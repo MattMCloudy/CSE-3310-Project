@@ -1,0 +1,76 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+JAVAC         = javac
+JAR           = jar
+JAVACFLAGS    = $(GENFLAGS) -endorseddirs "$(JACORB_HOME)/lib/endorsed"
+CLASSEXT      = .class
+CLASSDIR      = classes/
+OUTPUT_OPTION = -d $(CLASSDIR)
+COMPILE.java  = $(JAVAC) $(JAVACFLAGS) -cp $(JAVACCPATH) 
+JAVACCPATH    = "$(CLASSDIR):../../../../../jar/dcpscj.jar:"
+MAKEFILE      = Makefile.cj_tutorial_types
+DEPENDENCIES  = $(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+GENFLAGS      =  
+CLASSES       =  $(CLASSDIR)Chat/*$(CLASSEXT)
+JARCLASSES    =  Chat/*$(CLASSEXT)
+JAREXT        = .jar
+JARFILE       = $(LTARGETDIR)$(LIBPREFIX)cj_tutorial_types$(LIBSUFFIX)$(JAREXT)
+MANIFEST      = cj_tutorial_types.manifest
+JARFLAGS      = cvfm
+SRC           = Chat/*.java
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(JARFILE)
+
+$(JARFILE): $(CLASSES) $(CLASSDIR)$(MANIFEST)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
+	cd $(CLASSDIR) && $(JAR) $(JARFLAGS) $(JARFILE) $(MANIFEST) $(JARCLASSES) 
+	$(MV) $(CLASSDIR)/$(JARFILE) .
+
+$(CLASSDIR)$(MANIFEST):
+	echo Class-Path: ../../../../../jar/dcpscj.jar > $(CLASSDIR)$(MANIFEST)
+
+GENERATED_DIRTY = ChatDcps.idl Chat
+
+ChatDcps.idl: ../../idl/Chat.idl
+	"../../../../../bin/idlpp" -I "../../../../../etc/idl" -C -l java ../../idl/Chat.idl
+	java -classpath "$(JACORB_HOME)/lib/idl.jar:$(JACORB_HOME)/lib/endorsed/logkit.jar" org.jacorb.idl.parser -I../../../../../etc/idl ../../idl/Chat.idl
+
+Chat: ChatDcps.idl
+	java -classpath "$(JACORB_HOME)/lib/idl.jar:$(JACORB_HOME)/lib/endorsed/logkit.jar" org.jacorb.idl.parser -I../../../../../etc/idl -I../../idl ChatDcps.idl
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(CLASSES): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+$(CLASSDIR)Chat/*$(CLASSEXT): Chat
+	@$(TESTDIRSTART) "$(CLASSDIR)" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) Chat/*.java
+
+clean:
+	-$(RM) $(CLASSES)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(JARFILE)
+	-$(RM) $(GENERATED_DIRTY)
+	-$(RM) $(CLASSDIR)$(MANIFEST)
+
+check-syntax:
+	$(COMPILE.java) $(EXPORTFLAGS) $(CHK_SOURCES)
+
