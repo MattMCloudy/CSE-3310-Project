@@ -1,0 +1,844 @@
+# $Id: Makefile.in,v 1.115 2015/08/05 23:15:41 tom Exp $
+##############################################################################
+# Copyright (c) 1998-2014,2015 Free Software Foundation, Inc.                #
+#                                                                            #
+# Permission is hereby granted, free of charge, to any person obtaining a    #
+# copy of this software and associated documentation files (the "Software"), #
+# to deal in the Software without restriction, including without limitation  #
+# the rights to use, copy, modify, merge, publish, distribute, distribute    #
+# with modifications, sublicense, and/or sell copies of the Software, and to #
+# permit persons to whom the Software is furnished to do so, subject to the  #
+# following conditions:                                                      #
+#                                                                            #
+# The above copyright notice and this permission notice shall be included in #
+# all copies or substantial portions of the Software.                        #
+#                                                                            #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR #
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,   #
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL    #
+# THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING    #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER        #
+# DEALINGS IN THE SOFTWARE.                                                  #
+#                                                                            #
+# Except as contained in this notice, the name(s) of the above copyright     #
+# holders shall not be used in advertising or otherwise to promote the sale, #
+# use or other dealings in this Software without prior written               #
+# authorization.                                                             #
+##############################################################################
+#
+# Author: Thomas E. Dickey 1996-on
+#
+# Makefile for ncurses tests.
+
+# turn off _all_ suffix rules; we'll generate our own
+.SUFFIXES:
+
+SHELL		= /bin/sh
+
+
+
+
+destdir		=
+x		= 
+o		= .o
+
+MODEL		= ../ncurses-examples-20150808
+top_srcdir	= .
+srcdir		= .
+prefix		= /usr/local
+exec_prefix	= ${prefix}
+datarootdir	= ${prefix}/share
+
+bindir		= ${exec_prefix}/bin
+libdir		= ${exec_prefix}/lib
+includedir	= ${prefix}/include
+includesubdir	= 
+
+BINDIR		= $(DESTDIR)$(bindir)
+LIBDIR		= $(DESTDIR)$(libdir)
+INCLUDEDIR	= $(DESTDIR)$(includedir)$(includesubdir)
+
+PACKAGE		= ncurses-examples
+
+LIBTOOL		= 
+LIBTOOL_OPTS	= 
+LIBTOOL_CLEAN	= 
+LIBTOOL_COMPILE	= 
+LIBTOOL_LINK	= ${CC}
+
+INSTALL		= /usr/bin/install -c
+INSTALL_PROG	= ${INSTALL}
+transform	= s,x,x,
+TRANSFORM	= sed 's/$x$$//'|sed '$(transform)'|sed 's/$$/$x/'
+
+CTAGS		= 
+ETAGS		= 
+
+CC		= gcc
+CPP		= gcc -E
+
+CFLAGS		= -g -O2 
+CPPFLAGS	= -I. -I$(srcdir) -I../test -DHAVE_CONFIG_H  -D_GNU_SOURCE -D_XPG5
+
+CCFLAGS		= $(CPPFLAGS) $(CFLAGS)
+
+CFLAGS_LIBTOOL	= $(CCFLAGS)
+CFLAGS_NORMAL	= $(CCFLAGS)
+CFLAGS_DEBUG	= $(CCFLAGS) -g -DTRACE
+CFLAGS_PROFILE	= $(CCFLAGS) -pg
+CFLAGS_SHARED	= $(CCFLAGS) unknown
+
+CFLAGS_DEFAULT	= $(CFLAGS_NORMAL)
+
+REL_VERSION	= 
+ABI_VERSION	= 
+LOCAL_LIBDIR	= /home/mattmcleod/Dropbox/code/CSE3310/ncurses-examples-20150808/lib
+LOCAL_LIBS	= 
+MATH_LIB	= -lm
+TEST_LIBS	= 
+
+LD		= ld
+LINK		=  $(LIBTOOL_LINK) $(CFLAGS)
+
+LDFLAGS		=    -L/lib64
+
+LDFLAGS_LIBTOOL	= $(LDFLAGS) $(CFLAGS_LIBTOOL)
+LDFLAGS_NORMAL	= $(LDFLAGS) $(CFLAGS_NORMAL)
+LDFLAGS_DEBUG	= $(LDFLAGS) $(CFLAGS_DEBUG)
+LDFLAGS_PROFILE	= $(LDFLAGS) $(CFLAGS_PROFILE)
+LDFLAGS_SHARED	= $(LDFLAGS) $(CFLAGS_SHARED) 
+
+TEST_ARGS	=   -lform -lmenu -lpanel -lncurses 
+
+# use these for linking with all of the libraries
+LIBS_DEFAULT	= $(TEST_ARGS)  $(TEST_LIBS) $(MATH_LIB)
+LDFLAGS_DEFAULT	= $(LDFLAGS_NORMAL) $(LIBS_DEFAULT)
+
+# use these for linking with the (n)curses library and possibly pthreads
+LIBS_THREADS	= `echo "$(TEST_ARGS) " | sed -e 's/-lform.*-lpanel[^ ]*//'` $(TEST_LIBS) $(MATH_LIB) -lm
+LDFLAGS_THREADS	= $(LDFLAGS_NORMAL) $(LIBS_THREADS)
+
+# use these for linking with the (n)curses library
+LIBS_CURSES	= `echo "$(TEST_ARGS) " | sed -e 's/-lform.*-lpanel[^ ]*//'` $(TEST_LIBS) $(MATH_LIB)
+LDFLAGS_CURSES	= $(LDFLAGS_NORMAL) $(LIBS_CURSES)
+
+# use these for linking with the tinfo library if we have it, or curses library if not
+LIBS_TINFO	=  $(LIBS_CURSES)   $(TEST_LIBS) $(MATH_LIB)
+LDFLAGS_TINFO	=  $(LDFLAGS_NORMAL) $(LIBS_TINFO)
+
+LINT		= 
+LINT_OPTS	= 
+LINT_LIBS	= -lform -lmenu -lpanel -lncurses 
+
+HEADER_DEPS	= \
+	../include/curses.h \
+	../include/term.h
+
+# The rest is generated from the "programs" and "modules" files...
+# generated by mk-test.awk
+
+TESTS	= $(destdir)background$x \
+	  $(destdir)blue$x \
+	  $(destdir)bs$x \
+	  $(destdir)cardfile$x \
+	  $(destdir)chgat$x \
+	  $(destdir)clip_printw$x \
+	  $(destdir)color_set$x \
+	  $(destdir)demo_altkeys$x \
+	  $(destdir)demo_defkey$x \
+	  $(destdir)demo_forms$x \
+	  $(destdir)demo_keyok$x \
+	  $(destdir)demo_menus$x \
+	  $(destdir)demo_panels$x \
+	  $(destdir)demo_termcap$x \
+	  $(destdir)demo_terminfo$x \
+	  $(destdir)ditto$x \
+	  $(destdir)dots$x \
+	  $(destdir)dots_curses$x \
+	  $(destdir)dots_mvcur$x \
+	  $(destdir)dots_termcap$x \
+	  $(destdir)echochar$x \
+	  $(destdir)filter$x \
+	  $(destdir)firework$x \
+	  $(destdir)firstlast$x \
+	  $(destdir)foldkeys$x \
+	  $(destdir)form_driver_w$x \
+	  $(destdir)gdc$x \
+	  $(destdir)hanoi$x \
+	  $(destdir)hashtest$x \
+	  $(destdir)inch_wide$x \
+	  $(destdir)inchs$x \
+	  $(destdir)ins_wide$x \
+	  $(destdir)insdelln$x \
+	  $(destdir)inserts$x \
+	  $(destdir)key_names$x \
+	  $(destdir)keynames$x \
+	  $(destdir)knight$x \
+	  $(destdir)lrtest$x \
+	  $(destdir)movewindow$x \
+	  $(destdir)ncurses$x \
+	  $(destdir)newdemo$x \
+	  $(destdir)railroad$x \
+	  $(destdir)rain$x \
+	  $(destdir)redraw$x \
+	  $(destdir)savescreen$x \
+	  $(destdir)tclock$x \
+	  $(destdir)test_add_wchstr$x \
+	  $(destdir)test_addchstr$x \
+	  $(destdir)test_addstr$x \
+	  $(destdir)test_addwstr$x \
+	  $(destdir)test_arrays$x \
+	  $(destdir)test_get_wstr$x \
+	  $(destdir)test_getstr$x \
+	  $(destdir)test_instr$x \
+	  $(destdir)test_inwstr$x \
+	  $(destdir)test_opaque$x \
+	  $(destdir)test_setupterm$x \
+	  $(destdir)test_vid_puts$x \
+	  $(destdir)test_vidputs$x \
+	  $(destdir)testaddch$x \
+	  $(destdir)testcurs$x \
+	  $(destdir)testscanw$x \
+	  $(destdir)view$x \
+	  $(destdir)worm$x \
+	  $(destdir)xmas$x
+
+all: $(TESTS)
+
+sources:
+
+tags:
+	$(CTAGS) *.[ch]
+
+# no libraries here
+libs \
+install.libs \
+uninstall.libs:
+
+# we might install the test-programs
+install \
+install.test: $(BINDIR) $(TESTS)
+	$(SHELL) -c 'for src in $(TESTS); do \
+	dst=`echo $$src | $(TRANSFORM)`; \
+	$(INSTALL_PROG) $$src $(BINDIR)/$$dst; \
+	done'
+
+uninstall \
+uninstall.test:
+	$(SHELL) -c 'for src in $(TESTS); do \
+	dst=`echo $$src | $(TRANSFORM)`; \
+	rm -f $(BINDIR)/$$dst; \
+	done'
+
+mostlyclean ::
+	-rm -f core tags TAGS *~ *.bak *.i *.ln *.atac trace
+
+clean :: mostlyclean
+	-$(SHELL) -c "if test -n '$x' ; then $(MAKE) clean x=''; fi"
+	-rm -rf *$o screendump *.lis $(TESTS) .libs *.dSYM
+
+distclean :: clean
+	-rm -f Makefile ncurses_cfg.h config.status config.log
+
+realclean :: distclean
+
+lint:
+	$(SHELL) -c 'for N in $(TESTS); do echo LINT:$$N; $(LINT) $(LINT_OPTS) $(CPPFLAGS) $(srcdir)/$$N.c $(LINT_LIBS); done'
+$(BINDIR) :
+	mkdir -p $@
+
+$(destdir)background$x: $(MODEL)/background$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/background$o $(LDFLAGS_CURSES)
+
+$(destdir)blue$x: $(MODEL)/blue$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/blue$o $(LDFLAGS_CURSES)
+
+$(destdir)bs$x: $(MODEL)/bs$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/bs$o $(LDFLAGS_CURSES)
+
+$(destdir)cardfile$x: $(MODEL)/cardfile$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/cardfile$o $(LDFLAGS_DEFAULT)
+
+$(destdir)chgat$x: $(MODEL)/chgat$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/chgat$o $(LDFLAGS_CURSES)
+
+$(destdir)clip_printw$x: $(MODEL)/clip_printw$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/clip_printw$o $(LDFLAGS_CURSES)
+
+$(destdir)color_set$x: $(MODEL)/color_set$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/color_set$o $(LDFLAGS_CURSES)
+
+$(destdir)demo_altkeys$x: $(MODEL)/demo_altkeys$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_altkeys$o $(LDFLAGS_CURSES)
+
+$(destdir)demo_defkey$x: $(MODEL)/demo_defkey$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_defkey$o $(LDFLAGS_CURSES)
+
+$(destdir)demo_forms$x: $(MODEL)/demo_forms$o $(MODEL)/edit_field$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_forms$o $(MODEL)/edit_field$o $(LDFLAGS_DEFAULT)
+
+$(destdir)demo_keyok$x: $(MODEL)/demo_keyok$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_keyok$o $(LDFLAGS_CURSES)
+
+$(destdir)demo_menus$x: $(MODEL)/demo_menus$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_menus$o $(LDFLAGS_DEFAULT)
+
+$(destdir)demo_panels$x: $(MODEL)/demo_panels$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_panels$o $(LDFLAGS_DEFAULT)
+
+$(destdir)demo_termcap$x: $(MODEL)/demo_termcap$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_termcap$o $(LDFLAGS_TINFO)
+
+$(destdir)demo_terminfo$x: $(MODEL)/demo_terminfo$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/demo_terminfo$o $(LDFLAGS_TINFO)
+
+$(destdir)ditto$x: $(MODEL)/ditto$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/ditto$o $(LDFLAGS_THREADS)
+
+$(destdir)dots$x: $(MODEL)/dots$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/dots$o $(LDFLAGS_TINFO)
+
+$(destdir)dots_curses$x: $(MODEL)/dots_curses$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/dots_curses$o $(LDFLAGS_CURSES)
+
+$(destdir)dots_mvcur$x: $(MODEL)/dots_mvcur$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/dots_mvcur$o $(LDFLAGS_CURSES)
+
+$(destdir)dots_termcap$x: $(MODEL)/dots_termcap$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/dots_termcap$o $(LDFLAGS_TINFO)
+
+$(destdir)echochar$x: $(MODEL)/echochar$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/echochar$o $(LDFLAGS_CURSES)
+
+$(destdir)filter$x: $(MODEL)/filter$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/filter$o $(LDFLAGS_CURSES)
+
+$(destdir)firework$x: $(MODEL)/firework$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/firework$o $(LDFLAGS_CURSES)
+
+$(destdir)firstlast$x: $(MODEL)/firstlast$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/firstlast$o $(LDFLAGS_DEFAULT)
+
+$(destdir)foldkeys$x: $(MODEL)/foldkeys$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/foldkeys$o $(LDFLAGS_CURSES)
+
+$(destdir)form_driver_w$x: $(MODEL)/form_driver_w$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/form_driver_w$o $(LDFLAGS_DEFAULT)
+
+$(destdir)gdc$x: $(MODEL)/gdc$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/gdc$o $(LDFLAGS_CURSES)
+
+$(destdir)hanoi$x: $(MODEL)/hanoi$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/hanoi$o $(LDFLAGS_CURSES)
+
+$(destdir)hashtest$x: $(MODEL)/hashtest$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/hashtest$o $(LDFLAGS_CURSES)
+
+$(destdir)inch_wide$x: $(MODEL)/inch_wide$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/inch_wide$o $(LDFLAGS_CURSES)
+
+$(destdir)inchs$x: $(MODEL)/inchs$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/inchs$o $(LDFLAGS_CURSES)
+
+$(destdir)ins_wide$x: $(MODEL)/ins_wide$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/ins_wide$o $(LDFLAGS_CURSES)
+
+$(destdir)insdelln$x: $(MODEL)/insdelln$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/insdelln$o $(LDFLAGS_CURSES)
+
+$(destdir)inserts$x: $(MODEL)/inserts$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/inserts$o $(LDFLAGS_CURSES)
+
+$(destdir)key_names$x: $(MODEL)/key_names$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/key_names$o $(LDFLAGS_CURSES)
+
+$(destdir)keynames$x: $(MODEL)/keynames$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/keynames$o $(LDFLAGS_CURSES)
+
+$(destdir)knight$x: $(MODEL)/knight$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/knight$o $(LDFLAGS_CURSES)
+
+$(destdir)lrtest$x: $(MODEL)/lrtest$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/lrtest$o $(LDFLAGS_CURSES)
+
+$(destdir)movewindow$x: $(MODEL)/movewindow$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/movewindow$o $(LDFLAGS_CURSES)
+
+$(destdir)ncurses$x: $(MODEL)/ncurses$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/ncurses$o $(LDFLAGS_DEFAULT)
+
+$(destdir)newdemo$x: $(MODEL)/newdemo$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/newdemo$o $(LDFLAGS_CURSES)
+
+$(destdir)railroad$x: $(MODEL)/railroad$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/railroad$o $(LDFLAGS_TINFO)
+
+$(destdir)rain$x: $(MODEL)/rain$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/rain$o $(LDFLAGS_THREADS)
+
+$(destdir)redraw$x: $(MODEL)/redraw$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/redraw$o $(LDFLAGS_CURSES)
+
+$(destdir)savescreen$x: $(MODEL)/savescreen$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/savescreen$o $(LDFLAGS_CURSES)
+
+$(destdir)tclock$x: $(MODEL)/tclock$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/tclock$o $(LDFLAGS_CURSES)
+
+$(destdir)test_add_wchstr$x: $(MODEL)/test_add_wchstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_add_wchstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_addchstr$x: $(MODEL)/test_addchstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_addchstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_addstr$x: $(MODEL)/test_addstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_addstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_addwstr$x: $(MODEL)/test_addwstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_addwstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_arrays$x: $(MODEL)/test_arrays$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_arrays$o $(LDFLAGS_TINFO)
+
+$(destdir)test_get_wstr$x: $(MODEL)/test_get_wstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_get_wstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_getstr$x: $(MODEL)/test_getstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_getstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_instr$x: $(MODEL)/test_instr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_instr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_inwstr$x: $(MODEL)/test_inwstr$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_inwstr$o $(LDFLAGS_CURSES)
+
+$(destdir)test_opaque$x: $(MODEL)/test_opaque$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_opaque$o $(LDFLAGS_CURSES)
+
+$(destdir)test_setupterm$x: $(MODEL)/test_setupterm$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_setupterm$o $(LDFLAGS_CURSES)
+
+$(destdir)test_vid_puts$x: $(MODEL)/test_vid_puts$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_vid_puts$o $(LDFLAGS_CURSES)
+
+$(destdir)test_vidputs$x: $(MODEL)/test_vidputs$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/test_vidputs$o $(LDFLAGS_CURSES)
+
+$(destdir)testaddch$x: $(MODEL)/testaddch$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/testaddch$o $(LDFLAGS_CURSES)
+
+$(destdir)testcurs$x: $(MODEL)/testcurs$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/testcurs$o $(LDFLAGS_CURSES)
+
+$(destdir)testscanw$x: $(MODEL)/testscanw$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/testscanw$o $(LDFLAGS_CURSES)
+
+$(destdir)view$x: $(MODEL)/view$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/view$o $(LDFLAGS_CURSES)
+
+$(destdir)worm$x: $(MODEL)/worm$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/worm$o $(LDFLAGS_THREADS)
+
+$(destdir)xmas$x: $(MODEL)/xmas$o $(LOCAL_LIBS)
+	$(LINK) -o $@ $(MODEL)/xmas$o $(LDFLAGS_CURSES)
+
+# These rules are generated so we do not rely on suffix rules, which do not
+# work consistently for different make-programs (the '$(MODEL)/' confuses
+# some, and the '$x' confuses others).
+
+$(MODEL)/background.o : $(srcdir)/background.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/background.c
+
+$(MODEL)/blue.o : $(srcdir)/blue.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/blue.c
+
+$(MODEL)/bs.o : $(srcdir)/bs.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/bs.c
+
+$(MODEL)/cardfile.o : $(srcdir)/cardfile.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/cardfile.c
+
+$(MODEL)/chgat.o : $(srcdir)/chgat.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/chgat.c
+
+$(MODEL)/clip_printw.o : $(srcdir)/clip_printw.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/clip_printw.c
+
+$(MODEL)/color_set.o : $(srcdir)/color_set.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/color_set.c
+
+$(MODEL)/demo_altkeys.o : $(srcdir)/demo_altkeys.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_altkeys.c
+
+$(MODEL)/demo_defkey.o : $(srcdir)/demo_defkey.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_defkey.c
+
+$(MODEL)/demo_forms.o : $(srcdir)/demo_forms.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_forms.c
+
+$(MODEL)/demo_keyok.o : $(srcdir)/demo_keyok.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_keyok.c
+
+$(MODEL)/demo_menus.o : $(srcdir)/demo_menus.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_menus.c
+
+$(MODEL)/demo_panels.o : $(srcdir)/demo_panels.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_panels.c
+
+$(MODEL)/demo_termcap.o : $(srcdir)/demo_termcap.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_termcap.c
+
+$(MODEL)/demo_terminfo.o : $(srcdir)/demo_terminfo.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/demo_terminfo.c
+
+$(MODEL)/ditto.o : $(srcdir)/ditto.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/ditto.c
+
+$(MODEL)/dots.o : $(srcdir)/dots.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/dots.c
+
+$(MODEL)/dots_curses.o : $(srcdir)/dots_curses.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/dots_curses.c
+
+$(MODEL)/dots_mvcur.o : $(srcdir)/dots_mvcur.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/dots_mvcur.c
+
+$(MODEL)/dots_termcap.o : $(srcdir)/dots_termcap.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/dots_termcap.c
+
+$(MODEL)/echochar.o : $(srcdir)/echochar.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/echochar.c
+
+$(MODEL)/edit_field.o : $(srcdir)/edit_field.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/edit_field.c
+
+$(MODEL)/filter.o : $(srcdir)/filter.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/filter.c
+
+$(MODEL)/firework.o : $(srcdir)/firework.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/firework.c
+
+$(MODEL)/firstlast.o : $(srcdir)/firstlast.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/firstlast.c
+
+$(MODEL)/foldkeys.o : $(srcdir)/foldkeys.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/foldkeys.c
+
+$(MODEL)/form_driver_w.o : $(srcdir)/form_driver_w.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/form_driver_w.c
+
+$(MODEL)/gdc.o : $(srcdir)/gdc.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/gdc.c
+
+$(MODEL)/hanoi.o : $(srcdir)/hanoi.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/hanoi.c
+
+$(MODEL)/hashtest.o : $(srcdir)/hashtest.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/hashtest.c
+
+$(MODEL)/inch_wide.o : $(srcdir)/inch_wide.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/inch_wide.c
+
+$(MODEL)/inchs.o : $(srcdir)/inchs.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/inchs.c
+
+$(MODEL)/ins_wide.o : $(srcdir)/ins_wide.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/ins_wide.c
+
+$(MODEL)/insdelln.o : $(srcdir)/insdelln.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/insdelln.c
+
+$(MODEL)/inserts.o : $(srcdir)/inserts.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/inserts.c
+
+$(MODEL)/key_names.o : $(srcdir)/key_names.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/key_names.c
+
+$(MODEL)/keynames.o : $(srcdir)/keynames.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/keynames.c
+
+$(MODEL)/knight.o : $(srcdir)/knight.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/knight.c
+
+$(MODEL)/lrtest.o : $(srcdir)/lrtest.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/lrtest.c
+
+$(MODEL)/movewindow.o : $(srcdir)/movewindow.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/movewindow.c
+
+$(MODEL)/ncurses.o : $(srcdir)/ncurses.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/ncurses.c
+
+$(MODEL)/newdemo.o : $(srcdir)/newdemo.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/newdemo.c
+
+$(MODEL)/railroad.o : $(srcdir)/railroad.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/railroad.c
+
+$(MODEL)/rain.o : $(srcdir)/rain.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/rain.c
+
+$(MODEL)/redraw.o : $(srcdir)/redraw.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/redraw.c
+
+$(MODEL)/savescreen.o : $(srcdir)/savescreen.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/savescreen.c
+
+$(MODEL)/tclock.o : $(srcdir)/tclock.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/tclock.c
+
+$(MODEL)/test_add_wchstr.o : $(srcdir)/test_add_wchstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_add_wchstr.c
+
+$(MODEL)/test_addchstr.o : $(srcdir)/test_addchstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_addchstr.c
+
+$(MODEL)/test_addstr.o : $(srcdir)/test_addstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_addstr.c
+
+$(MODEL)/test_addwstr.o : $(srcdir)/test_addwstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_addwstr.c
+
+$(MODEL)/test_arrays.o : $(srcdir)/test_arrays.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_arrays.c
+
+$(MODEL)/test_get_wstr.o : $(srcdir)/test_get_wstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_get_wstr.c
+
+$(MODEL)/test_getstr.o : $(srcdir)/test_getstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_getstr.c
+
+$(MODEL)/test_instr.o : $(srcdir)/test_instr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_instr.c
+
+$(MODEL)/test_inwstr.o : $(srcdir)/test_inwstr.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_inwstr.c
+
+$(MODEL)/test_opaque.o : $(srcdir)/test_opaque.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_opaque.c
+
+$(MODEL)/test_setupterm.o : $(srcdir)/test_setupterm.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_setupterm.c
+
+$(MODEL)/test_vid_puts.o : $(srcdir)/test_vid_puts.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_vid_puts.c
+
+$(MODEL)/test_vidputs.o : $(srcdir)/test_vidputs.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/test_vidputs.c
+
+$(MODEL)/testaddch.o : $(srcdir)/testaddch.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/testaddch.c
+
+$(MODEL)/testcurs.o : $(srcdir)/testcurs.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/testcurs.c
+
+$(MODEL)/testscanw.o : $(srcdir)/testscanw.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/testscanw.c
+
+$(MODEL)/view.o : $(srcdir)/view.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/view.c
+
+$(MODEL)/worm.o : $(srcdir)/worm.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/worm.c
+
+$(MODEL)/xmas.o : $(srcdir)/xmas.c \
+	$(srcdir)/test.priv.h \
+	ncurses_cfg.h
+	
+	$(CC) -c $(CFLAGS_DEFAULT) $(srcdir)/xmas.c
