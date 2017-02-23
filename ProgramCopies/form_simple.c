@@ -13,7 +13,7 @@ int main()
 
 	/* Initialize the fields */
 	field[0] = new_field(1, 10, 4, 18, 0, 0);
-	field[1] = new_field(1, 10, 6, 18, 0, 0);
+	field[1] = new_field(1, 10, 14, 18, 0, 0);
 	field[2] = NULL;
 
 	/* Set field options */
@@ -29,22 +29,17 @@ int main()
 	refresh();
 	
 	mvprintw(4, 10, "Value 1:");
-	mvprintw(6, 10, "Value 2:");
+	mvprintw(14, 10, "Value 2:");
 	refresh();
 
 	/* Loop through to get user requests */
-	while((ch = getch()) != KEY_F(1))
+	while((ch = getch()) != KEY_F(3))
 	{	switch(ch)
-		{	case KEY_DOWN:
+		{	case KEY_F(2):
 				/* Go to next field */
 				form_driver(my_form, REQ_NEXT_FIELD);
 				/* Go to the end of the present buffer */
 				/* Leaves nicely at the last character */
-				form_driver(my_form, REQ_END_LINE);
-				break;
-			case KEY_UP:
-				/* Go to previous field */
-				form_driver(my_form, REQ_PREV_FIELD);
 				form_driver(my_form, REQ_END_LINE);
 				break;
 			default:
