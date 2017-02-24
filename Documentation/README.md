@@ -1,5 +1,3 @@
-# CSE 3310 Project Repository
+# Documentation for SuperChat
 
-A school project at UTA
-
-*members: Nima Rahimzadeh, Megan Myers, Matt McLeod*
+All documentation created in the process of making SuperChat
