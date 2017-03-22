@@ -2,7 +2,7 @@
 
 class Chatroom {
     private:
-        \\stuff
+        //stuff
     public:
-        \\stuff
+        //stuff
 };

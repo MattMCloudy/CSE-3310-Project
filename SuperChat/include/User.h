@@ -2,7 +2,7 @@
 
 class User {
     private:
-        \\stuff
+        //stuff
     public:
-        \\stuff
+        //stuff
 };
