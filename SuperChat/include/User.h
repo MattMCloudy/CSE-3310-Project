@@ -1,8 +1,12 @@
-
+#include "user_c_struct.h"
+#include "Message.h"
 
 class User {
     private:
-        //stuff
+        //user_struct user;
     public:
-        //stuff
+        void CreateMessage();
+        void SendMessage();
+        void ExitChatroom();
+        //void EnterChatroom(); ??
 };

@@ -1,8 +1,12 @@
-
+#include "chatroom_c_struct.h"
+#include "User.h"
 
 class Chatroom {
     private:
-        //stuff
+        //chatroom_struct chatroom;
+        vector<User> users;
     public:
-        //stuff
+        void PostMessage();
+        //void AddUser(); ??
+        
 };
