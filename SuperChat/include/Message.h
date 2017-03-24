@@ -6,9 +6,14 @@
 #include <vector>
 #include "message_c_struct.h"
 
+#ifndef __MESSAGE_H
+#define __MESSAGE_H
+
 class Message {
     private:
         "message_struct message"
     public:
         //stuff
 };
+
+#endif

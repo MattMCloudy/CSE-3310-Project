@@ -1,6 +1,6 @@
-#include "../lib/ViewController.h"
+#include "../include/Initializer.h"
 
 int main() {
-    ViewController* view = new ViewController();
-    view->exe();
+    Initializer* init = new Initializer();
+    init->exe();
 }
