@@ -1,8 +1,10 @@
+#ifndef __USER_H
+#define __USER_H
+
 #include "user_c_struct.h"
 #include "Message.h"
 
-#ifndef __USER_H
-#define __USER_H
+using namespace std;
 
 class User {
     private:

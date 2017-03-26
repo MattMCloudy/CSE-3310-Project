@@ -1,8 +1,10 @@
+#ifndef __CHATROOM_H
+#define __CHATROOM_H
+
 #include "chatroom_c_struct.h"
 #include "User.h"
 
-#ifndef __CHATROOM_H
-#define __CHATROOM_H
+using namespace std;
 
 class Chatroom {
     private:

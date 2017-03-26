@@ -1,4 +1,3 @@
-//This file should contain the entirity of the User Interface.
 class ViewController {
     private:
         //stuff

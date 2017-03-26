@@ -1,8 +1,10 @@
+#ifndef __CHATDAEMON_H
+#define __CHATDAEMON_H
+
 #include "Chatroom.h"
 #include "UserInterface.h"
 
-#ifndef __CHATDAEMON_H
-#define __CHATDAEMON_H
+using namespace std;
 
 class ChatDaemon {
     private:

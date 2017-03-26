@@ -1,9 +1,11 @@
+#ifndef __INITIALIZER_H
+#define __INITIALIZER_H
+
 #include "ViewController.h"
 #include "UserInterface.h"
 #include "ChatDaemon.h"
 
-#ifndef __INITIALIZER_H
-#define __INITIALIZER_H
+using namespace std;
 
 class Initializer {
     private:
