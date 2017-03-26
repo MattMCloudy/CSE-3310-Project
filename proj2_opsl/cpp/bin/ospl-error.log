@@ -1,0 +1,48 @@
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 18:56:27 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5900.103906021 s.
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : leaseThread b6273b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/Durability Service/d_durability.c/182/0/1490486187.376779207
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 18:56:27 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 7479.578679829 s.
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : leaseThread b6240b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/Durability Service/d_durability.c/182/0/1490486187.382132776
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 18:56:27 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 7344.297586030 s.
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : leaseThread b61bfb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/Durability Service/d_durability.c/182/0/1490486187.381891143
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 18:56:27 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 7635.032038727 s.
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : leaseThread b6279b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/Durability Service/d_durability.c/182/0/1490486187.418582669
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 20:43:37 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4878.378941681 s.
+Node        : ubuntu
+Process     : SuperChatSubscriber <7555>
+Thread      : leaseThread b6228b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/Durability Service/d_durability.c/182/0/1490492617.418249354
+========================================================================================
+Report      : ERROR
+Date        : Sat Mar 25 20:43:37 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4876.622141006 s.
+Node        : ubuntu
+Process     : SuperChatSubscriber <7555>
+Thread      : OSPL Lease Renew Thread b650eb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/OpenSplice domain service/spliced.c/153/0/1490492617.449558667

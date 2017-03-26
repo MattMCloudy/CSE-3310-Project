@@ -1,0 +1,44 @@
+
+
+
+jmdavis@debian:~/proj2$ cat cpp/Makefile
+
+all:bin/HelloWorldPublisher bin/HelloWorldSubscriber
+
+FILES_GENERATED_FROM_THE_IDL_BY_IDLPP= ./bin/HelloWorldDataDcps_impl.h ./bin/HelloWorldData.cpp \
+                                     ./bin/HelloWorldDataSplDcps.cpp ./bin/HelloWorldDataDcps.cpp \
+                                     ./bin/HelloWorldDataDcps_impl.cpp ./bin/ccpp_HelloWorldData.h \
+                                     ./bin/HelloWorldDataDcps.h ./bin/HelloWorldData.h ./bin/HelloWorldDataSplDcps.h
+
+${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}:./idl/HelloWorldData.idl
+        idlpp -I ${OSPL_HOME}/etc/idl -l cpp ./idl/HelloWorldData.idl -d ./bin
+
+COMMON_SRC_FILES=./src/CheckStatus.cpp  ./src/DDSEntityManager.cpp
+COMMON_H_FILES=./src/CheckStatus.h
+
+# this library list may need some adjust for different operating systems
+# works on cse3320.org
+COMMON_LIBS=-L${OSPL_HOME}/lib/ \
+            -ldcpssacpp \
+            -lddskernel \
+            -lpthread
+
+CXXFLAGS=-Wall -O0 -g
+
+bin/HelloWorldPublisher : src/HelloWorldDataPublisher.cpp ${COMMON_SRC_FILES} ${COMMON_H_FILES} ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}
+        g++  ${CXXFLAGS} \
+        -o bin/HelloWorldPublisher src/HelloWorldDataPublisher.cpp  ${COMMON_SRC_FILES} ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} \
+        -I./src/ -I./include -I./bin \
+        -I${OSPL_HOME}/include/dcps/C++/SACPP/ \
+        ${COMMON_LIBS}
+
+bin/HelloWorldSubscriber : src/HelloWorldDataSubscriber.cpp ${COMMON_SRC_FILES} ${COMMON_H_FILES} ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}
+        g++  ${CXXFLAGS} \
+        -o bin/HelloWorldSubscriber src/HelloWorldDataSubscriber.cpp  ${COMMON_SRC_FILES} ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} \
+        -I./src/ -I./include -I./bin \
+        -I${OSPL_HOME}/include/dcps/C++/SACPP/ \
+        ${COMMON_LIBS}
+
+clean:
+        -rm -f ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}
+        -rm -f bin/HelloWorldPublisher bin/HelloWorldSubscriber
