@@ -9,7 +9,10 @@ using namespace std;
 
 class Initializer {
     private:
+        ChatDaemon daemon;
+        UserInterface ui;
     public:
+        Initializer();
         void exe();
 };
 

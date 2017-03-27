@@ -1,13 +1,21 @@
 #ifndef __USERINTERFACE_H
 #define __USERINTERFACE_H
 
-#include "ChatDaemon.h"
+#include "Chatroom.h"
+
+class ChatDaemon;
+
+using namespace std;
 
 class UserInterface {
     private:
-        //stuff
+        ChatDaemon* daemon;
     public:
-        void test();
+        UserInterface() {
+            cout << "UI Initialized...\n";
+        }
+        void create();
+        void setDaemon(ChatDaemon* new_daemon);
 };
 
 #endif

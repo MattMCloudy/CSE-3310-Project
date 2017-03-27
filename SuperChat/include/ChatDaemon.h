@@ -2,15 +2,20 @@
 #define __CHATDAEMON_H
 
 #include "Chatroom.h"
-#include "UserInterface.h"
+
+class UserInterface;
 
 using namespace std;
 
 class ChatDaemon {
     private:
-        //stuff
+        UserInterface* ui;
     public:
-        //stuff
+        ChatDaemon() {
+            cout << "Daemon Created...\n";
+        }
+        void start();
+        void setUI(UserInterface* new_ui);
 };
 
 #endif

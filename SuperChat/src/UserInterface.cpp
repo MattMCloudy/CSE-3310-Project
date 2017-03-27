@@ -1,7 +1,7 @@
 #include "../include/UserInterface.h"
+#include "../include/ChatDaemon.h"
 
-
-void UserInterface::test() {
+void UserInterface::create() {
     initscr();
     printw("Hello, World");
     refresh();
@@ -9,3 +9,4 @@ void UserInterface::test() {
     endwin();
 }
 
+void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}

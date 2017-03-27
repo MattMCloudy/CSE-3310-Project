@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
-#include <pthread.h>
+#include <thread>
 #include <ncurses.h>
 #include "message_c_struct.h"
 

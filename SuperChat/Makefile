@@ -1,3 +1,4 @@
+CXX = g++ -std=c++11
 SRC_DIR = src
 INC_DIR = include
 LIB_DIR = lib
@@ -6,7 +7,7 @@ SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(wildcard $(INC_DIR)/*.h)
 
-LDFLAGS = -w -lncurses -I$(INC_DIR)/..
+LDFLAGS = -w -lncurses -lpthread -I$(INC_DIR)/..
 
 all: super
 
