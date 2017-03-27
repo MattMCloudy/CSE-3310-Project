@@ -9,6 +9,7 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include <functional>
 #include <ncurses.h>
 #include "message_c_struct.h"
 

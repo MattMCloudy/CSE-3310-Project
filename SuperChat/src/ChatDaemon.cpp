@@ -12,10 +12,15 @@
 #include "../include/UserInterface.h"
 
 void ChatDaemon::start() {
+    m->lock();
     cout << "ChatDaemon has started\n";
+    m->unlock();
 }
 
 void ChatDaemon::setUI(UserInterface* new_ui) {
     ui = new_ui;
 }
 
+void ChatDaemon::setMutex(mutex* new_m) {
+    m = new_m;
+}

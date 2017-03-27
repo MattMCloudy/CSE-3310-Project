@@ -32,9 +32,15 @@ Initializer::Initializer() {
 
 void Initializer::exe() {
     cout << "Begin Execution...\n";
-
-
+    
+    mutex m;
+    
+    daemon.setMutex(&m);
+    ui.setMutex(&m);
+ 
+    cout << "Entering daemon thread...\n";
     thread daemon_thread(&ChatDaemon::start, ref(daemon));
+    cout << "Entering ui thread...\n";
     thread ui_thread(&UserInterface::create, ref(ui));
 
     daemon_thread.join();

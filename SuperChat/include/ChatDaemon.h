@@ -30,12 +30,14 @@ using namespace std;
 class ChatDaemon {
     private:
         UserInterface* ui;
+        mutex* m;
     public:
         ChatDaemon() {
             cout << "Daemon Created...\n";
         }
         void start();
         void setUI(UserInterface* new_ui);
+        void setMutex(mutex* new_m);
 };
 
 #endif

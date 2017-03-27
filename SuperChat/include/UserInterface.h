@@ -23,12 +23,14 @@ using namespace std;
 class UserInterface {
     private:
         ChatDaemon* daemon;
+        mutex* m;
     public:
         UserInterface() {
             cout << "UI Initialized...\n";
         }
         void create();
         void setDaemon(ChatDaemon* new_daemon);
+        void setMutex(mutex* new_m);
 };
 
 #endif
