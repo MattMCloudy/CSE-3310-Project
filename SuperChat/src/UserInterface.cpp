@@ -1,3 +1,8 @@
+/*Matt:
+ * This is where all of the methods for the UserInterface will be implemented.
+ * :)
+ */
+
 #include "../include/UserInterface.h"
 #include "../include/ChatDaemon.h"
 

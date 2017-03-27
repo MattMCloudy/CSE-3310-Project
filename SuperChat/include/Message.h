@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <mutex>
 #include <ncurses.h>
 #include "message_c_struct.h"
 
