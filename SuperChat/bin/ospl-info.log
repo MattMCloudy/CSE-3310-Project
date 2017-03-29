@@ -1,0 +1,72 @@
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : spliced b6d5bb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/user::u_domain::u_domainNew/u_domain.c/706/0/1490827593.185148749
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : spliced b6d5bb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/The OpenSplice domain service/u_domain.c/827/0/1490827593.193191369
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : spliced b6d5bb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490827593.193960109
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : SOAP service is reachable via port 60117
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : cmsoap b687cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/CM SOAP Service/cms_service.c/410/0/1490827593.305838004
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'cmsoap' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : cmsoap b687cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490827593.306113562
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : ddsi2 b652fb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490827593.548741178
+========================================================================================
+Report      : INFO
+Date        : Wed Mar 29 17:46:33 CDT 2017
+Description : The durability service can by identified by ID: 2066708780
+Node        : ubuntu
+Process     : SuperChat <4712>
+Thread      : durability b66ceb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/DurabilityService/d_durability.c/476/0/1490827593.968273170
