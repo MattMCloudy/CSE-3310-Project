@@ -11,6 +11,7 @@
 #include <mutex>
 #include <functional>
 #include <ncurses.h>
+#include "SuperChat.h"
 #include "message_c_struct.h"
 
 using namespace std;

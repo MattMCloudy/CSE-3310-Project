@@ -1,6 +1,6 @@
 #include <signal.h>
 #include <assert.h>
-//#include <ncurses.h>
+#include <ncurses.h>
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>

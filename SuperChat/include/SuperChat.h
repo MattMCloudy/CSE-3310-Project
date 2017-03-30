@@ -4,8 +4,8 @@
 //  
 //  File name: SuperChat.h
 //  Source: idl/SuperChat.idl
-//  Generated: Thu Mar 30 15:38:05 2017
-//  OpenSplice V6.4.140407OSS
+//  Generated: Wed Mar 29 18:02:04 2017
+//  OpenSplice V6.4.140320OSS
 //  
 //******************************************************************
 #ifndef _SUPERCHAT_H_
