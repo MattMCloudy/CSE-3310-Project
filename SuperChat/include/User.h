@@ -1,7 +1,6 @@
 #ifndef __USER_H
 #define __USER_H
 
-#include "user_c_struct.h"
 #include "Message.h"
 
 using namespace std;
