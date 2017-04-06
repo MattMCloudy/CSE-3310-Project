@@ -30,6 +30,10 @@ using namespace std;
 class ChatDaemon {
     private:
         UserInterface* ui;
+        Chatroom* current_chatroom;
+        vector<Chatroom*> chatrooms;
+        vector<User*> users;
+        LocalUser* local_user;
         mutex* m;
     public:
         ChatDaemon() {
@@ -38,6 +42,17 @@ class ChatDaemon {
         void start();
         void setUI(UserInterface* new_ui);
         void setMutex(mutex* new_m);
+        Chatroom* createNewChatroom(string name);
+        void postChatroomToUI(Chatroom* chatroom); //Possibly in Chatroom instead?
+        void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
+        LocalUser* addNewLocalUser(string nick);
+        RemoteUser* addNewRemoteUser(RemoteUser* new_user);
+        void sendNewMessage(Message* new_message);
+        void waitForNewMessageReceived();
+        void changeChatroom(Chatroom* new_cur_chatroom);
+        void readInPreviousUsers();
+        void postUsersToFile();
+        
 };
 
 #endif
