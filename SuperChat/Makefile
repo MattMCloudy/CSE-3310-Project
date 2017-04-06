@@ -3,7 +3,7 @@ all:./bin/SuperChat
 COMMON_LIBS=-L${OSPL_HOME}/lib/ \
             -ldcpssacpp \
             -lddskernel \
-            -lpthread
+            -lpthread \
 
 CXX_FLAGS=-std=c++11 -Wall -O0 -g
 

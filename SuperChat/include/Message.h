@@ -11,7 +11,15 @@
 #include <mutex>
 #include <functional>
 #include <ncurses.h>
+#include <assert.h>
+#include <string>
+#include <sstream>
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
 #include "SuperChat.h"
+#include "DDSEntityManager.h"
+#include "../bin/ccpp_SuperChat.h"
 
 using namespace std;
 
