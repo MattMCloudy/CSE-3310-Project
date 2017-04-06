@@ -17,14 +17,15 @@ ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}:./idl/SuperChat.idl
 
 SRC_FILES= src/DDSEntityManager.cpp src/CheckStatus.cpp src/ChatDaemon.cpp src/UserInterface.cpp src/Initializer.cpp src/Chatroom.cpp src/User.cpp src/Message.cpp src/ViewController.cpp
 
-bin/SuperChat: ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} ./src/SuperChat.cpp ${SRC_FILES}
-	g++ ${CXX_FLAGS} -o ./bin/SuperChat ./src/SuperChat.cpp \
+bin/SuperChat: ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} ./src/main.cpp ${SRC_FILES}
+	g++ ${CXX_FLAGS} -o ./bin/SuperChat ./src/main.cpp \
                -I./src/ -I./include -I./bin \
                -I${OSPL_HOME}/include/dcps/C++/SACPP/ \
                ${SRC_FILES} \
                ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} \
                ${COMMON_LIBS} \
-               -lncurses
+               -lncurses \
+			   -lmenu
 
 clean:
 	-rm -f ./bin/SuperChat ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}
