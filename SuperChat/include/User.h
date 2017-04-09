@@ -10,18 +10,20 @@ using namespace std;
 class User {
     private:
         string nick;
-        unsigned long uuid;
+        string description;
+        int chatroom_idx;
+        struct user* user_struct;
+        long long int uuid;
         DDSEntityManager em;
         userDataWriter_var Writer;
-        userDataReader_var Reader;
-        //user_struct user;
     public:
-        User(string nick);
-        void createMessage();
-        void sendMessage();
-        void receiveMessage(); //I guess this is what we need here?
-        //void ExitChatroom(); This will be in LocalUser
-        //void EnterChatroom(); This will be too I think
+        User(string, string, int);
+        User(struct user*);
+        ~User();
+        void setEntityManager();
+        void makeNewUser();
+        long long int newBoostUUID();
+        void sendUser();              
 };
 
 #endif

@@ -63,5 +63,5 @@ long long int Message::newBoostUUID() {
 
 void Message::sendMessage() {
     ReturnCode_t status = Writer->write(message_struct, HANDLE_NIL);
-    checkStatus(status, "Writer:;write");
+    checkStatus(status, "Writer::write");
 }
