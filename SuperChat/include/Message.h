@@ -39,15 +39,13 @@ class Message {
         string content;
         int chatroom_idx;      
     public:
-        Message(string, int); //write this
+        Message(string, int);
         Message(struct message*);
-        ~Message(); //write this
+        ~Message();
         void setEntityManager();
         void makeNewMessage();
         long long int newBoostUUID();
-        void sendMessage(); //write this
-
-        //stuff
+        void sendMessage();
 };
 
 #endif
