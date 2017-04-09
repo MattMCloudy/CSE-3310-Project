@@ -13,6 +13,7 @@
 #include <ncurses.h>
 #include <assert.h>
 #include <string>
+#include <string.h>
 #include <sstream>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
@@ -21,12 +22,31 @@
 #include "DDSEntityManager.h"
 #include "../bin/ccpp_SuperChat.h"
 
+using namespace DDS;
+using namespace SuperChat;
 using namespace std;
+
+/*
+ * I don't believe we need a reader inside of Message,
+ * Messages should be read in from Chatroom
+ */
 
 class Message {
     private:
-        //message_struct message;
+        struct message message_struct;
+        DDSEntityManager em;
+        messageDataWriter_var Writer;
+        string content;
+        int chatroom_idx;      
     public:
+        Message(string, int); //write this
+        Message(struct message*);
+        ~Message(); //write this
+        void setEntityManager();
+        void makeNewMessage();
+        long long int newBoostUUID();
+        void sendMessage(); //write this
+
         //stuff
 };
 
