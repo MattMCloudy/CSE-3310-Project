@@ -65,3 +65,5 @@ void Message::sendMessage() {
     ReturnCode_t status = Writer->write(message_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }
+
+int Message::getChatroomIndex() {return chatroom_idx;}

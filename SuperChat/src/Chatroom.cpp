@@ -64,3 +64,15 @@ void Chatroom::sendChatroom() {
     ReturnCode_t status = Writer->write(*chatroom_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }
+
+void Chatroom::addUser(User* new_user) {
+    users.push_back(new_user);
+}
+
+void Chatroom::addMessage(Message* new_message) {
+    messages.push_back(new_message);
+    unpublished_messages.push_back(new_message);
+}
+
+
+

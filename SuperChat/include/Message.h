@@ -46,6 +46,7 @@ class Message {
         void makeNewMessage();
         long long int newBoostUUID();
         void sendMessage();
+        int getChatroomIndex();
 };
 
 #endif

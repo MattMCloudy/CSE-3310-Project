@@ -20,8 +20,9 @@ class Chatroom {
         DDSEntityManager em;
         chatroomDataWriter_var Writer;
         //chatroomDataWriter_var Reader;
-        vector<User> users;
-        vector<Message> messages;
+        vector<User*> users;
+        vector<Message*> messages;
+        vector<Message*> unpublished_messages;
     public:
         Chatroom(string passed_name, int passed_chatroom_idx,  ChatDaemon* passed_daemon);
         Chatroom(struct chatroom* passed_chatroom_struct, ChatDaemon* passed_daemon);
@@ -30,6 +31,7 @@ class Chatroom {
         void makeNewChatroom();
         void postMessage();
         void addUser(User* new_user);
+        void addMessage(Message* new_message);
         void sendMessage(Message* new_message);
         void recieveMessage(); //some params I need to figure out
         void sendChatroom();     

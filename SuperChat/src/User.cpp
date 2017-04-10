@@ -71,3 +71,5 @@ void User::sendUser() {
     ReturnCode_t status = Writer->write(*user_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }
+
+int User::getChatroomIndex() {return chatroom_idx;}

@@ -24,9 +24,9 @@ void ChatDaemon::start() {
     //Update message list with DDS
     //Update chatroom list with DDS
     
+    readInAllChatrooms();
     readInAllUsers();
     readInAllMessages();
-    readInAllChatrooms();
     
     //once we read in All Users too, we'll be able
     //to designate which ones are online and which
@@ -106,8 +106,11 @@ void ChatDaemon::setEntityManager() {
 }
 
 ChatDaemon::~ChatDaemon() {
-    
-
+    em.deleteReader();
+    em.deleteSubscriber();
+    em.deleteTopic();
+    em.deleteParticipant();  
+    //lulz who knows if this will work
 }
 
 void ChatDaemon::readInAllUsers() {
@@ -121,6 +124,7 @@ void ChatDaemon::readInAllUsers() {
     for(ULong j = 0; j < userList.length(); j++) {
         User* new_user = new User(&userList[j]);
         users.push_back(new_user);
+        chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
     }
 
     status = user_reader->return_loan(userList, infoSeq);
@@ -138,6 +142,7 @@ void ChatDaemon::readInAllMessages() {
     for(ULong j = 0; j < msgList.length(); j++) {
         Message* new_message = new Message(&msgList[j]);
         messages.push_back(new_message);
+        chatrooms[new_message->getChatroomIndex()]->addMessage(new_message);
     }
 
     status = message_reader->return_loan(msgList, infoSeq);
@@ -169,14 +174,15 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
 
     if (chatrooms.size() > 10) {
         cerr << "ERROR: Already 10 chatrooms initialized";
-      } else {
+    } else {
         string name = "random";
         Chatroom new_chatroom(name, chatrooms.size(), this);
         chatrooms.push_back(&new_chatroom);
         //changeChatroom(&new_chatroom);
         //postChatroomToUI(&new_chatroom);
         return &new_chatroom;
-      }
+    }
+
     return NULL;
 }
 

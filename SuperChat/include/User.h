@@ -23,7 +23,8 @@ class User {
         void setEntityManager();
         void makeNewUser();
         long long int newBoostUUID();
-        void sendUser();              
+        void sendUser();
+        int getChatroomIndex();        
 };
 
 #endif
