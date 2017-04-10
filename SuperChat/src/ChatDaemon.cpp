@@ -110,11 +110,56 @@ ChatDaemon::~ChatDaemon() {
 
 }
 
-void ChatDaemon::readInAllUsers() {}
+void ChatDaemon::readInAllUsers() {
+    userSeq userList;
+    SampleInfoSeq infoSeq;
+    ReturnCode_t status = -1;
+    status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE,
+                            ANY_VIEW_STATE, ANY_INSTANCE_STATE);
+    checkStatus(status, "MsgDataReader::take");
+    
+    for(ULong j = 0; j < userList.length(); j++) {
+        User* new_user = new User(&userList[j]);
+        users.push_back(new_user);
+    }
 
-void ChatDaemon::readInAllMessages() {}
+    status = user_reader->return_loan(userList, infoSeq);
+    checkStatus(status, "MsgDataReader::return_loan");
+}
 
-void ChatDaemon::readInAllChatrooms() {}
+void ChatDaemon::readInAllMessages() {
+    messageSeq msgList;
+    SampleInfoSeq infoSeq;
+    ReturnCode_t status = -1;
+    status = message_reader->take(msgList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE,
+                            ANY_VIEW_STATE, ANY_INSTANCE_STATE);
+    checkStatus(status, "MsgDataReader::take");
+    
+    for(ULong j = 0; j < msgList.length(); j++) {
+        Message* new_message = new Message(&msgList[j]);
+        messages.push_back(new_message);
+    }
+
+    status = message_reader->return_loan(msgList, infoSeq);
+    checkStatus(status, "MsgDataReader::return_loan");
+}
+
+void ChatDaemon::readInAllChatrooms() {
+    chatroomSeq chatList;
+    SampleInfoSeq infoSeq;
+    ReturnCode_t status = -1;
+    status = chatroom_reader->take(chatList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE,
+                            ANY_VIEW_STATE, ANY_INSTANCE_STATE);
+    checkStatus(status, "MsgDataReader::take");
+    
+    for(ULong j = 0; j < chatList.length(); j++) {
+        Chatroom* new_chatroom = new Chatroom(&chatList[j], this);
+        chatrooms.push_back(new_chatroom);
+    }
+
+    status = chatroom_reader->return_loan(chatList, infoSeq);
+    checkStatus(status, "MsgDataReader::return_loan");
+}
 
 Chatroom* ChatDaemon::createNewChatroom(string name) {
     //Trap from UI to here to create a new Chatroom 
