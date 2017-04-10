@@ -31,23 +31,32 @@ class ChatDaemon {
     private:
         UserInterface* ui;
         Chatroom* current_chatroom;
+        bool LocalUserInitialized;
         vector<Chatroom*> chatrooms;
         vector<User*> users;
+        vector<Message*> messages;
         LocalUser* local_user;
+        DDSEntityManager em;
+        chatroomDataReader_var chatroom_reader;
+        messageDataReader_var message_reader;
+        userDataReader_var user_reader;
         mutex* m;
     public:
-        ChatDaemon() {
-            cout << "Daemon Created...\n";
-        }
+        ChatDaemon();
+        ~ChatDaemon();
         void start();
         void setUI(UserInterface* new_ui);
         void setMutex(mutex* new_m);
+        void setEntityManager();
+        void readInAllUsers();
+        void readInAllMessages();
+        void readInAllChatrooms();
         Chatroom* createNewChatroom(string name);
         void postChatroomToUI(Chatroom* chatroom); //Possibly in Chatroom instead?
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         LocalUser* addNewLocalUser(string nick);
         RemoteUser* addNewRemoteUser(RemoteUser* new_user);
-        void sendNewMessage(string message_text);
+        Message* sendNewMessage(string message_text);
         void waitForNewMessageReceived();
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();

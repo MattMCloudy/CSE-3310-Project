@@ -11,10 +11,57 @@
 #include "../include/ChatDaemon.h"
 #include "../include/UserInterface.h"
 
+ChatDaemon::ChatDaemon() {}
+
 void ChatDaemon::start() {
     m->lock();
-    cout << "ChatDaemon has started\n";
+    LocalUserInitialized = false;
+    //build user list from file ** needs to be written
+    readInPreviousUsers();
     m->unlock();
+    
+    //Update user list with DDS
+    //Update message list with DDS
+    //Update chatroom list with DDS
+    
+    readInAllUsers();
+    readInAllMessages();
+    readInAllChatrooms();
+    
+    //once we read in All Users too, we'll be able
+    //to designate which ones are online and which
+    //ones are not as well.
+    
+
+    //Then if no chatrooms have been initialized
+    //create public
+
+    //otherwise we need it to enter chatroom 0, which should be public
+    
+    //by this time the ui should have sent a command to initialize the
+    //Local User which upon being created will send itself out to the world
+    //this thread of execution will be locked to make all of that happen
+    
+    //from there it should conduct normal operating procedure
+    //that is periodically updating the user list, message list, and chatroom list
+    //assigning users to their appropriate chatroom, assigning messages to their appropriate chatroom,
+    //and taking in new chatrooms
+
+    //from there it will look at the information stored inside of the current chatroom
+    //it will need to keep three vectors. One containing all of its associated users, and
+    //two containing posted messages and unposted messages.
+    
+    //we just need to post all the unposted messages, clear that vector, and do all that all over again
+    
+    //I need to think more about how this will affect threading
+
+    if (chatrooms.size() == 0)
+        createNewChatroom("public");
+    else {
+        changeChatroom(chatrooms[0]);
+    }
+
+
 }
 
 void ChatDaemon::setUI(UserInterface* new_ui) {
@@ -27,26 +74,68 @@ void ChatDaemon::setMutex(mutex* new_m) {
 
 
 
-Chatroom* createNewChatroom(string name) {
+void ChatDaemon::setEntityManager() {
+    char* user_topic_name = "user";
+    char* message_topic_name = "message";
+    char* chatroom_topic_name = "chatroom";
+
+    em.createParticipant("");
+
+    userTypeSupport_var T_user = new userTypeSupport();
+    em.registerType(T_user.in());
+    em.createTopic(user_topic_name);
+
+    messageTypeSupport_var T_message = new messageTypeSupport();
+    em.registerType(T_message.in());
+    em.createTopic(message_topic_name);
+
+    chatroomTypeSupport_var T_chatroom = new chatroomTypeSupport();
+    em.registerType(T_chatroom.in());
+    em.createTopic(chatroom_topic_name);
+    
+    em.createSubscriber();
+
+    em.createReader();
+    DataReader_var dreader = em.getReader();
+    user_reader = userDataReader::_narrow(dreader.in());
+    message_reader = messageDataReader::_narrow(dreader.in());
+    chatroom_reader = chatroomDataReader::_narrow(dreader.in());
+    checkHandle(user_reader.in(), "MsgDataReader::_narrow");
+    checkHandle(message_reader.in(), "MsgDataReader::_narrow");
+    checkHandle(chatroom_reader.in(), "MsgDataReader::_narrow");
+}
+
+ChatDaemon::~ChatDaemon() {
+    
+
+}
+
+void ChatDaemon::readInAllUsers() {}
+
+void ChatDaemon::readInAllMessages() {}
+
+void ChatDaemon::readInAllChatrooms() {}
+
+Chatroom* ChatDaemon::createNewChatroom(string name) {
     //Trap from UI to here to create a new Chatroom 
     //possibly need more than name for params
     
     //Something like this should work for making chatrooms
 
-    /*if (chatrooms.size() > 10) {
+    if (chatrooms.size() > 10) {
         cerr << "ERROR: Already 10 chatrooms initialized";
-        return NULL;
       } else {
-        Chatroom new_chatroom(name);
-        chatrooms.append(&new_chatroom);
-        changeChatroom(&new_chatroom);
-        postChatroomToUI(&new_chatroom);
-        waitForNewMessageReceived(&new_chatroom);
+        string name = "random";
+        Chatroom new_chatroom(name, chatrooms.size(), this);
+        chatrooms.push_back(&new_chatroom);
+        //changeChatroom(&new_chatroom);
+        //postChatroomToUI(&new_chatroom);
+        return &new_chatroom;
       }
-    */
+    return NULL;
 }
 
-void postChatroomToUI(Chatroom* chatroom) {
+void ChatDaemon::postChatroomToUI(Chatroom* chatroom) {
     //Something like this should work for this method
     
     /*
@@ -58,7 +147,7 @@ void postChatroomToUI(Chatroom* chatroom) {
     //Possibly in Chatroom instead?
 }
 
-void postNewMessageToUI(Message* new_message) {
+void ChatDaemon::postNewMessageToUI(Message* new_message) {
    
     /*
     m->lock();
@@ -69,7 +158,7 @@ void postNewMessageToUI(Message* new_message) {
     //This could also be inside of Chatroom theoretically.
 }
 
-LocalUser* addNewLocalUser(string nick) {
+LocalUser* ChatDaemon::addNewLocalUser(string nick) {
     
     /*
     if (LocalUserInitialized) {
@@ -89,7 +178,7 @@ LocalUser* addNewLocalUser(string nick) {
     */
 }
 
-RemoteUser* addNewRemoteUser(RemoteUser* new_user) {
+RemoteUser* ChatDaemon::addNewRemoteUser(RemoteUser* new_user) {
     
     /*
     So we should be receiving the remote users from opensplice,
@@ -113,7 +202,7 @@ RemoteUser* addNewRemoteUser(RemoteUser* new_user) {
     */
 }
 
-Message* sendNewMessage(string message_text) {
+Message* ChatDaemon::sendNewMessage(string message_text) {
 
     /*
     Message new_message(message_text, local_user); >>I assume we'll need to give the
@@ -141,7 +230,7 @@ Message* sendNewMessage(string message_text) {
  * input will shift to receving messages.
  */
 
-void waitForNewMessageReceived() {
+void ChatDaemon::waitForNewMessageReceived() {
     /*
     Here we have some means of going into Chatroom
     and waiting for new messages to pop up.
@@ -156,7 +245,7 @@ void waitForNewMessageReceived() {
     */
 }
 
-void changeChatroom(Chatroom* new_cur_chatroom) {
+void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
   
     /*
     if (cur_chatroom != NULL) {
@@ -169,11 +258,11 @@ void changeChatroom(Chatroom* new_cur_chatroom) {
     */
 }
 
-void readInPreviousUsers() {
+void ChatDaemon::readInPreviousUsers() {
     /*some reading in files from cout and stuff */
 }
 
-void postUsersToFile() {}
+void ChatDaemon::postUsersToFile() {}
 
 
 
