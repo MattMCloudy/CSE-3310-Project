@@ -166,6 +166,10 @@ void ChatDaemon::readInAllChatrooms() {
     checkStatus(status, "MsgDataReader::return_loan");
 }
 
+void ChatDaemon::processCurrentChatroom() {
+    //cur_chatroom->sendAllUnpublishedMessages;
+}
+
 Chatroom* ChatDaemon::createNewChatroom(string name) {
     //Trap from UI to here to create a new Chatroom 
     //possibly need more than name for params
@@ -175,7 +179,6 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
     if (chatrooms.size() > 10) {
         cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
-        string name = "random";
         Chatroom new_chatroom(name, chatrooms.size(), this);
         chatrooms.push_back(&new_chatroom);
         //changeChatroom(&new_chatroom);
@@ -281,19 +284,13 @@ Message* ChatDaemon::sendNewMessage(string message_text) {
  * input will shift to receving messages.
  */
 
-void ChatDaemon::waitForNewMessageReceived() {
-    /*
-    Here we have some means of going into Chatroom
-    and waiting for new messages to pop up.
-    
+void ChatDaemon::readSendObjects() {
     while(true) {
-        if (kill_current_chatroom)
-            break;
-        
-        Message* new_message = cur_chatroom->receiveMessages();
-        postNewMessageToUI(new_message);
+        readInAllChatrooms();
+        readInAllUsers();
+        readInAllMessages();
+        processCurrentChatroom();
     }
-    */
 }
 
 void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {

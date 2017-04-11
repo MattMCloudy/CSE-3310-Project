@@ -57,7 +57,8 @@ class ChatDaemon {
         LocalUser* addNewLocalUser(string nick);
         RemoteUser* addNewRemoteUser(RemoteUser* new_user);
         Message* sendNewMessage(string message_text);
-        void waitForNewMessageReceived();
+        void readSendObjects();
+        void processCurrentChatroom();
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
         void postUsersToFile();

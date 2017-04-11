@@ -32,7 +32,7 @@ class Chatroom {
         void postMessage();
         void addUser(User* new_user);
         void addMessage(Message* new_message);
-        void sendMessage(Message* new_message);
+        void sendAllUnpublishedMessages();
         void recieveMessage(); //some params I need to figure out
         void sendChatroom();     
 };
