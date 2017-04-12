@@ -10,13 +10,14 @@ Chatroom::Chatroom(string passed_name, int passed_chatroom_idx, ChatDaemon* pass
     setEntityManager();
     makeNewChatroom();
        
-
+    sendChatroom();
 }
 
-Chatroom::Chatroom(struct chatroom* new_chatroom, ChatDaemon* passed_daemon) {
+Chatroom::Chatroom(struct chatroom* new_chatroom, int new_chatroom_idx,  ChatDaemon* passed_daemon) {
     string name_temp(new_chatroom->chatroom_name);
     name = name_temp;
-    chatroom_idx = new_chatroom->chatroom_idx;
+    new_chatroom->chatroom_idx = new_chatroom_idx;
+    chatroom_idx = new_chatroom_idx;
     chatroom_struct = new_chatroom;
     
     daemon = passed_daemon;
@@ -84,5 +85,5 @@ void Chatroom::sendAllUnpublishedMessages() {
     unpublished_messages.clear();
 }
 
-
+int Chatroom::getChatroomIndex() {return chatroom_idx;}
 

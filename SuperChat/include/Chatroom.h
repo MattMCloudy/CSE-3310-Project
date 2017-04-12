@@ -23,7 +23,7 @@ class Chatroom {
         vector<Message*> unpublished_messages;
     public:
         Chatroom(string passed_name, int passed_chatroom_idx,  ChatDaemon* passed_daemon);
-        Chatroom(struct chatroom* passed_chatroom_struct, ChatDaemon* passed_daemon);
+        Chatroom(struct chatroom* passed_chatroom_struct, int new_chatroom_idx, ChatDaemon* passed_daemon);
         ~Chatroom();
         void setEntityManager();
         void makeNewChatroom();
@@ -32,7 +32,8 @@ class Chatroom {
         void addMessage(Message* new_message);
         void sendAllUnpublishedMessages();
         void recieveMessage(); //some params I need to figure out
-        void sendChatroom();     
+        void sendChatroom();
+        int getChatroomIndex();     
 };
 
 #endif

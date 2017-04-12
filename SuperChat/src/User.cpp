@@ -77,3 +77,5 @@ void User::sendUser() {
 int User::getChatroomIndex() {return chatroom_idx;}
 
 long long int User::getUUID() {return uuid;}
+
+string User::getNick() {return nick;}

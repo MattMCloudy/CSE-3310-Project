@@ -60,6 +60,7 @@ class ChatDaemon {
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
+        void sendMessage(string text);
         void readSendObjects();
         void processCurrentChatroom();
         void changeChatroom(Chatroom* new_cur_chatroom);

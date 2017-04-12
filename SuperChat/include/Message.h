@@ -37,9 +37,10 @@ class Message {
         DDSEntityManager em;
         messageDataWriter_var Writer;
         string content;
+        long long int sender_uuid;
         int chatroom_idx;      
     public:
-        Message(string, int);
+        Message(string, long long int, int);
         Message(struct message*);
         ~Message();
         void setEntityManager();

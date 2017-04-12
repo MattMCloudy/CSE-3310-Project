@@ -6516,3 +6516,163 @@ Node        : localhost
 Process     : SuperChat <21215>
 Thread      : signalHandler 7f7ece83a700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492030334.947231480
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : spliced 7f55e98d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492034398.226215685
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : spliced 7f55e98d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492034398.247607968
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : Service cmsoap disabled
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : spliced 7f55e98d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492034398.248194012
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : spliced 7f55e98d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492034398.249102392
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : ddsi2 7f55e64c1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492034398.268575825
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 16:59:58 CDT 2017
+Description : The durability service can by identified by ID: 49728100
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : durability 7f55e6855700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492034398.481635891
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:00:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : durability 7f55e6855700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492034405.488985740
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:00:54 CDT 2017
+Description : Termination request (signal 2) received from PID 30493 (self), UID 1000
+Node        : localhost
+Process     : SuperChat <30493>
+Thread      : signalHandler 7f55e7541700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492034454.510115470
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : spliced 7f10ebd74700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492037755.046067229
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : spliced 7f10ebd74700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492037755.065507599
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : Service cmsoap disabled
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : spliced 7f10ebd74700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492037755.066062330
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : spliced 7f10ebd74700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492037755.066889444
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : ddsi2 7f10e8962700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492037755.086225348
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:55:55 CDT 2017
+Description : The durability service can by identified by ID: 661406794
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : durability 7f10e8cf6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492037755.396583703
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:56:02 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : durability 7f10e8cf6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492037762.404342715
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 12 17:56:08 CDT 2017
+Description : Termination request (signal 2) received from PID 24332 (self), UID 1000
+Node        : localhost
+Process     : SuperChat <24332>
+Thread      : signalHandler 7f10e99e2700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492037768.920299746

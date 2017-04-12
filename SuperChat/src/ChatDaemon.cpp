@@ -135,20 +135,14 @@ void ChatDaemon::readInAllUsers() {
     checkStatus(status, "MsgDataReader::take");
     
     for(ULong j = 0; j < userList.length(); j++) {
-        bool user_already_seen = false;
         User* new_user = new User(&userList[j]);
-        for(int i = 0; i < users.size(); i++) {
-            if (new_user->getUUID() == users[i]->getUUID())
-                user_already_seen = true;
-        }
-        if (!user_already_seen) {
-            cout << "New User to be added...";
-            cout << "Index: " << new_user->getChatroomIndex() << "\n";
-            cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
+        cout << "New User to be added...\n";
+        cout << "Nick: " << new_user->getNick() << "\n";
+        cout << "Index: " << new_user->getChatroomIndex() << "\n";
+        cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
             
-            users.push_back(new_user);
-            chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
-        }
+        users.push_back(new_user);
+        chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
     }
 
     status = user_reader->return_loan(userList, infoSeq);
@@ -182,8 +176,18 @@ void ChatDaemon::readInAllChatrooms() {
     checkStatus(status, "MsgDataReader::take");
     
     for(ULong j = 0; j < chatList.length(); j++) {
-        Chatroom* new_chatroom = new Chatroom(&chatList[j], this);
-        chatrooms.push_back(new_chatroom);
+        //ffr we should probably throw some type of check in here
+        //you see we read in any chatrooms we create, and
+        //this will recreate them as it stands now
+        //not good lol
+        
+
+        Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
+
+        if (chatrooms.size() > 10)
+            cerr << "ERROR: 10 Chatrooms already initialized\n";
+        else
+            chatrooms.push_back(new_chatroom);
     }
 
     status = chatroom_reader->return_loan(chatList, infoSeq);
@@ -223,7 +227,6 @@ void ChatDaemon::postChatroomToUI(Chatroom* chatroom) {
     m->unlock();
     */
     
-    //Possibly in Chatroom instead?
 }
 
 void ChatDaemon::postNewMessageToUI(Message* new_message) {
@@ -234,7 +237,6 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     m->unlock();
     */
 
-    //This could also be inside of Chatroom theoretically.
 }
 
 User* ChatDaemon::addNewLocalUser(string nick) {
@@ -249,7 +251,6 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     users.push_back(new_local_user);
     local_user = new_local_user;
     
-    current_chatroom->addUser(new_local_user);
     
     LocalUserInitialized = true;
     return local_user;
@@ -288,6 +289,14 @@ void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
     m->lock();
     current_chatroom = new_cur_chatroom;
     m->unlock();
+}
+
+void ChatDaemon::sendMessage(string text) {
+    Message* new_message = new Message(text, local_user->getUUID(), current_chatroom->getChatroomIndex());
+    //I think we should only need to create the message here
+    //once it's created it's sent out via opensplice
+    //from there it will be treated as any message
+    //read in and processed in the right chatroom
 }
 
 void ChatDaemon::readInPreviousUsers() {

@@ -1,19 +1,22 @@
 #include "../include/Message.h"
 
-Message::Message(string text, int passed_chatroom_idx) {
+Message::Message(string text, long long int passed_uuid, int passed_chatroom_idx) {
     content = text;
     chatroom_idx = passed_chatroom_idx;
+    sender_uuid = passed_uuid;
 
     setEntityManager();
     makeNewMessage();
-
-    //This is where one could put the reader, but I think it should belong to Chatroom
+    
+    sendMessage();
 }
 
 Message::Message(struct message* new_mssg){
     string temp(new_mssg->message);
     content = temp;
     chatroom_idx = new_mssg->chatroom_idx;
+    sender_uuid = new_mssg->uuid;
+
     message_struct = *new_mssg;
 
     setEntityManager();
