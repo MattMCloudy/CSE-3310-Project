@@ -77,6 +77,7 @@ void Chatroom::addMessage(Message* new_message) {
 void Chatroom::sendAllUnpublishedMessages() {
     for(int i = 0; i < unpublished_messages.size(); i++) {
         unpublished_messages[i]->sendMessage();
+        daemon->postNewMessageToUI(unpublished_messages[i]);
     }
     unpublished_messages.clear();
 }

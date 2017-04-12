@@ -7,13 +7,7 @@
 #include "../include/ChatDaemon.h"
 
 void UserInterface::create() {
-    m->lock();
-    initscr();
-    printw("Hello, World");
-    refresh();
-    getch();
-    endwin();
-    m->unlock();
+    cout << "Inside UI\n";
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}

@@ -42,8 +42,8 @@ void Initializer::exe() {
     thread daemon_thread(&ChatDaemon::start, ref(daemon));
     cout << "Entering ui thread...\n";
     thread ui_thread(&UserInterface::create, ref(ui));
-
-    daemon_thread.join();
-    ui_thread.join();
     
+
+    ui_thread.join();
+    daemon_thread.join();
 }

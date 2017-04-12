@@ -26,11 +26,13 @@ User::User(struct user* new_user) {
 
 
 User::~User() {
+    /*
     em.deleteWriter();
     em.deletePublisher();
     em.deleteSubscriber();
     em.deleteTopic();
     em.deleteParticipant();
+    */
 }
 
 void User::setEntityManager() {

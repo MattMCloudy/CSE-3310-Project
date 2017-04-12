@@ -11,19 +11,19 @@
 #include "../include/ChatDaemon.h"
 #include "../include/UserInterface.h"
 
-ChatDaemon::ChatDaemon() {}
 
 void ChatDaemon::start() {
     m->lock();
     LocalUserInitialized = false;
     //build user list from file ** needs to be written
-    readInPreviousUsers();
+    //readInPreviousUsers();
     m->unlock();
     
     //Update user list with DDS
     //Update message list with DDS
     //Update chatroom list with DDS
-    
+    setEntityManager();
+
     readInAllChatrooms();
     readInAllUsers();
     readInAllMessages();
@@ -60,8 +60,9 @@ void ChatDaemon::start() {
     else {
         changeChatroom(chatrooms[0]);
     }
-
-
+    
+    addNewLocalUser("Tim");
+    readSendObjects();
 }
 
 void ChatDaemon::setUI(UserInterface* new_ui) {
@@ -79,37 +80,48 @@ void ChatDaemon::setEntityManager() {
     char* message_topic_name = "message";
     char* chatroom_topic_name = "chatroom";
 
-    em.createParticipant("");
+    chtrmEM.createParticipant("");
+    mssgEM.createParticipant("");
+    usrEM.createParticipant("");
 
     userTypeSupport_var T_user = new userTypeSupport();
-    em.registerType(T_user.in());
-    em.createTopic(user_topic_name);
+    usrEM.registerType(T_user.in());
+    usrEM.createTopic(user_topic_name);
 
     messageTypeSupport_var T_message = new messageTypeSupport();
-    em.registerType(T_message.in());
-    em.createTopic(message_topic_name);
+    mssgEM.registerType(T_message.in());
+    mssgEM.createTopic(message_topic_name);
 
     chatroomTypeSupport_var T_chatroom = new chatroomTypeSupport();
-    em.registerType(T_chatroom.in());
-    em.createTopic(chatroom_topic_name);
+    chtrmEM.registerType(T_chatroom.in());
+    chtrmEM.createTopic(chatroom_topic_name);
     
-    em.createSubscriber();
+    chtrmEM.createSubscriber();
+    mssgEM.createSubscriber();
+    usrEM.createSubscriber();
 
-    em.createReader();
-    DataReader_var dreader = em.getReader();
-    user_reader = userDataReader::_narrow(dreader.in());
-    message_reader = messageDataReader::_narrow(dreader.in());
-    chatroom_reader = chatroomDataReader::_narrow(dreader.in());
+    usrEM.createReader();
+    DataReader_var userreader = usrEM.getReader();
+
+    mssgEM.createReader();
+    DataReader_var mssgreader = mssgEM.getReader();
+
+    chtrmEM.createReader();
+    DataReader_var chtrmreader = chtrmEM.getReader();
+
+    user_reader = userDataReader::_narrow(userreader.in());
+    message_reader = messageDataReader::_narrow(mssgreader.in());
+    chatroom_reader = chatroomDataReader::_narrow(chtrmreader.in());
     checkHandle(user_reader.in(), "MsgDataReader::_narrow");
     checkHandle(message_reader.in(), "MsgDataReader::_narrow");
     checkHandle(chatroom_reader.in(), "MsgDataReader::_narrow");
 }
 
 ChatDaemon::~ChatDaemon() {
-    em.deleteReader();
-    em.deleteSubscriber();
-    em.deleteTopic();
-    em.deleteParticipant();  
+    //em.deleteReader();
+    //em.deleteSubscriber();
+    //em.deleteTopic();
+    //em.deleteParticipant();  
     //lulz who knows if this will work
 }
 
@@ -117,8 +129,7 @@ void ChatDaemon::readInAllUsers() {
     userSeq userList;
     SampleInfoSeq infoSeq;
     ReturnCode_t status = -1;
-    status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE,
-                            ANY_VIEW_STATE, ANY_INSTANCE_STATE);
+    status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE, ANY_VIEW_STATE, ANY_INSTANCE_STATE);
     checkStatus(status, "MsgDataReader::take");
     
     for(ULong j = 0; j < userList.length(); j++) {
@@ -166,9 +177,6 @@ void ChatDaemon::readInAllChatrooms() {
     checkStatus(status, "MsgDataReader::return_loan");
 }
 
-void ChatDaemon::processCurrentChatroom() {
-    //cur_chatroom->sendAllUnpublishedMessages;
-}
 
 Chatroom* ChatDaemon::createNewChatroom(string name) {
     //Trap from UI to here to create a new Chatroom 
@@ -179,14 +187,18 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
     if (chatrooms.size() > 10) {
         cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
-        Chatroom new_chatroom(name, chatrooms.size(), this);
-        chatrooms.push_back(&new_chatroom);
-        //changeChatroom(&new_chatroom);
-        //postChatroomToUI(&new_chatroom);
-        return &new_chatroom;
+        Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
+        chatrooms.push_back(new_chatroom);
+        changeChatroom(new_chatroom);
+        postChatroomToUI(new_chatroom);
+        return new_chatroom;
     }
 
     return NULL;
+}
+
+void ChatDaemon::processCurrentChatroom() {
+    current_chatroom->sendAllUnpublishedMessages();
 }
 
 void ChatDaemon::postChatroomToUI(Chatroom* chatroom) {
@@ -212,61 +224,27 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     //This could also be inside of Chatroom theoretically.
 }
 
-LocalUser* ChatDaemon::addNewLocalUser(string nick) {
+User* ChatDaemon::addNewLocalUser(string nick) {
     
-    /*
     if (LocalUserInitialized) {
-        cerr << "A local user has already been initialized: " << local_user->getNick();
+        cerr << "A local user has already been initialized: ";
         return local_user;
     }
 
-    LocalUser new_local_user(nick);
-    users.append(&new_local_user);
-    local_user = &new_local_user;
+    User* new_local_user = new User(nick, "The local user", 0);
+    users.push_back(new_local_user);
+    cout << "err?\n";
+    local_user = new_local_user;
     
-    >>Only do this if the public chatroom has been initialized
-    cur_chatroom->addNewUser(local_user);
+    current_chatroom->addUser(new_local_user);
     
     LocalUserInitialized = true;
     return local_user;
-    */
-}
-
-RemoteUser* ChatDaemon::addNewRemoteUser(RemoteUser* new_user) {
     
-    /*
-    So we should be receiving the remote users from opensplice,
-    I assume they will be initialized elsewhere and here we'll
-    just take care of adding it to the list of users and posting
-    it to UI
-    */
-    
-    /*
-    users.append(new_user);
-    cur_chatroom->addNewUser(new_user); >>We may very well be getting this
-                                        >>new user from chatroom, so this
-                                        >>could be unnecessary
-
-    >>we'll see how this works but we may need a mutex lock here
-    m->lock();
-    ui->postNewUser(new_user);
-    m->unlock();
-
-    return new_user;                    >>It could also be unnecessary to return anything here
-    */
 }
 
-Message* ChatDaemon::sendNewMessage(string message_text) {
 
-    /*
-    Message new_message(message_text, local_user); >>I assume we'll need to give the
-                                                   >>sender with the message
-    cur_chatroom->sendMessage(&new_message);
 
-    >>Once we return the Message, ui will post it immediately
-    return &new_message;
-    */
-}
 
 /* So I had a bit of a messy situation in the next
  * couple of methods.
@@ -294,16 +272,9 @@ void ChatDaemon::readSendObjects() {
 }
 
 void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
-  
-    /*
-    if (cur_chatroom != NULL) {
-        m->lock();
-        kill_current_chatroom = true;
-        m->unlock();
-    }
-    
-    cur_chatroom = new_cur_chatroom;
-    */
+    m->lock();
+    current_chatroom = new_cur_chatroom;
+    m->unlock();
 }
 
 void ChatDaemon::readInPreviousUsers() {
