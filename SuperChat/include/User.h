@@ -24,7 +24,8 @@ class User {
         void makeNewUser();
         long long int newBoostUUID();
         void sendUser();
-        int getChatroomIndex();        
+        int getChatroomIndex();
+        long long int getUUID();   
 };
 
 #endif

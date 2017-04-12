@@ -1,8 +1,6 @@
 #ifndef __CHATROOM_H
 #define __CHATROOM_H
 
-#include "RemoteUser.h"
-#include "LocalUser.h"
 #include "User.h"
 
 class ChatDaemon;

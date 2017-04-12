@@ -55,9 +55,11 @@ void ChatDaemon::start() {
     
     //I need to think more about how this will affect threading
 
-    if (chatrooms.size() == 0)
+    if (chatrooms.size() == 0) {
+        cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
-    else {
+    } else {
+        cout << "Public previously initialized, entering now...\n";
         changeChatroom(chatrooms[0]);
     }
     
@@ -133,9 +135,20 @@ void ChatDaemon::readInAllUsers() {
     checkStatus(status, "MsgDataReader::take");
     
     for(ULong j = 0; j < userList.length(); j++) {
+        bool user_already_seen = false;
         User* new_user = new User(&userList[j]);
-        users.push_back(new_user);
-        chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
+        for(int i = 0; i < users.size(); i++) {
+            if (new_user->getUUID() == users[i]->getUUID())
+                user_already_seen = true;
+        }
+        if (!user_already_seen) {
+            cout << "New User to be added...";
+            cout << "Index: " << new_user->getChatroomIndex() << "\n";
+            cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
+            
+            users.push_back(new_user);
+            chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
+        }
     }
 
     status = user_reader->return_loan(userList, infoSeq);
@@ -230,10 +243,10 @@ User* ChatDaemon::addNewLocalUser(string nick) {
         cerr << "A local user has already been initialized: ";
         return local_user;
     }
-
+    
+    cout << "Initializing Local User...\n";
     User* new_local_user = new User(nick, "The local user", 0);
     users.push_back(new_local_user);
-    cout << "err?\n";
     local_user = new_local_user;
     
     current_chatroom->addUser(new_local_user);

@@ -9,30 +9,30 @@ User::User(string passed_nick, string passed_description, int passed_chatroom_id
 
     setEntityManager();
     makeNewUser();
-       
-
+          
+    sendUser();
 }
 
 User::User(struct user* new_user) {
     string nick_temp(new_user->nick);
     nick = nick_temp;
+    chatroom_idx = new_user->chatroom_idx;
     //string desc_temp(new_user->description); the idl doesn't have this yet for some reason.
     //description = desc_temp;
     uuid = new_user->uuid;
     user_struct = new_user;
 
     setEntityManager();
+    sendUser();
 }
 
 
 User::~User() {
-    /*
     em.deleteWriter();
     em.deletePublisher();
     em.deleteSubscriber();
     em.deleteTopic();
     em.deleteParticipant();
-    */
 }
 
 void User::setEntityManager() {
@@ -75,3 +75,5 @@ void User::sendUser() {
 }
 
 int User::getChatroomIndex() {return chatroom_idx;}
+
+long long int User::getUUID() {return uuid;}

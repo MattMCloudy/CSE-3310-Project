@@ -22,6 +22,8 @@ Chatroom::Chatroom(struct chatroom* new_chatroom, ChatDaemon* passed_daemon) {
     daemon = passed_daemon;
 
     setEntityManager();
+
+    sendChatroom();
 }
 
 
