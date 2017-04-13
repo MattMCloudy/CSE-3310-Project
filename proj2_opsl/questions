@@ -1,0 +1,17 @@
+From SuperChatDataPublisher.cpp
+
+1) domain? somebody explain domain like i'm 5. 
+	  // create domain participant
+  mgr.createParticipant("SuperChat!!!!!");
+
+  is this something that has to be done just once at the beginning? like you set it up and the entire thing just runs on this one domain, right? 
+
+2) //I DON'T UNDERSTAND WHAT "TYPE" IS EVEN THOUGH I READ IT IN THE TUTORIAL DOCUMENT.*********************************************************
+
+  //create type
+  MsgTypeSupport_var mt = new MsgTypeSupport();
+  mgr.registerType(mt.in());
+
+3) Topic? elaborate. 
+
+4) isn't there a idl file that we're all supposed to use somewhere? i can't find where it's posted. 

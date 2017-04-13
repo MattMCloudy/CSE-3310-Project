@@ -1,0 +1,70 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+JAVAC         = javac
+JAR           = jar
+JAVACFLAGS    = $(GENFLAGS) -sourcepath ../src
+CLASSEXT      = .class
+CLASSDIR      = classes/
+OUTPUT_OPTION = -d $(CLASSDIR)
+COMPILE.java  = $(JAVAC) $(JAVACFLAGS) -cp $(JAVACCPATH) 
+JAVACCPATH    = "saj_tutorial_types.jar:$(CLASSDIR):../../../../../jar/dcpssaj.jar:"
+MAKEFILE      = Makefile.saj_tutorial_userload
+DEPENDENCIES  = $(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+GENFLAGS      =  
+CLASSES       =  $(CLASSDIR)chatroom/UserLoad$(CLASSEXT) $(CLASSDIR)chatroom/ErrorHandler$(CLASSEXT)
+JARCLASSES    =  chatroom/UserLoad$(CLASSEXT) chatroom/ErrorHandler$(CLASSEXT)
+JAREXT        = .jar
+MAINCLASS     = chatroom.UserLoad
+JARFILE       = $(LTARGETDIR)$(LIBPREFIX)saj_tutorial_userload$(LIBSUFFIX)$(JAREXT)
+MANIFEST      = saj_tutorial_userload.manifest
+JARFLAGS      = cvfm
+SRC           = ../src/chatroom/UserLoad.java ../src/chatroom/ErrorHandler.java
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(JARFILE)
+
+$(JARFILE): $(CLASSES) $(CLASSDIR)$(MANIFEST)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
+	cd $(CLASSDIR) && $(JAR) $(JARFLAGS) $(JARFILE) $(MANIFEST) $(JARCLASSES) 
+	$(MV) $(CLASSDIR)/$(JARFILE) .
+
+$(CLASSDIR)$(MANIFEST):
+	echo Class-Path: saj_tutorial_types.jar ../../../../../jar/dcpssaj.jar > $(CLASSDIR)$(MANIFEST)
+	echo Main-Class: $(MAINCLASS) >> $(CLASSDIR)$(MANIFEST)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+$(CLASSDIR)chatroom/UserLoad$(CLASSEXT): ../src/chatroom/UserLoad.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/UserLoad.java
+
+$(CLASSDIR)chatroom/ErrorHandler$(CLASSEXT): ../src/chatroom/ErrorHandler.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/ErrorHandler.java
+
+clean:
+	-$(RM) $(CLASSES)
+
+realclean: clean
+	-$(RM) $(BIN)
+	-$(RM) $(CLASSDIR)$(MANIFEST)
+	-$(RM) chatroom/
+
+check-syntax:
+	$(COMPILE.java) $(EXPORTFLAGS) $(CHK_SOURCES)
+

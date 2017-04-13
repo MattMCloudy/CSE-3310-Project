@@ -1,0 +1,26 @@
+jmdavis@debian:~/proj2$ ls -R
+.:
+cpp
+
+./cpp:
+bin  idl  Makefile  ospl-info.log  scripts  src
+
+./cpp/bin:
+ccpp_HelloWorldData.h   HelloWorldDataDcps.h         HelloWorldData.h           HelloWorldPublisher
+HelloWorldData.cpp      HelloWorldDataDcps_impl.cpp  HelloWorldDataSplDcps.cpp  HelloWorldSubscriber
+HelloWorldDataDcps.cpp  HelloWorldDataDcps_impl.h    HelloWorldDataSplDcps.h
+
+./cpp/idl:
+HelloWorldData.idl
+
+./cpp/scripts:
+release.com
+
+./cpp/src:
+CheckStatus.cpp  CheckStatus.h  DDSEntityManager.cpp  DDSEntityManager.h  HelloWorldDataPublisher.cpp  HelloWorldDataSubscriber.cpp
+
+
+
+
+
+

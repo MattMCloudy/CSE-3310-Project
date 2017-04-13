@@ -1,0 +1,318 @@
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : spliced b6e14b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/user::u_domain::u_domainNew/u_domain.c/706/0/1490478545.567292017
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : spliced b6e14b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/The OpenSplice domain service/u_domain.c/827/0/1490478545.575415980
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : spliced b6e14b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478545.576290033
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : SOAP service is reachable via port 46262
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : cmsoap b6914b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/CM SOAP Service/cms_service.c/410/0/1490478545.607802986
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'cmsoap' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : cmsoap b6914b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478545.608143556
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : ddsi2 b65e9b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478545.666232622
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:06 CDT 2017
+Description : The durability service can by identified by ID: 1394794730
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : durability b6788b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/DurabilityService/d_durability.c/476/0/1490478546.380235167
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:49:13 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4924>
+Thread      : durability b6788b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478553.479867667
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : spliced b6dd5b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/user::u_domain::u_domainNew/u_domain.c/706/0/1490478667.724152197
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : spliced b6dd5b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/The OpenSplice domain service/u_domain.c/827/0/1490478667.730629453
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : spliced b6dd5b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478667.731393721
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : SOAP service is reachable via port 55646
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : cmsoap b68fdb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/CM SOAP Service/cms_service.c/410/0/1490478667.742428335
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'cmsoap' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : cmsoap b68fdb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478667.742720175
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : ddsi2 b6638b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478667.752448519
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:07 CDT 2017
+Description : The durability service can by identified by ID: 399470230
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : durability b67a4b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/DurabilityService/d_durability.c/476/0/1490478667.764812011
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:51:14 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <4997>
+Thread      : durability b67a4b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478674.839424964
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : spliced b6d5cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/user::u_domain::u_domainNew/u_domain.c/706/0/1490478833.034928282
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : spliced b6d5cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/The OpenSplice domain service/u_domain.c/827/0/1490478833.041184918
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : spliced b6d5cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478833.041902734
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : SOAP service is reachable via port 59075
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : cmsoap b687cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/CM SOAP Service/cms_service.c/410/0/1490478833.049070431
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'cmsoap' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : cmsoap b687cb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478833.054089554
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : ddsi2 b65b7b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478833.059215843
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:53:53 CDT 2017
+Description : The durability service can by identified by ID: 1438442867
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : durability b6723b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/DurabilityService/d_durability.c/476/0/1490478833.075407376
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 16:54:00 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5076>
+Thread      : durability b6723b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490478840.189805539
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : spliced b6e06b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/user::u_domain::u_domainNew/u_domain.c/706/0/1490480284.715350893
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : spliced b6e06b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/The OpenSplice domain service/u_domain.c/827/0/1490480284.721922541
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : spliced b6e06b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490480284.722811483
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : SOAP service is reachable via port 54355
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : cmsoap b68fdb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/CM SOAP Service/cms_service.c/410/0/1490480284.737199390
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'cmsoap' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : cmsoap b68fdb40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490480284.737572165
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:04 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : ddsi2 b65e3b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/v_serviceChangeState/v_service.c/329/0/1490480284.765141992
+========================================================================================
+Report      : INFO
+Date        : Sat Mar 25 17:18:05 CDT 2017
+Description : The durability service can by identified by ID: 1512667077
+Node        : ubuntu
+Process     : HelloWorldSubscriber <5330>
+Thread      : durability b6782b40
+Internals   : V6.4.140320OSS/24b1387/24b1387/DurabilityService/d_durability.c/476/0/1490480285.270570524

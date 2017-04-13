@@ -1,0 +1,136 @@
+# -*-Makefile-*-
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+
+CC            = gcc
+CXX           = g++
+LD            = $(CXX) $(CCFLAGS) $(PICFLAGS) $(GENFLAGS)
+AR            = ar
+PICFLAGS      = -fPIC
+CPPFLAGS      = $(PICFLAGS) $(GENFLAGS) -D_REENTRANT -Wall -I"$(ACE_ROOT)" -I"$(TAO_ROOT)" -I"$(TAO_ROOT)/include" -I"$(ACE_ROOT)/include" -I"../../../../../include" -I"../../../../../include/sys" -I"../../../../../include/dcps/C++/CCPP" -I"../../../../../include/dcps/C++/CCPP/DDS_OpenFusion_2" -I"." -I"../../../../../examples/include" -I"../../../../../examples"
+OBJEXT        = .o
+OUTPUT_OPTION = -o "$@"
+COMPILE.c     = $(CC) $(CFLAGS) $(CPPFLAGS) -c
+COMPILE.cc    = $(CXX) $(CCFLAGS) $(CPPFLAGS) -c
+LDFLAGS       = -L"." -L"$(ACE_ROOT)/lib" -L"$(TAO_ROOT)/lib" -L"../../../../../lib" -Wl,-rpath,\$$ORIGIN -Wl,-rpath,\$$ORIGIN/../../../../../lib
+CCC           = $(CXX)
+MAKEFILE      = Makefile.ccpp_tutorial_types
+DEPENDENCIES  = $(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+EXEEXT        = 
+LIBPREFIX     = lib
+LIBSUFFIX     = 
+GENFLAGS      = -O3 -DNDEBUG
+LDLIBS        = -l"TAO_PortableServer$(LIBSUFFIX)" -l"TAO_AnyTypeCode$(LIBSUFFIX)" -l"TAO$(LIBSUFFIX)" -l"ACE$(LIBSUFFIX)" -l"dcpsccpp" -l"ddskernel" -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
+OBJS          = .obj$(CFG)/ChatSplDcps$(OBJEXT) .obj$(CFG)/ChatDcps_impl$(OBJEXT) .obj$(CFG)/ChatDcpsC$(OBJEXT) .obj$(CFG)/ChatDcpsS$(OBJEXT) .obj$(CFG)/ChatC$(OBJEXT) .obj$(CFG)/ChatS$(OBJEXT)
+AREXT         = .a
+LIB           = $(LTARGETDIR)$(LIBPREFIX)ccpp_tutorial_types$(LIBSUFFIX)$(AREXT)
+SOEXT         = .so
+SHTARGETDIR   = ./
+SHLIB         = $(SHTARGETDIR)$(LIBPREFIX)ccpp_tutorial_types$(LIBSUFFIX)$(SOEXT)
+SHFLAGS       = -shared
+SRC           = ChatSplDcps.cpp ChatDcps_impl.cpp ChatDcpsC.cpp ChatDcpsS.cpp ChatC.cpp ChatS.cpp
+LINK.cc       = $(LD) $(LDFLAGS)
+DYNAMICFLAGS  = -DOSPL_BUILDEXAMPLE_LIB
+STATICFLAGS   = -DACE_AS_STATIC_LIBS -DTAO_AS_STATIC_LIBS
+EXPORTFLAGS   = $(DYNAMICFLAGS)
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(SHLIB)
+
+$(SHLIB): $(OBJS)
+	@$(TESTDIRSTART) "$(SHTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(SHTARGETDIR)"
+	$(LINK.cc) $(SHFLAGS) $(OBJS) $(LDLIBS) $(OUTPUT_OPTION)
+
+$(LIB): $(OBJS)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS) 
+
+GENERATED_DIRTY = ChatDcpsC.inl ChatDcpsC.h ChatDcpsS.h ChatDcpsC.cpp ChatDcpsS.cpp ./ChatC.inl ./ChatC.h ./ChatS.h ./ChatC.cpp ./ChatS.cpp ./ChatDcps.idl ./ChatDcps_impl.h ./ChatSplDcps.cpp ./ChatDcps_impl.cpp ./ccpp_Chat.h ./ChatSplDcps.h
+
+
+export DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):$(ACE_ROOT)/lib
+export LD_LIBRARY_PATH   := $(LD_LIBRARY_PATH):$(ACE_ROOT)/lib
+export SHLIB_PATH        := $(SHLIB_PATH):$(ACE_ROOT)/lib
+export LIBPATH           := $(LIBPATH):$(ACE_ROOT)/lib
+export PATH              := $(PATH):$(ACE_ROOT)/lib
+
+.NOTPARALLEL:
+ChatDcpsC.inl ChatDcpsC.h ChatDcpsS.h ChatDcpsC.cpp ChatDcpsS.cpp: ChatDcps.idl
+	$(ACE_ROOT)/bin/tao_idl -Wb,pre_include=ace/pre.h -Wb,post_include=ace/post.h -I$(TAO_ROOT) -I "../../../../../etc/idl" -I ../../idl -Wb,export_macro=OS_EXAMPLE_API -Wb,export_include=../../../../../examples/include/examples_export.h ChatDcps.idl
+
+
+.NOTPARALLEL:
+./ChatC.inl ./ChatC.h ./ChatS.h ./ChatC.cpp ./ChatS.cpp: ../../idl/Chat.idl
+	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
+	$(ACE_ROOT)/bin/tao_idl -Wb,pre_include=ace/pre.h -Wb,post_include=ace/post.h -I$(TAO_ROOT) -I "../../../../../etc/idl" -I ../../idl -Wb,export_macro=OS_EXAMPLE_API -Wb,export_include=../../../../../examples/include/examples_export.h ../../idl/Chat.idl
+
+
+
+
+
+export DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):../../../../../bin:../../../../../lib
+export LD_LIBRARY_PATH   := $(LD_LIBRARY_PATH):../../../../../bin:../../../../../lib
+export SHLIB_PATH        := $(SHLIB_PATH):../../../../../bin:../../../../../lib
+export LIBPATH           := $(LIBPATH):../../../../../bin:../../../../../lib
+export PATH              := $(PATH):../../../../../bin:../../../../../lib
+
+.NOTPARALLEL:
+./ChatDcps.idl ./ChatDcps_impl.h ./ChatSplDcps.cpp ./ChatDcps_impl.cpp ./ccpp_Chat.h ./ChatSplDcps.h: ../../idl/Chat.idl
+	@$(TESTDIRSTART) "." $(TESTDIREND) $(MKDIR) "."
+	"../../../../../bin/idlpp" -I "../../../../../etc/idl" -C -l cpp -b CCPP/DDS_OpenFusion_2 ../../idl/Chat.idl
+
+.PRECIOUS: $(GENERATED_DIRTY)
+$(OBJS): $(GENERATED_DIRTY)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+.obj$(CFG)/ChatSplDcps$(OBJEXT): ChatSplDcps.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatSplDcps.cpp
+
+.obj$(CFG)/ChatDcps_impl$(OBJEXT): ChatDcps_impl.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatDcps_impl.cpp
+
+.obj$(CFG)/ChatDcpsC$(OBJEXT): ChatDcpsC.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatDcpsC.cpp
+
+.obj$(CFG)/ChatDcpsS$(OBJEXT): ChatDcpsS.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatDcpsS.cpp
+
+.obj$(CFG)/ChatC$(OBJEXT): ChatC.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatC.cpp
+
+.obj$(CFG)/ChatS$(OBJEXT): ChatS.cpp
+	@$(TESTDIRSTART) ".obj$(CFG)/" $(TESTDIREND) $(MKDIR) ".obj$(CFG)/"
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) ChatS.cpp
+
+clean:
+	-$(RM) $(OBJS)
+
+realclean: clean
+	-$(RM) $(SHLIB) $(LIB)
+	-$(RM) $(GENERATED_DIRTY)
+	-$(RM) .obj$(CFG)/
+
+check-syntax:
+	$(COMPILE.cc) $(EXPORTFLAGS) $(CHK_SOURCES)
+

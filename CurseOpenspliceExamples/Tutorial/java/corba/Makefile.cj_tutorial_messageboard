@@ -1,0 +1,82 @@
+#----------------------------------------------------------------------------
+#       Macros
+#----------------------------------------------------------------------------
+JAVAC         = javac
+JAR           = jar
+JAVACFLAGS    = $(GENFLAGS) -endorseddirs "$(JACORB_HOME)/lib/endorsed" -sourcepath ../src
+CLASSEXT      = .class
+CLASSDIR      = classes/
+OUTPUT_OPTION = -d $(CLASSDIR)
+COMPILE.java  = $(JAVAC) $(JAVACFLAGS) -cp $(JAVACCPATH) 
+JAVACCPATH    = "cj_tutorial_types.jar:$(CLASSDIR):../../../../../jar/dcpscj.jar:"
+MAKEFILE      = Makefile.cj_tutorial_messageboard
+DEPENDENCIES  = $(MAKEFILE)
+LTARGETDIR    = ./
+CAT           = cat
+MV            = mv -f
+RM            = rm -rf
+CP            = cp -p
+NUL           = /dev/null
+MKDIR         = mkdir -p
+TESTDIRSTART  = test -d
+TESTDIREND    = ||
+TOUCH         = touch
+GENFLAGS      =  
+CLASSES       =  $(CLASSDIR)chatroom/MessageBoard$(CLASSEXT) $(CLASSDIR)chatroom/ErrorHandler$(CLASSEXT) $(CLASSDIR)chatroom/ExtDomainParticipant$(CLASSEXT) $(CLASSDIR)chatroom/ExtDomainParticipantHelper$(CLASSEXT) $(CLASSDIR)chatroom/DataReaderListenerImpl$(CLASSEXT)
+JARCLASSES    =  chatroom/MessageBoard$(CLASSEXT) chatroom/ErrorHandler$(CLASSEXT) chatroom/ExtDomainParticipant$(CLASSEXT) chatroom/ExtDomainParticipantHelper$(CLASSEXT) chatroom/DataReaderListenerImpl$(CLASSEXT)
+JAREXT        = .jar
+MAINCLASS     = MessageBoard
+JARFILE       = $(LTARGETDIR)$(LIBPREFIX)cj_tutorial_messageboard$(LIBSUFFIX)$(JAREXT)
+MANIFEST      = cj_tutorial_messageboard.manifest
+JARFLAGS      = cvfm
+SRC           = ../src/chatroom/MessageBoard.java ../src/chatroom/ErrorHandler.java ../src/chatroom/ExtDomainParticipant.java ../src/chatroom/ExtDomainParticipantHelper.java ../src/chatroom/DataReaderListenerImpl.java
+
+#----------------------------------------------------------------------------
+#       Local targets
+#----------------------------------------------------------------------------
+
+all: $(JARFILE)
+
+$(JARFILE): $(CLASSES) $(CLASSDIR)$(MANIFEST)
+	@$(TESTDIRSTART) "$(LTARGETDIR)" $(TESTDIREND) $(MKDIR) "$(LTARGETDIR)"
+	cd $(CLASSDIR) && $(JAR) $(JARFLAGS) $(JARFILE) $(MANIFEST) $(JARCLASSES) 
+	$(MV) $(CLASSDIR)/$(JARFILE) .
+
+$(CLASSDIR)$(MANIFEST):
+	echo Class-Path: cj_tutorial_types.jar ../../../../../jar/dcpscj.jar > $(CLASSDIR)$(MANIFEST)
+	echo Main-Class: $(MAINCLASS) >> $(CLASSDIR)$(MANIFEST)
+
+generated: $(GENERATED_DIRTY)
+	@-:
+
+$(CLASSDIR)chatroom/MessageBoard$(CLASSEXT): ../src/chatroom/MessageBoard.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/MessageBoard.java
+
+$(CLASSDIR)chatroom/ErrorHandler$(CLASSEXT): ../src/chatroom/ErrorHandler.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/ErrorHandler.java
+
+$(CLASSDIR)chatroom/ExtDomainParticipant$(CLASSEXT): ../src/chatroom/ExtDomainParticipant.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/ExtDomainParticipant.java
+
+$(CLASSDIR)chatroom/ExtDomainParticipantHelper$(CLASSEXT): ../src/chatroom/ExtDomainParticipantHelper.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/ExtDomainParticipantHelper.java
+
+$(CLASSDIR)chatroom/DataReaderListenerImpl$(CLASSEXT): ../src/chatroom/DataReaderListenerImpl.java
+	@$(TESTDIRSTART) "$(CLASSDIR)chatroom/" $(TESTDIREND) $(MKDIR) "$(CLASSDIR)chatroom/"
+	$(COMPILE.java) $(EXPORTFLAGS) $(OUTPUT_OPTION) ../src/chatroom/DataReaderListenerImpl.java
+
+clean:
+	-$(RM) $(CLASSES)
+
+realclean: clean
+	-$(RM) $(BIN)
+	-$(RM) $(CLASSDIR)$(MANIFEST)
+	-$(RM) chatroom/
+
+check-syntax:
+	$(COMPILE.java) $(EXPORTFLAGS) $(CHK_SOURCES)
+
