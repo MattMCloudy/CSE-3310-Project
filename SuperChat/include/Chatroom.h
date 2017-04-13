@@ -33,7 +33,8 @@ class Chatroom {
         void sendAllUnpublishedMessages();
         void recieveMessage(); //some params I need to figure out
         void sendChatroom();
-        int getChatroomIndex();     
+        int getChatroomIndex(); 
+        string getName();    
 };
 
 #endif

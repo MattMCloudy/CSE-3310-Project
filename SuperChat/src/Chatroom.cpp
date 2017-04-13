@@ -87,3 +87,4 @@ void Chatroom::sendAllUnpublishedMessages() {
 
 int Chatroom::getChatroomIndex() {return chatroom_idx;}
 
+string Chatroom::getName() {return name;}

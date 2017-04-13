@@ -70,3 +70,5 @@ void Message::sendMessage() {
 }
 
 int Message::getChatroomIndex() {return chatroom_idx;}
+
+string Message::getContent() {return content;}

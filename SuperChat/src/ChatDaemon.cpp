@@ -1,4 +1,5 @@
-/*Matt:
+/*
+Matt:
  * OK, this is where all of the methods in ChatDaemon will be implemented.
  * I bet we'll have to get pretty cozy with this file.
  * Thanks for following along on this little tour, lmk any questions/concerns you
@@ -136,12 +137,17 @@ void ChatDaemon::readInAllUsers() {
     
     for(ULong j = 0; j < userList.length(); j++) {
         User* new_user = new User(&userList[j]);
+
+        if (user_map[new_user->getUUID()] != NULL)
+            continue;
+        
+
         cout << "New User to be added...\n";
         cout << "Nick: " << new_user->getNick() << "\n";
         cout << "Index: " << new_user->getChatroomIndex() << "\n";
         cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
-            
         users.push_back(new_user);
+        user_map[new_user->getUUID()] = new_user;
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
     }
 
@@ -159,7 +165,12 @@ void ChatDaemon::readInAllMessages() {
     
     for(ULong j = 0; j < msgList.length(); j++) {
         Message* new_message = new Message(&msgList[j]);
+
+        if(message_map[hash(new_message->getContent())] != NULL)
+            continue;
+
         messages.push_back(new_message);
+        message_map[hash(new_message->getContent())] = new_message;
         chatrooms[new_message->getChatroomIndex()]->addMessage(new_message);
     }
 
@@ -184,10 +195,11 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-        if (chatrooms.size() > 10)
-            cerr << "ERROR: 10 Chatrooms already initialized\n";
-        else
-            chatrooms.push_back(new_chatroom);
+        if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
+            continue;
+        
+        chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
+        chatrooms.push_back(new_chatroom);
     }
 
     status = chatroom_reader->return_loan(chatList, infoSeq);
@@ -201,10 +213,11 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
     
     //Something like this should work for making chatrooms
 
-    if (chatrooms.size() > 10) {
+    if (chatrooms.size() >= 10) {
         cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
+        chatroom_map[hash(name)] = new_chatroom;
         chatrooms.push_back(new_chatroom);
         changeChatroom(new_chatroom);
         postChatroomToUI(new_chatroom);
@@ -248,6 +261,7 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
     cout << "Initializing Local User...\n";
     User* new_local_user = new User(nick, "The local user", 0);
+    user_map[new_local_user->getUUID()] = new_local_user;
     users.push_back(new_local_user);
     local_user = new_local_user;
     
@@ -257,24 +271,6 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
 }
 
-
-
-
-/* So I had a bit of a messy situation in the next
- * couple of methods.
- *
- * Essentially I needed way for a thread stuck in the
- * following while(true) to break out when necessary.
- *
- * The way I see it, I can kill the current chatrooms
- * connection to opensplice when we change chatrooms.
- * That way, the threads will change responsibilities.
- * The one stuck in this while(true) will return back
- * to UI and become the one listening to user input.
- * Then, the next time someone makes a new chatroom,
- * or changes chatrooms the one listening into user
- * input will shift to receving messages.
- */
 
 void ChatDaemon::readSendObjects() {
     while(true) {
@@ -293,10 +289,20 @@ void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
 
 void ChatDaemon::sendMessage(string text) {
     Message* new_message = new Message(text, local_user->getUUID(), current_chatroom->getChatroomIndex());
+    message_map[hash(text)] = new_message;
     //I think we should only need to create the message here
     //once it's created it's sent out via opensplice
     //from there it will be treated as any message
     //read in and processed in the right chatroom
+}
+
+int ChatDaemon::hash(string key_string) {
+    int total = 0;
+    
+    for(int i = 0; i < key_string.length(); i++)
+        total = total + (int) key_string[i];
+    
+    return total;
 }
 
 void ChatDaemon::readInPreviousUsers() {

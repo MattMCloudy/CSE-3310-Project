@@ -35,6 +35,9 @@ class ChatDaemon {
         vector<Chatroom*> chatrooms;
         vector<User*> users;
         vector<Message*> messages;
+        unordered_map<int, Chatroom*> chatroom_map;
+        unordered_map<long long int, User*> user_map;
+        unordered_map<int, Message*> message_map;
         User* local_user;
         DDSEntityManager chtrmEM;
         DDSEntityManager mssgEM;
@@ -63,6 +66,7 @@ class ChatDaemon {
         void sendMessage(string text);
         void readSendObjects();
         void processCurrentChatroom();
+        int hash(string key_string);
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
         void postUsersToFile();
