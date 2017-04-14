@@ -14,11 +14,12 @@ Matt:
 
 
 void ChatDaemon::start() {
-    m->lock();
-    LocalUserInitialized = false;
+    hasStarted = true;
+
+    //m->lock();
     //build user list from file ** needs to be written
     //readInPreviousUsers();
-    m->unlock();
+    //m->unlock();
     
     //Update user list with DDS
     //Update message list with DDS
@@ -121,25 +122,64 @@ void ChatDaemon::setEntityManager() {
 }
 
 ChatDaemon::~ChatDaemon() {
-    //em.deleteReader();
-    //em.deleteSubscriber();
-    //em.deleteTopic();
-    //em.deleteParticipant();  
-    //lulz who knows if this will work
+    if (hasStarted) {
+        chtrmEM.deleteReader();
+        chtrmEM.deleteSubscriber();
+        chtrmEM.deleteTopic();
+        chtrmEM.deleteParticipant();
+
+        usrEM.deleteReader();
+        usrEM.deleteSubscriber();
+        usrEM.deleteTopic();
+        usrEM.deleteParticipant();
+
+        mssgEM.deleteReader();
+        mssgEM.deleteSubscriber();
+        mssgEM.deleteTopic();
+        mssgEM.deleteParticipant();
+    }  
 }
 
+void ChatDaemon::setAllUsersOffline() {
+    for(int i = 0; i < users.size(); i++) {
+        users[i]->setIsOffline();
+    }
+}
+
+vector<User*> ChatDaemon::checkWhichUsersOnline() {
+    online_users.clear();
+    offline_users.clear();
+    for(int i = 0; i < users.size(); i++) {
+        if (users[i]->getIsOnline())
+            online_users.push_back(users[i]);
+        else
+            offline_users.push_back(users[i]);
+    }
+    return online_users;
+}
+
+vector<User*> ChatDaemon::getOfflineUsers() {return offline_users;}
+
 void ChatDaemon::readInAllUsers() {
+    
     userSeq userList;
     SampleInfoSeq infoSeq;
     ReturnCode_t status = -1;
+    
     status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE, ANY_VIEW_STATE, ANY_INSTANCE_STATE);
     checkStatus(status, "MsgDataReader::take");
     
+    m->lock();
+    setAllUsersOffline();
+    m->unlock();
+
     for(ULong j = 0; j < userList.length(); j++) {
         User* new_user = new User(&userList[j]);
 
-        if (user_map[new_user->getUUID()] != NULL)
+        if (user_map[new_user->getUUID()] != NULL) {
+            user_map[new_user->getUUID()]->setIsOnline();
             continue;
+        }
         
 
         cout << "New User to be added...\n";
@@ -150,10 +190,18 @@ void ChatDaemon::readInAllUsers() {
         user_map[new_user->getUUID()] = new_user;
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
     }
+    
+    
+    checkWhichUsersOnline();
+    //We can have this written here or in the GUI
+    //honestly I'd prefer it be in the GUI
+    //it'll make the whole thing less computationally intensive
 
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
+
+
 
 void ChatDaemon::readInAllMessages() {
     messageSeq msgList;
@@ -311,6 +359,6 @@ void ChatDaemon::readInPreviousUsers() {
 
 void ChatDaemon::postUsersToFile() {}
 
-
+void ChatDaemon::exit() {}
 
 

@@ -11,6 +11,7 @@ class User {
     private:
         string nick;
         string description;
+        bool isOnline;
         int chatroom_idx;
         struct user* user_struct;
         long long int uuid;
@@ -27,6 +28,9 @@ class User {
         int getChatroomIndex();
         long long int getUUID();
         string getNick();
+        void setIsOnline();
+        void setIsOffline();
+        bool getIsOnline();
 };
 
 #endif

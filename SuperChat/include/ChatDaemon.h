@@ -1,4 +1,5 @@
-/*Matt:
+/*
+Matt:
  * OK finally we've found where the magic happens,
  * A daemon is a program that runs constantly underneath other user-level
  * programs, and I think it helps to think of this class in that way.
@@ -32,8 +33,11 @@ class ChatDaemon {
         UserInterface* ui;
         Chatroom* current_chatroom;
         bool LocalUserInitialized;
+        bool hasStarted;
         vector<Chatroom*> chatrooms;
         vector<User*> users;
+        vector<User*> online_users;
+        vector<User*> offline_users;
         vector<Message*> messages;
         unordered_map<int, Chatroom*> chatroom_map;
         unordered_map<long long int, User*> user_map;
@@ -49,12 +53,17 @@ class ChatDaemon {
     public:
         ChatDaemon() {
             cout << "ChatDaemon Initialized...\n";
+            LocalUserInitialized = false;
+            hasStarted = false;
         }
         ~ChatDaemon();
         void start();
         void setUI(UserInterface* new_ui);
         void setMutex(mutex* new_m);
         void setEntityManager();
+        void setAllUsersOffline();
+        vector<User*> checkWhichUsersOnline();
+        vector<User*> getOfflineUsers();
         void readInAllUsers();
         void readInAllMessages();
         void readInAllChatrooms();
@@ -70,7 +79,7 @@ class ChatDaemon {
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
         void postUsersToFile();
-        
+        void exit();      
 };
 
 #endif
