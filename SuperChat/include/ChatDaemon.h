@@ -52,7 +52,7 @@ class ChatDaemon {
         mutex* m;
     public:
         ChatDaemon() {
-            cout << "ChatDaemon Initialized...\n";
+            //cout << "ChatDaemon Initialized...\n";
             LocalUserInitialized = false;
             hasStarted = false;
         }

@@ -11,6 +11,8 @@
 #include <mutex>
 #include <functional>
 #include <ncurses.h>
+#include <form.h>
+#include <menu.h>
 #include <assert.h>
 #include <string>
 #include <string.h>
