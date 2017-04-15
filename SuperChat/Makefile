@@ -26,7 +26,8 @@ bin/SuperChat: ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} ./src/main.cpp ${SRC_FIL
                ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP} \
                ${COMMON_LIBS} \
                -lncurses \
-			   -lmenu
+			   -lmenu \
+			   -lform
 
 clean:
 	-rm -f ./bin/SuperChat ${FILES_GENERATED_FROM_THE_IDL_BY_IDLPP}

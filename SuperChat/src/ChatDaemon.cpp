@@ -58,10 +58,10 @@ void ChatDaemon::start() {
     //I need to think more about how this will affect threading
 
     if (chatrooms.size() == 0) {
-        cout << "Initializing public chatroom...\n";
+        //cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
     } else {
-        cout << "Public previously initialized, entering now...\n";
+        //cout << "Public previously initialized, entering now...\n";
         changeChatroom(chatrooms[0]);
     }
     
@@ -182,10 +182,10 @@ void ChatDaemon::readInAllUsers() {
         }
         
 
-        cout << "New User to be added...\n";
-        cout << "Nick: " << new_user->getNick() << "\n";
-        cout << "Index: " << new_user->getChatroomIndex() << "\n";
-        cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
+        //cout << "New User to be added...\n";
+        //cout << "Nick: " << new_user->getNick() << "\n";
+        //cout << "Index: " << new_user->getChatroomIndex() << "\n";
+        //cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
@@ -262,7 +262,7 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
     //Something like this should work for making chatrooms
 
     if (chatrooms.size() >= 10) {
-        cerr << "ERROR: Already 10 chatrooms initialized";
+        //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
         chatroom_map[hash(name)] = new_chatroom;
@@ -303,11 +303,11 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
 User* ChatDaemon::addNewLocalUser(string nick) {
     
     if (LocalUserInitialized) {
-        cerr << "A local user has already been initialized: ";
+        //cerr << "A local user has already been initialized: ";
         return local_user;
     }
     
-    cout << "Initializing Local User...\n";
+    //cout << "Initializing Local User...\n";
     User* new_local_user = new User(nick, "The local user", 0);
     user_map[new_local_user->getUUID()] = new_local_user;
     users.push_back(new_local_user);

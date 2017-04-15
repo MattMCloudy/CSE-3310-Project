@@ -24,11 +24,21 @@ class UserInterface {
     private:
         ChatDaemon* daemon;
         mutex* m;
+
+        int MAX_MESSAGE_LENGTH; //MAX LENGTH FOR ENTIRE OUTPUT (INCLUDES UUID AND NICK)
+        int R_MAX;
+        int C_MAX;
+        int MAX_UUID_LENGTH;
     public:
         UserInterface() {
-            cout << "UI Initialized...\n";
+            //cout << "UI Initialized...\n";
+            MAX_MESSAGE_LENGTH = 144;
+            R_MAX = 40;
+            C_MAX = 121;
+            MAX_UUID_LENGTH = 10;
         }
         void create();
+        void printMessage(char*, char*, char*, FORM*, int);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
 };
