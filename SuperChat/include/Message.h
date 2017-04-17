@@ -40,15 +40,15 @@ class Message {
         DDSEntityManager em;
         messageDataWriter_var Writer;
         string content;
-        long long int sender_uuid;
+        long long sender_uuid;
         int chatroom_idx;      
     public:
-        Message(string, long long int, int);
+        Message(string, long long, int);
         Message(struct message*);
         ~Message();
         void setEntityManager();
         void makeNewMessage();
-        long long int newBoostUUID();
+        long long newBoostUUID();
         void sendMessage();
         int getChatroomIndex();
         string getContent();

@@ -9,19 +9,15 @@
 void UserInterface::create() {
     cout << "Inside UI\n";
 
-    FIELD *mbf[1];                        //creating field array for msgbox
-    FIELD *cbf[1];             		//creating field array for chatbox
-    FORM *msgbox;                         //declare pointer to msgbox form
-    FORM *chatbox;			//declare pointer to chatbox form
+    local_user = daemon->addNewLocalUser("Tim");
+    count = 0;
+    FORM* msgbox;
+    FORM* chatbox;
+    FIELD* mbf[1];
+    FIELD* cbf[1];
 
-    int ch;
-    char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
-    int i;
-    int count=0;			//counter for number of characters in the input string(for printing)
-
-    char nick[] = "John Doe\0"; 		//place holder for user nick string
-    char ID[] = "012345\0";               //place holder for user ID string
-    char curCR[] = "(Current Chatroom)\0";//place holder for current user chatroom
+    const char* nick = local_user->getNick().c_str(); 		//place holder for user nick string
+    char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
 
     //SEND LOCAL USER TO CHAT DAEMON
 
@@ -80,7 +76,7 @@ void UserInterface::create() {
     mvprintw(7, 54, "'F4' to ________");     //"
 
     attroff(A_BOLD);
-    mvprintw(0, 11, " %s: %s", nick, ID); //print user nick and UUID
+    mvprintw(0, 11, " %s: %s", nick, "02020\0"); //print user nick and UUID
   
 
     while((ch=getch())!=27)
@@ -114,7 +110,7 @@ void UserInterface::create() {
 
            case 10: //enter is pressed
 
-	           printMessage(nick, ID, input, chatbox, count); //print function to print input[] into chatbox
+	           printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
                count=0;       
                form_driver(msgbox, REQ_CLR_FIELD);
                //daemon->sendMessage(input);
@@ -154,33 +150,36 @@ void UserInterface::create() {
 
 
 
-void UserInterface::printMessage(char* nick, char* ID, char *input, FORM *chatbox, int size)
+void UserInterface::printMessage(User* origin_user, char *input, FORM* chatbox)
 {
     int i;
-    int count=0;
-    static char* lastUser;
+    int mssg_counter=0;
+    static long long int lastUser = 0;
+    const char* nick = origin_user->getNick().c_str();
+    long long int ID = origin_user->getUUID();
  
     form_driver(chatbox, REQ_END_FIELD);       //cursor to end of chatbox
     form_driver(chatbox, REQ_NEXT_LINE);       //cursor to next line 
     if(lastUser!=ID){
-        for(i=0; i<((MAX_MESSAGE_LENGTH/3)-1); i++, count++){
+        for(i=0; i<((MAX_MESSAGE_LENGTH/3)-1); i++, mssg_counter++){
             if(nick[i] == NULL)
                 break;
             form_driver(chatbox, nick[i]);
         }
-        form_driver(chatbox, '[');    
-
-        for(i=0; count<((MAX_MESSAGE_LENGTH/3)-4); i++, count++){
+        
+        /*
+        for(i=0; mssg_counter<((MAX_MESSAGE_LENGTH/3)-4); i++, mssg_counter++){
             if(nick[i] == NULL)
             break;
             form_driver(chatbox, ID[i]);
         }
         form_driver(chatbox, ']');
+        */
 
         form_driver(chatbox, REQ_NEXT_LINE);form_driver(chatbox, REQ_NEXT_LINE); 
     }
     form_driver(chatbox, ':'); 
-    for(i=0; i<size; i++){                 //iterates through to input[count]
+    for(i=0; i<count; i++){                 //iterates through to input[count]
         form_driver(chatbox, input[i]);       //sets prints input[i] to Chatbox
     }
 

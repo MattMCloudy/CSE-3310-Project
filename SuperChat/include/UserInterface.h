@@ -15,6 +15,10 @@
 #define __USERINTERFACE_H
 
 #include "Chatroom.h"
+#define MAX_MESSAGE_LENGTH 144
+#define C_MAX 121
+#define R_MAX 40
+#define MAX_UUID_LENGTH 10
 
 class ChatDaemon;
 
@@ -24,21 +28,17 @@ class UserInterface {
     private:
         ChatDaemon* daemon;
         mutex* m;
-
-        int MAX_MESSAGE_LENGTH; //MAX LENGTH FOR ENTIRE OUTPUT (INCLUDES UUID AND NICK)
-        int R_MAX;
-        int C_MAX;
-        int MAX_UUID_LENGTH;
+        int ch;
+        char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+        int i;
+        int count;			//counter for number of characters in the input string(for printing)
+        User* local_user;
     public:
         UserInterface() {
             //cout << "UI Initialized...\n";
-            MAX_MESSAGE_LENGTH = 144;
-            R_MAX = 40;
-            C_MAX = 121;
-            MAX_UUID_LENGTH = 10;
         }
         void create();
-        void printMessage(char*, char*, char*, FORM*, int);
+        void printMessage(User*, char*, FORM*);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
 };

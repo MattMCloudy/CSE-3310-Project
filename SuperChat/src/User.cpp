@@ -64,9 +64,9 @@ void User::makeNewUser() {
     user_struct = &new_user;
 }
 
-long long int User::newBoostUUID() {
+long long User::newBoostUUID() {
     boost::uuids::uuid uuid = boost::uuids::random_generator()();
-    long long int x;
+    long long x;
     memcpy(&x, &uuid, sizeof(x));
     return x;
 }
@@ -78,7 +78,7 @@ void User::sendUser() {
 
 int User::getChatroomIndex() {return chatroom_idx;}
 
-long long int User::getUUID() {return uuid;}
+long long User::getUUID() {return uuid;}
 
 string User::getNick() {return nick;}
 

@@ -16,7 +16,6 @@ Matt:
 void ChatDaemon::start() {
     hasStarted = true;
 
-    //m->lock();
     //build user list from file ** needs to be written
     //readInPreviousUsers();
     //m->unlock();
@@ -27,8 +26,6 @@ void ChatDaemon::start() {
     setEntityManager();
 
     readInAllChatrooms();
-    readInAllUsers();
-    readInAllMessages();
     
     //once we read in All Users too, we'll be able
     //to designate which ones are online and which
@@ -65,7 +62,9 @@ void ChatDaemon::start() {
         changeChatroom(chatrooms[0]);
     }
     
-    addNewLocalUser("Tim");
+    readInAllUsers();
+    readInAllMessages();
+    
     readSendObjects();
 }
 
@@ -169,9 +168,7 @@ void ChatDaemon::readInAllUsers() {
     status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE, ANY_VIEW_STATE, ANY_INSTANCE_STATE);
     checkStatus(status, "MsgDataReader::take");
     
-    m->lock();
     setAllUsersOffline();
-    m->unlock();
 
     for(ULong j = 0; j < userList.length(); j++) {
         User* new_user = new User(&userList[j]);
@@ -309,6 +306,7 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
     //cout << "Initializing Local User...\n";
     User* new_local_user = new User(nick, "The local user", 0);
+    cout << new_local_user->getNick() << "\n";
     user_map[new_local_user->getUUID()] = new_local_user;
     users.push_back(new_local_user);
     local_user = new_local_user;
@@ -330,9 +328,7 @@ void ChatDaemon::readSendObjects() {
 }
 
 void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
-    m->lock();
     current_chatroom = new_cur_chatroom;
-    m->unlock();
 }
 
 void ChatDaemon::sendMessage(string text) {

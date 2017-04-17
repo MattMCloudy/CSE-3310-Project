@@ -1,6 +1,6 @@
 #include "../include/Message.h"
 
-Message::Message(string text, long long int passed_uuid, int passed_chatroom_idx) {
+Message::Message(string text, long long passed_uuid, int passed_chatroom_idx) {
     content = text;
     chatroom_idx = passed_chatroom_idx;
     sender_uuid = passed_uuid;
@@ -57,9 +57,9 @@ void Message::makeNewMessage() {
     message_struct = new_mssg;
 }
 
-long long int Message::newBoostUUID() {
+long long Message::newBoostUUID() {
     boost::uuids::uuid uuid = boost::uuids::random_generator()();
-    long long int x;
+    long long x;
     memcpy(&x, &uuid, sizeof(x));
     return x;
 }

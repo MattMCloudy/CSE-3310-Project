@@ -40,7 +40,7 @@ class ChatDaemon {
         vector<User*> offline_users;
         vector<Message*> messages;
         unordered_map<int, Chatroom*> chatroom_map;
-        unordered_map<long long int, User*> user_map;
+        unordered_map<long long, User*> user_map;
         unordered_map<int, Message*> message_map;
         User* local_user;
         DDSEntityManager chtrmEM;

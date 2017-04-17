@@ -37,7 +37,10 @@ void Initializer::exe() {
     
     daemon.setMutex(&m);
     ui.setMutex(&m);
- 
+    
+    daemon.setUI(&ui);
+    ui.setDaemon(&daemon);
+
     cout << "Entering daemon thread...\n";
     thread daemon_thread(&ChatDaemon::start, ref(daemon));
     cout << "Entering ui thread...\n";
