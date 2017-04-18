@@ -1278,3 +1278,83 @@ Node        : localhost
 Process     : SuperChat <9303>
 Thread      : main thread 7ffff5e0d700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492481957.612044947
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 19.551101762 s.
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492542874.585944872
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542874.585965460
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 19.555520043 s.
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492542874.590958147
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542874.593757876
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542874.594198415
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:34 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542874.594302219
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:35 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542875.773024637
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:35 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542875.786527926
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:38 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492542878.723807295
+========================================================================================
+Report      : ERROR
+Date        : Tue Apr 18 14:14:43 CDT 2017
+Description : The splice deamon is no longer running for entity 0xf003f630. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : localhost
+Process     : SuperChat <22597>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492542883.478803423

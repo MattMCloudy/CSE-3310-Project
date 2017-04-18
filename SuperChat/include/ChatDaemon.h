@@ -75,6 +75,8 @@ class ChatDaemon {
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
         void sendMessage(char* input);
+        void wakeLocalUser();
+        void wakeAllChatrooms();
         void readSendObjects();
         void processCurrentChatroom();
         int hash(string key_string);
