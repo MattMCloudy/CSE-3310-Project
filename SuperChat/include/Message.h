@@ -36,22 +36,23 @@ using namespace std;
 
 class Message {
     private:
-        struct message message_struct;
+        struct message* message_struct;
         DDSEntityManager em;
         messageDataWriter_var Writer;
         string content;
-        long long sender_uuid;
+        unsigned long long sender_uuid;
         int chatroom_idx;      
     public:
-        Message(string, long long, int);
+        Message(string, unsigned long long, int);
         Message(struct message*);
         ~Message();
         void setEntityManager();
         void makeNewMessage();
-        long long newBoostUUID();
+        unsigned long long newBoostUUID();
         void sendMessage();
         int getChatroomIndex();
         string getContent();
+        unsigned long long getSenderUUID();
 };
 
 #endif

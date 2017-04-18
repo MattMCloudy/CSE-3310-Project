@@ -20,39 +20,10 @@ void ChatDaemon::start() {
     //readInPreviousUsers();
     //m->unlock();
     
-    //Update user list with DDS
-    //Update message list with DDS
-    //Update chatroom list with DDS
+
     setEntityManager();
 
     readInAllChatrooms();
-    
-    //once we read in All Users too, we'll be able
-    //to designate which ones are online and which
-    //ones are not as well.
-    
-
-    //Then if no chatrooms have been initialized
-    //create public
-
-    //otherwise we need it to enter chatroom 0, which should be public
-    
-    //by this time the ui should have sent a command to initialize the
-    //Local User which upon being created will send itself out to the world
-    //this thread of execution will be locked to make all of that happen
-    
-    //from there it should conduct normal operating procedure
-    //that is periodically updating the user list, message list, and chatroom list
-    //assigning users to their appropriate chatroom, assigning messages to their appropriate chatroom,
-    //and taking in new chatrooms
-
-    //from there it will look at the information stored inside of the current chatroom
-    //it will need to keep three vectors. One containing all of its associated users, and
-    //two containing posted messages and unposted messages.
-    
-    //we just need to post all the unposted messages, clear that vector, and do all that all over again
-    
-    //I need to think more about how this will affect threading
 
     if (chatrooms.size() == 0) {
         //cout << "Initializing public chatroom...\n";
@@ -62,6 +33,10 @@ void ChatDaemon::start() {
         changeChatroom(chatrooms[0]);
     }
     
+    readInAllChatrooms();
+    
+    //addNewLocalUser("Tim");
+    //sendMessage("Lets see how this works");
     readInAllUsers();
     readInAllMessages();
     
@@ -178,13 +153,20 @@ void ChatDaemon::readInAllUsers() {
             continue;
         }
         
+        /*
+        cout << "New User to be added...\n";
+        cout << "Nick: " << new_user->getNick() << "\n";
+        cout << "UUID: " << new_user->getUUID() << "\n";
+        cout << "Index: " << new_user->getChatroomIndex() << "\n";
+        cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
+        */
 
-        //cout << "New User to be added...\n";
-        //cout << "Nick: " << new_user->getNick() << "\n";
-        //cout << "Index: " << new_user->getChatroomIndex() << "\n";
-        //cout << "Chatroom ptr: " << chatrooms[new_user->getChatroomIndex()] << "\n";
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
+
+        //cout << new_user->getUUID() << "\n";
+        //cout << user_map[new_user->getUUID()] << "\n";
+
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
     }
     
@@ -211,8 +193,14 @@ void ChatDaemon::readInAllMessages() {
     for(ULong j = 0; j < msgList.length(); j++) {
         Message* new_message = new Message(&msgList[j]);
 
-        if(message_map[hash(new_message->getContent())] != NULL)
-            continue;
+        //if(message_map[hash(new_message->getContent())] != NULL)
+        //    continue;
+        
+        /*
+        cout << "Message Sender: " << new_message->getSenderUUID() << "\n";
+        cout << "Message Text: " << new_message->getContent() << "\n";
+        cout << "Message Chatroom Index: " << new_message->getChatroomIndex() << "\n";
+        */
 
         messages.push_back(new_message);
         message_map[hash(new_message->getContent())] = new_message;
@@ -240,11 +228,16 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-        if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
-            continue;
+        //if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
+        //    continue;
         
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         chatrooms.push_back(new_chatroom);
+
+        if(current_chatroom == NULL)
+            changeChatroom(new_chatroom);
+
+        //postChatroomToUI();
     }
 
     status = chatroom_reader->return_loan(chatList, infoSeq);
@@ -262,10 +255,6 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
-        chatroom_map[hash(name)] = new_chatroom;
-        chatrooms.push_back(new_chatroom);
-        changeChatroom(new_chatroom);
-        postChatroomToUI(new_chatroom);
         return new_chatroom;
     }
 
@@ -288,14 +277,23 @@ void ChatDaemon::postChatroomToUI(Chatroom* chatroom) {
 }
 
 void ChatDaemon::postNewMessageToUI(Message* new_message) {
-   
+    
     /*
-    m->lock();
-    ui->postNewMessage(message);
-    m->unlock();
+    cout << new_message->getSenderUUID() << "\n";
+    cout << local_user->getUUID() << "\n";
+    cout << user_map[new_message->getSenderUUID()] << "\n";
+
+    if (new_message->getSenderUUID() != local_user->getUUID()) {
+        cout << "FUUUUUCKKKKCKKCK\n";
+    }
     */
 
-}
+    User* sender = user_map[new_message->getSenderUUID()];   
+    
+    m->lock();
+    ui->printMessage(sender, new_message, chatbox);
+    m->unlock();
+}   
 
 User* ChatDaemon::addNewLocalUser(string nick) {
     
@@ -306,12 +304,10 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
     //cout << "Initializing Local User...\n";
     User* new_local_user = new User(nick, "The local user", 0);
-    cout << new_local_user->getNick() << "\n";
-    user_map[new_local_user->getUUID()] = new_local_user;
-    users.push_back(new_local_user);
+    //cout << "Nick: " << new_local_user->getNick() << "\n";
+    //cout << "UUID: " << new_local_user->getUUID() << "\n";
     local_user = new_local_user;
-    
-    
+       
     LocalUserInitialized = true;
     return local_user;
     
@@ -331,9 +327,9 @@ void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
     current_chatroom = new_cur_chatroom;
 }
 
-void ChatDaemon::sendMessage(string text) {
+void ChatDaemon::sendMessage(char* input) {
+    string text(input);
     Message* new_message = new Message(text, local_user->getUUID(), current_chatroom->getChatroomIndex());
-    message_map[hash(text)] = new_message;
     //I think we should only need to create the message here
     //once it's created it's sent out via opensplice
     //from there it will be treated as any message
@@ -355,6 +351,7 @@ void ChatDaemon::readInPreviousUsers() {
 
 void ChatDaemon::postUsersToFile() {}
 
-void ChatDaemon::exit() {}
+void ChatDaemon::exit() {
+}
 
-
+void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}

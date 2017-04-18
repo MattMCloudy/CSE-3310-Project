@@ -9,7 +9,6 @@ Chatroom::Chatroom(string passed_name, int passed_chatroom_idx, ChatDaemon* pass
 
     setEntityManager();
     makeNewChatroom();
-       
     sendChatroom();
 }
 
@@ -22,9 +21,6 @@ Chatroom::Chatroom(struct chatroom* new_chatroom, int new_chatroom_idx,  ChatDae
     
     daemon = passed_daemon;
 
-    setEntityManager();
-
-    sendChatroom();
 }
 
 
@@ -56,10 +52,10 @@ void Chatroom::setEntityManager() {
 
 
 void Chatroom::makeNewChatroom() {
-    struct chatroom new_chatroom;
-    strncpy(new_chatroom.chatroom_name, name.c_str(), sizeof(new_chatroom.chatroom_name));
-    new_chatroom.chatroom_idx = chatroom_idx;
-    chatroom_struct = &new_chatroom;
+    struct chatroom* new_chatroom = (struct chatroom*) malloc(sizeof(struct chatroom));
+    strncpy(new_chatroom->chatroom_name, name.c_str(), sizeof(new_chatroom->chatroom_name));
+    new_chatroom->chatroom_idx = chatroom_idx;
+    chatroom_struct = new_chatroom;
 }
 
 
@@ -79,7 +75,6 @@ void Chatroom::addMessage(Message* new_message) {
 
 void Chatroom::sendAllUnpublishedMessages() {
     for(int i = 0; i < unpublished_messages.size(); i++) {
-        unpublished_messages[i]->sendMessage();
         daemon->postNewMessageToUI(unpublished_messages[i]);
     }
     unpublished_messages.clear();

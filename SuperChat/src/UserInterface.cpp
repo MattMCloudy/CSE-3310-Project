@@ -49,6 +49,10 @@ void UserInterface::create() {
     chatbox = new_form(cbf);		  //"
     post_form(chatbox);			  //"
     refresh();
+    
+    m->lock();
+    daemon->setChatbox(chatbox);
+    m->unlock();
 
     attron(A_BOLD);                      //drawing horizontal lines
     move(1,0); hline('_', C_MAX-1);       //"
@@ -110,10 +114,10 @@ void UserInterface::create() {
 
            case 10: //enter is pressed
 
-	           printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
+	           //printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
+               daemon->sendMessage(input);
                count=0;       
                form_driver(msgbox, REQ_CLR_FIELD);
-               //daemon->sendMessage(input);
                refresh(); 
                break;
 
@@ -141,22 +145,24 @@ void UserInterface::create() {
     free_form(msgbox);
     free_form(chatbox);
     free_field(mbf[0]);
-    free_field(cbf[0]);
-      
+    free_field(cbf[0]); 
     //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
 
     endwin();
+    delete daemon;
+    //This will totally cause errors once we have the file reading in place
 } 
 
 
 
-void UserInterface::printMessage(User* origin_user, char *input, FORM* chatbox)
+void UserInterface::printMessage(User* origin_user, Message* new_message, FORM* chatbox)
 {
     int i;
     int mssg_counter=0;
     static long long int lastUser = 0;
     const char* nick = origin_user->getNick().c_str();
     long long int ID = origin_user->getUUID();
+    const char* input = new_message->getContent().c_str();
  
     form_driver(chatbox, REQ_END_FIELD);       //cursor to end of chatbox
     form_driver(chatbox, REQ_NEXT_LINE);       //cursor to next line 

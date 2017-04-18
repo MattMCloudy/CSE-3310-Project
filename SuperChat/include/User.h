@@ -14,7 +14,7 @@ class User {
         bool isOnline;
         int chatroom_idx;
         struct user* user_struct;
-        long long uuid;
+        unsigned long long uuid;
         DDSEntityManager em;
         userDataWriter_var Writer;
     public:
@@ -23,10 +23,10 @@ class User {
         ~User();
         void setEntityManager();
         void makeNewUser();
-        long long newBoostUUID();
+        unsigned long long newBoostUUID();
         void sendUser();
         int getChatroomIndex();
-        long long getUUID();
+        unsigned long long getUUID();
         string getNick();
         void setIsOnline();
         void setIsOffline();

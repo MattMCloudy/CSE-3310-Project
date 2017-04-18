@@ -38,7 +38,7 @@ class UserInterface {
             //cout << "UI Initialized...\n";
         }
         void create();
-        void printMessage(User*, char*, FORM*);
+        void printMessage(User*, Message*, FORM*);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
 };

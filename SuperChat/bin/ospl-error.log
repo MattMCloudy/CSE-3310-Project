@@ -518,3 +518,763 @@ Node        : localhost
 Process     : SuperChat <2052>
 Thread      : ServiceManager 7ffff7e1b700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492415793.809516099
+========================================================================================
+Report      : API_INFO
+Date        : Mon Apr 17 14:33:16 CDT 2017
+Description : Subscriber::delete_datareader contains_loans
+Node        : localhost
+Process     : SuperChat <7450>
+Thread      : 7f2dde574700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_dataReader.c/339/20/1492457596.098485390
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 14:33:16 CDT 2017
+Description : Unable to delete datareader
+Node        : localhost
+Process     : SuperChat <7450>
+Thread      : 7f2dde574700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492457596.105495768
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 14:39:03 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 126.775459729 s.
+Node        : localhost
+Process     : SuperChat <12725>
+Thread      : OSPL Lease Renew Thread 7fffbffff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492457943.822812045
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 14:39:03 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 126.248871930 s.
+Node        : localhost
+Process     : SuperChat <12725>
+Thread      : leaseThread 7fffbfde7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492457943.825006141
+========================================================================================
+Report      : API_INFO
+Date        : Mon Apr 17 14:41:34 CDT 2017
+Description : Subscriber::delete_datareader contains_loans
+Node        : localhost
+Process     : SuperChat <15563>
+Thread      : 7f09d00c3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_dataReader.c/339/20/1492458094.454420070
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 14:41:34 CDT 2017
+Description : Unable to delete datareader
+Node        : localhost
+Process     : SuperChat <15563>
+Thread      : 7f09d00c3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492458094.455244746
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:16 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 23.776676237 s.
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : OSPL Lease Renew Thread 7ffff408a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492460116.085753174
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:48 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492460148.454675836
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:48 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492460148.455779660
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:16 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 23.648195009 s.
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : leaseThread 7fffbfde0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492460116.086917924
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:48 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492460148.459454354
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:15:48 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <27466>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492460148.460292269
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:32:12 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 36.896194711 s.
+Node        : localhost
+Process     : SuperChat <543>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492461132.618726750
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:32:12 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 36.896332353 s.
+Node        : localhost
+Process     : SuperChat <543>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492461132.621084389
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:49 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492461709.136314587
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:49 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 12.377478831 s.
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492461709.139699397
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:51 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492461711.054891640
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:49 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 12.605838007 s.
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492461709.136376501
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:51 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492461711.057913051
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:51 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492461711.059124190
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 15:41:58 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4367>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492461718.521577763
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:07 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.094526674 s.
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492465927.708572993
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:07 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.093779975 s.
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492465927.709296941
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:20 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492465940.768936956
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:20 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492465940.769011921
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:20 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492465940.771365235
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:20 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492465940.772816257
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:34 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492465954.324065221
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:51 CDT 2017
+Description : The splice deamon is no longer running for entity 0xec0acf00. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492465971.253590269
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:52:51 CDT 2017
+Description : Claim Kernel failed.
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantNew/u_participant.c/141/0/1492465971.253712835
+========================================================================================
+Report      : API_INFO
+Date        : Mon Apr 17 16:52:51 CDT 2017
+Description : DomainParticipantFactory::create_participant creation of kernel entity failed
+Node        : localhost
+Process     : SuperChat <28469>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_domainParticipant.c/543/3/1492465971.253759262
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:11 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466051.453761704
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:11 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466051.453897209
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.930014582 s.
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : OSPL Lease Renew Thread 7ffff4858700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492466051.453993299
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:11 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.929534829 s.
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492466051.454978082
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:11 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466051.458254551
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:19 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466059.894422563
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:19 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466059.895719043
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:31 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 11.677904857 s.
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : OSPL Lease Renew Thread 7ffff4858700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492466071.568627512
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:54:45 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492466085.368287991
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:55:07 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.145102657 s.
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : OSPL Lease Renew Thread 7ffff4858700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492466107.418257527
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 16:55:20 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.229566128 s.
+Node        : localhost
+Process     : SuperChat <29119>
+Thread      : OSPL Lease Renew Thread 7ffff4858700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492466120.647927458
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:19:41 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 324.685042928 s.
+Node        : localhost
+Process     : SuperChat <4070>
+Thread      : OSPL Lease Renew Thread 7fef96c7d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492467581.787538347
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:19:41 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 324.473992028 s.
+Node        : localhost
+Process     : SuperChat <4070>
+Thread      : leaseThread 7fef969cc700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492467581.795596659
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:57:42 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 27.918402048 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492469862.370486726
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:57:42 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 27.604227393 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492469862.372153080
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:58:15 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 21.457652962 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492469895.835477220
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:58:15 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 21.457502007 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492469895.836158829
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:03 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 48.005212368 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492469943.840847918
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:03 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 48.005902915 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492469943.842177823
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:41 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 37.698595530 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492469981.539607078
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:41 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 37.698174315 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492469981.540518295
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492469992.029814524
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492469992.030406368
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 10.491169827 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492469992.030841057
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492469992.031127266
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 10.491965479 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492469992.032653753
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 17:59:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492469992.036780663
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:00:04 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 12.805149814 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492470004.836114700
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:00:04 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492470004.840350537
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:00:04 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492470004.841688756
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:00:15 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 10.965978617 s.
+Node        : localhost
+Process     : SuperChat <17873>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492470015.802232835
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:06:17 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 109.050530002 s.
+Node        : localhost
+Process     : SuperChat <19989>
+Thread      : OSPL Lease Renew Thread 7fffaffff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492470377.960732015
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:06:17 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 108.642607325 s.
+Node        : localhost
+Process     : SuperChat <19989>
+Thread      : leaseThread 7fffafde7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492470377.961303221
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:07 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 28.943461094 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492471387.843779841
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:07 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 28.835835169 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492471387.847095599
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:18 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471398.825171435
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:18 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 10.974454344 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492471398.825666751
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:18 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 10.975357023 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : leaseThread 7fffb7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492471398.826642033
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:18 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471398.831705272
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:24 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471404.347089428
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:24 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471404.348958477
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:24 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471404.353384346
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:37 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 12.926771069 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492471417.272365823
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:23:49 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492471429.533011993
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:24:05 CDT 2017
+Description : The splice deamon is no longer running for entity 0xf003b890. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492471445.420447253
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:24:05 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.795507169 s.
+Node        : localhost
+Process     : SuperChat <25781>
+Thread      : OSPL Lease Renew Thread 7fffb7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492471445.421182314
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492472932.742667111
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:52 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492472932.749067831
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:52 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 19.655764853 s.
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492472932.743642730
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:52 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 19.655516245 s.
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : OSPL Lease Renew Thread 7ffff4858700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492472932.746038133
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:59 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492472939.004316785
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:59 CDT 2017
+Description : The splice deamon is no longer running for entity 0xec0aceb0. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492472939.007371322
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:59 CDT 2017
+Description : Claim Kernel failed.
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantNew/u_participant.c/141/0/1492472939.007502051
+========================================================================================
+Report      : API_INFO
+Date        : Mon Apr 17 18:48:59 CDT 2017
+Description : DomainParticipantFactory::create_participant creation of kernel entity failed
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_domainParticipant.c/543/3/1492472939.007543502
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 18:48:59 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <4305>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492472939.007775597
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:17:09 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492481829.283816274
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:17:09 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492481829.291254715
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:17:09 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 18.670042786 s.
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : OSPL Lease Renew Thread 7ffff488b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492481829.284043343
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:17:09 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 18.343387363 s.
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492481829.285307560
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:18:00 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492481880.208808715
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:18:00 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492481880.212746831
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:18:20 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 17.292091088 s.
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : OSPL Lease Renew Thread 7ffff488b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492481900.396060664
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:18:23 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492481903.368710883
+========================================================================================
+Report      : ERROR
+Date        : Mon Apr 17 21:19:17 CDT 2017
+Description : The splice deamon is no longer running for entity 0xf003e470. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : localhost
+Process     : SuperChat <9303>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492481957.612044947

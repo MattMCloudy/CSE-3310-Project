@@ -10,8 +10,7 @@ User::User(string passed_nick, string passed_description, int passed_chatroom_id
 
     setEntityManager();
     makeNewUser();
-          
-    sendUser();
+    sendUser();      
 }
 
 User::User(struct user* new_user) {
@@ -24,8 +23,6 @@ User::User(struct user* new_user) {
     uuid = new_user->uuid;
     user_struct = new_user;
 
-    setEntityManager();
-    sendUser();
 }
 
 
@@ -57,28 +54,36 @@ void User::setEntityManager() {
 
 
 void User::makeNewUser() {
-    struct user new_user; //This is the same as messageInstance
-    strncpy(new_user.nick, nick.c_str(), sizeof(new_user.nick));
-    new_user.uuid = newBoostUUID();
-    new_user.chatroom_idx = chatroom_idx;
-    user_struct = &new_user;
+    struct user* new_user = (struct user*) malloc(sizeof(struct user)); //This is the same as messageInstance
+    strncpy(new_user->nick, nick.c_str(), sizeof(new_user->nick));
+    //cout << "passing uuid: " << uuid << "\n";
+    new_user->uuid = uuid;
+    //cout << new_user->uuid << "\n";
+    new_user->chatroom_idx = chatroom_idx;
+    user_struct = new_user;
 }
 
-long long User::newBoostUUID() {
+unsigned long long User::newBoostUUID() {
     boost::uuids::uuid uuid = boost::uuids::random_generator()();
-    long long x;
+    unsigned long long x;
     memcpy(&x, &uuid, sizeof(x));
     return x;
 }
 
 void User::sendUser() {
+    /*
+    cout << "Inside sender...\n";
+    cout << user_struct->nick << "\n";
+    cout << user_struct->uuid << "\n";
+    */
+
     ReturnCode_t status = Writer->write(*user_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }
 
 int User::getChatroomIndex() {return chatroom_idx;}
 
-long long User::getUUID() {return uuid;}
+unsigned long long User::getUUID() {return uuid;}
 
 string User::getNick() {return nick;}
 

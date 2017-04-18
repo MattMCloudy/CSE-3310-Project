@@ -32,6 +32,7 @@ class ChatDaemon {
     private:
         UserInterface* ui;
         Chatroom* current_chatroom;
+        FORM* chatbox;
         bool LocalUserInitialized;
         bool hasStarted;
         vector<Chatroom*> chatrooms;
@@ -40,7 +41,7 @@ class ChatDaemon {
         vector<User*> offline_users;
         vector<Message*> messages;
         unordered_map<int, Chatroom*> chatroom_map;
-        unordered_map<long long, User*> user_map;
+        unordered_map<unsigned long long, User*> user_map;
         unordered_map<int, Message*> message_map;
         User* local_user;
         DDSEntityManager chtrmEM;
@@ -55,6 +56,7 @@ class ChatDaemon {
             //cout << "ChatDaemon Initialized...\n";
             LocalUserInitialized = false;
             hasStarted = false;
+            current_chatroom = NULL;
         }
         ~ChatDaemon();
         void start();
@@ -72,12 +74,13 @@ class ChatDaemon {
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
-        void sendMessage(string text);
+        void sendMessage(char* input);
         void readSendObjects();
         void processCurrentChatroom();
         int hash(string key_string);
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
+        void setChatbox(FORM*);
         void postUsersToFile();
         void exit();      
 };

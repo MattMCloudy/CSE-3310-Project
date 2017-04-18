@@ -1,14 +1,13 @@
 #include "../include/Message.h"
 
-Message::Message(string text, long long passed_uuid, int passed_chatroom_idx) {
+Message::Message(string text, unsigned long long passed_uuid, int passed_chatroom_idx) {
     content = text;
     chatroom_idx = passed_chatroom_idx;
     sender_uuid = passed_uuid;
 
     setEntityManager();
     makeNewMessage();
-    
-    sendMessage();
+    sendMessage();   
 }
 
 Message::Message(struct message* new_mssg){
@@ -17,9 +16,8 @@ Message::Message(struct message* new_mssg){
     chatroom_idx = new_mssg->chatroom_idx;
     sender_uuid = new_mssg->uuid;
 
-    message_struct = *new_mssg;
+    message_struct = new_mssg;
 
-    setEntityManager();
 }
 
 Message::~Message() {
@@ -49,26 +47,28 @@ void Message::setEntityManager() {
 }
 
 void Message::makeNewMessage() {
-    message new_mssg; //This is the same as messageInstance
-    strncpy(new_mssg.message, content.c_str(), sizeof(new_mssg.message));
-    new_mssg.uuid = newBoostUUID();
-    new_mssg.chatroom_idx = chatroom_idx;
-    new_mssg.cksum = 0;
-    message_struct = new_mssg;
+    struct message* new_message = (struct message*) malloc(sizeof(struct message)); //This is the same as messageInstance
+    strncpy(new_message->message, content.c_str(), sizeof(new_message->message));
+    new_message->uuid = sender_uuid;
+    new_message->chatroom_idx = chatroom_idx;
+    new_message->cksum = 0;
+    message_struct = new_message;
 }
 
-long long Message::newBoostUUID() {
+unsigned long long Message::newBoostUUID() {
     boost::uuids::uuid uuid = boost::uuids::random_generator()();
-    long long x;
+    unsigned long long x;
     memcpy(&x, &uuid, sizeof(x));
     return x;
 }
 
 void Message::sendMessage() {
-    ReturnCode_t status = Writer->write(message_struct, HANDLE_NIL);
+    ReturnCode_t status = Writer->write(*message_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }
 
 int Message::getChatroomIndex() {return chatroom_idx;}
 
 string Message::getContent() {return content;}
+
+unsigned long long Message::getSenderUUID() {return sender_uuid;}
