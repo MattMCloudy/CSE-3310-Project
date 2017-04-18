@@ -60,6 +60,7 @@ void Chatroom::makeNewChatroom() {
 
 
 void Chatroom::sendChatroom() {
+    //cout << chatroom_struct << "\n";
     ReturnCode_t status = Writer->write(*chatroom_struct, HANDLE_NIL);
     checkStatus(status, "Writer::write");
 }

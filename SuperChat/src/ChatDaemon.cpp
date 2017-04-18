@@ -26,7 +26,7 @@ void ChatDaemon::start() {
     readInAllChatrooms();
 
     if (chatrooms.size() == 0) {
-        //cout << "Initializing public chatroom...\n";
+        cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
     } else {
         //cout << "Public previously initialized, entering now...\n";
@@ -228,8 +228,8 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-        //if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
-        //    continue;
+        if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
+            continue;
         
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         chatrooms.push_back(new_chatroom);
@@ -255,6 +255,10 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
+        chatrooms.push_back(new_chatroom);
+        local_chatrooms.push_back(new_chatroom);
+        chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
+        changeChatroom(new_chatroom);
         return new_chatroom;
     }
 
@@ -291,7 +295,7 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     User* sender = user_map[new_message->getSenderUUID()];   
     
     m->lock();
-    ui->printMessage(sender, new_message, chatbox);
+    ui->printMessage(sender, new_message);
     m->unlock();
 }   
 
@@ -315,9 +319,9 @@ User* ChatDaemon::addNewLocalUser(string nick) {
 
 void ChatDaemon::wakeLocalUser() {local_user->sendUser();}
 
-void ChatDaemon::wakeAllChatrooms() {
+void ChatDaemon::wakeLocalChatrooms() {
     for(int i = 0; i < chatrooms.size(); i++) {
-        chatrooms[i]->sendChatroom();
+        local_chatrooms[i]->sendChatroom();
     }
 }
 
@@ -328,7 +332,7 @@ void ChatDaemon::readSendObjects() {
         readInAllMessages();
         processCurrentChatroom();
         wakeLocalUser();
-        wakeAllChatrooms();
+        //wakeLocalChatrooms();
     }
 }
 
