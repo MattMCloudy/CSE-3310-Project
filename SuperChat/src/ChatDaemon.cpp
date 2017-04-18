@@ -313,6 +313,15 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
 }
 
+void ChatDaemon::wakeLocalUser() {
+    local_user->sendUser();
+}
+
+void ChatDaemon::wakeAllChatrooms() {
+    for(int i = 0; i < chatrooms.size(); i++) {
+        chatrooms[i]->sendChatroom();
+    }
+}
 
 void ChatDaemon::readSendObjects() {
     while(true) {
