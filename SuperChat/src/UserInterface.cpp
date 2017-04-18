@@ -5,16 +5,14 @@
 
 #include "../include/UserInterface.h"
 #include "../include/ChatDaemon.h"
+#include "../include/globals.h"
 
 void UserInterface::create() {
     cout << "Inside UI\n";
 
     local_user = daemon->addNewLocalUser("Tim");
     count = 0;
-    FORM* msgbox;
-    FORM* chatbox;
-    FIELD* mbf[1];
-    FIELD* cbf[1];
+
 
     const char* nick = local_user->getNick().c_str(); 		//place holder for user nick string
     char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
@@ -160,9 +158,9 @@ void UserInterface::printMessage(User* origin_user, Message* new_message, FORM* 
     int i;
     int mssg_counter=0;
     static long long int lastUser = 0;
-    const char* nick = origin_user->getNick().c_str();
+    string nick = origin_user->getNick();
     long long int ID = origin_user->getUUID();
-    const char* input = new_message->getContent().c_str();
+    string input = new_message->getContent();
  
     form_driver(chatbox, REQ_END_FIELD);       //cursor to end of chatbox
     form_driver(chatbox, REQ_NEXT_LINE);       //cursor to next line 
