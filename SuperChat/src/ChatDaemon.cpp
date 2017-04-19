@@ -222,7 +222,6 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-<<<<<<< HEAD
 ////////////////////Megan added this chunk. commented out following chunk////////////////////
         //this way we can check bool isActive for each chatroom each time this readinAllChatrooms is called.
         if (chatrooms.size() >= 10) {
@@ -240,10 +239,6 @@ void ChatDaemon::readInAllChatrooms() {
 
        // if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
         //   continue;
-=======
-        if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
-            continue;
->>>>>>> f9a4edb1f799e0fc5ce224351d6ea341a681e565
         
     /***************************************************************************    
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
@@ -271,14 +266,12 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
-<<<<<<< HEAD
         new_chatroom->start = clock(); 
-=======
+
         chatrooms.push_back(new_chatroom);
         local_chatrooms.push_back(new_chatroom);
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         changeChatroom(new_chatroom);
->>>>>>> f9a4edb1f799e0fc5ce224351d6ea341a681e565
         return new_chatroom;
     }
 
