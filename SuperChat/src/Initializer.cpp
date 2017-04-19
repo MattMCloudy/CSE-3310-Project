@@ -22,11 +22,11 @@
 #include "../include/Initializer.h"
 
 Initializer::Initializer() {
-   // UserInterface new_ui;
+    UserInterface new_ui;
     ChatDaemon new_daemon;
     
     daemon = new_daemon;
- //   ui     = new_ui;
+    ui     = new_ui;
 }
 
 
@@ -36,17 +36,17 @@ void Initializer::exe() {
     mutex m;
     
     daemon.setMutex(&m);
-   // ui.setMutex(&m);
+    ui.setMutex(&m);
     
-   // daemon.setUI(&ui);
-  //  ui.setDaemon(&daemon);
+    daemon.setUI(&ui);
+    ui.setDaemon(&daemon);
 
     cout << "Entering daemon thread...\n";
     thread daemon_thread(&ChatDaemon::start, ref(daemon));
- //   cout << "Entering ui thread...\n";
-  //  thread ui_thread(&UserInterface::create, ref(ui));
+    cout << "Entering ui thread...\n";
+    thread ui_thread(&UserInterface::create, ref(ui));
     
 
-  //  ui_thread.join();
+    ui_thread.join();
     daemon_thread.join();
 }

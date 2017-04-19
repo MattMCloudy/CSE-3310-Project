@@ -22,7 +22,7 @@ void ChatDaemon::start() {
     readInAllChatrooms();
 
     if (chatrooms.size() == 0) {
-        cout << "Initializing public chatroom...\n";
+        //cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
     } else {
         //cout << "Public previously initialized, entering now...\n";
@@ -108,16 +108,12 @@ ChatDaemon::~ChatDaemon() {
     }  
 }
 
-void ChatDaemon::setAllUsersOffline() {
-    for(int i = 0; i < users.size(); i++) {
-        users[i]->setIsOffline();
-    }
-}
 
 vector<User*> ChatDaemon::checkWhichUsersOnline() {
     online_users.clear();
     offline_users.clear();
     for(int i = 0; i < users.size(); i++) {
+        users[i]->checkIfOnline();
         if (users[i]->getIsOnline())
             online_users.push_back(users[i]);
         else
@@ -137,8 +133,6 @@ void ChatDaemon::readInAllUsers() {
     status = user_reader->take(userList, infoSeq, LENGTH_UNLIMITED, ANY_SAMPLE_STATE, ANY_VIEW_STATE, ANY_INSTANCE_STATE);
     checkStatus(status, "MsgDataReader::take");
     
-    setAllUsersOffline();
-
     for(ULong j = 0; j < userList.length(); j++) {
         User* new_user = new User(&userList[j]);
 
@@ -222,33 +216,21 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-////////////////////Megan added this chunk. commented out following chunk////////////////////
         //this way we can check bool isActive for each chatroom each time this readinAllChatrooms is called.
         if (chatrooms.size() >= 10) {
-          continue; }
-        else if (chatroom_map[hash(new_chatroom->getName())] != NULL) {
-            new_chatroom->checkActive(); 
-        }
-        else{
+          continue;
+        } else if (chatroom_map[hash(new_chatroom->getName())] != NULL) {
+            new_chatroom->setIsActive(); 
+            //some means of making chatroom look alive
+        } else{
             chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
             chatrooms.push_back(new_chatroom);
-            changeChatroom(new_chatroom);   
-            new_chatroom->start = clock();          //set start time when the chatroom is first created. (we'll also set it when a message is sent)
+
+            if (current_chatroom == NULL)
+                changeChatroom(new_chatroom);   
+
+            new_chatroom->setIsActive();          //set start time when the chatroom is first created.
         }
-////////////////////////end chunk by megan/////////////////////////////////
-
-       // if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
-        //   continue;
-        
-    /***************************************************************************    
-        chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
-        chatrooms.push_back(new_chatroom);
-
-        if(current_chatroom == NULL)
-            changeChatroom(new_chatroom);
-
-        //postChatroomToUI();
-    *****************************************************************************/    
     }
 
     status = chatroom_reader->return_loan(chatList, infoSeq);
@@ -266,8 +248,7 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
-        new_chatroom->start = clock(); 
-
+        new_chatroom->setIsActive(); 
         chatrooms.push_back(new_chatroom);
         local_chatrooms.push_back(new_chatroom);
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
@@ -308,7 +289,7 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     User* sender = user_map[new_message->getSenderUUID()];   
     
     m->lock();
-    ui->printMessage(sender, new_message);
+    ui->printMessage(sender, new_message, message_length_counter);
     m->unlock();
 }   
 
@@ -355,7 +336,9 @@ void ChatDaemon::changeChatroom(Chatroom* new_cur_chatroom) {
 
 void ChatDaemon::sendMessage(char* input) {
     string text(input);
+    current_chatroom->setIsActive();
     Message* new_message = new Message(text, local_user->getUUID(), current_chatroom->getChatroomIndex());
+    
     //I think we should only need to create the message here
     //once it's created it's sent out via opensplice
     //from there it will be treated as any message
@@ -364,6 +347,10 @@ void ChatDaemon::sendMessage(char* input) {
 
 void ChatDaemon::setTestMessage(){
     testMessage = "This is a test message."; 
+}
+
+void ChatDaemon::setMessageLengthCounter(int size) {
+    message_length_counter = size;
 }
 
 int ChatDaemon::hash(string key_string) {

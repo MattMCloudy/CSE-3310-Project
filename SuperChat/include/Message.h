@@ -17,6 +17,7 @@
 #include <string>
 #include <string.h>
 #include <sstream>
+#include <time.h>
 #include <unordered_map>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>

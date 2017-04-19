@@ -84,15 +84,20 @@ void Chatroom::sendAllUnpublishedMessages() {
 }
 
 void Chatroom::checkActive(){
- 
-    clock_t now; 
+    clock_t now = clock(); 
     int elapsed_time; 
     elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
-    cout << "ELAPSED TIME: " << elapsed_time << endl; 
-    if (elapsed_time > 600){                    //600 seconds in 10 minutes
+    //cout << elapsed_time << "\n";
+    if (elapsed_time > 600)                    //600 seconds in 10 minutes
         isActive = false; 
-    }
-    isActive = true; 
+    else
+        isActive = true; 
+}
+
+void Chatroom::setIsActive() {
+    clock_t now = clock();
+    start = now;
+    checkActive();
 }
 
 int Chatroom::getChatroomIndex() {return chatroom_idx;}

@@ -15,6 +15,7 @@ class User {
         int chatroom_idx;
         struct user* user_struct;
         unsigned long long uuid;
+        clock_t start;
         DDSEntityManager em;
         userDataWriter_var Writer;
     public:
@@ -28,8 +29,8 @@ class User {
         int getChatroomIndex();
         unsigned long long getUUID();
         string getNick();
+        void checkIfOnline();
         void setIsOnline();
-        void setIsOffline();
         bool getIsOnline();
 };
 

@@ -39,6 +39,7 @@ class Chatroom {
         int getChatroomIndex(); 
         string getName();  
         void checkActive(); 
+        void setIsActive();
 };
 
 #endif

@@ -7,11 +7,11 @@
 #include "../include/ChatDaemon.h"
 #include "../include/globals.h"
 
+
 void UserInterface::create() {
     cout << "Inside UI\n";
 
     local_user = daemon->addNewLocalUser("Tim");
-    count = 0;
 
 
     const char* nick = local_user->getNick().c_str(); 		//place holder for user nick string
@@ -113,6 +113,7 @@ void UserInterface::create() {
            case 10: //enter is pressed
 
 	           //printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
+               daemon->setMessageLengthCounter(count);
                daemon->sendMessage(input);
                count=0;       
                form_driver(msgbox, REQ_CLR_FIELD);
@@ -153,7 +154,7 @@ void UserInterface::create() {
 
 
 
-void UserInterface::printMessage(User* origin_user, Message* new_message)
+void UserInterface::printMessage(User* origin_user, Message* new_message, int size)
 {
     int i;
     int mssg_counter=0;
@@ -183,7 +184,7 @@ void UserInterface::printMessage(User* origin_user, Message* new_message)
         form_driver(chatbox, REQ_NEXT_LINE);form_driver(chatbox, REQ_NEXT_LINE); 
     }
     form_driver(chatbox, ':'); 
-    for(i=0; i<count; i++){                 //iterates through to input[count]
+    for(i=0; i < size; i++){                 //iterates through to input[count]
         form_driver(chatbox, input[i]);       //sets prints input[i] to Chatbox
     }
 

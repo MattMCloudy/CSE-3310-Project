@@ -31,14 +31,15 @@ class UserInterface {
         int ch;
         char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
         int i;
-        int count;			//counter for number of characters in the input string(for printing)
+        int count;
         User* local_user;
     public:
         UserInterface() {
             //cout << "UI Initialized...\n";
+            count = 0;
         }
         void create();
-        void printMessage(User*, Message*, FORM*);
+        void printMessage(User*, Message*, int);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
 };
