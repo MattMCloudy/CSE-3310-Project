@@ -153,7 +153,7 @@ void UserInterface::create() {
 
 
 
-void UserInterface::printMessage(User* origin_user, Message* new_message, FORM* chatbox)
+void UserInterface::printMessage(User* origin_user, Message* new_message)
 {
     int i;
     int mssg_counter=0;

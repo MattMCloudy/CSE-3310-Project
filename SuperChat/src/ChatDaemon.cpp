@@ -22,7 +22,7 @@ void ChatDaemon::start() {
     readInAllChatrooms();
 
     if (chatrooms.size() == 0) {
-        //cout << "Initializing public chatroom...\n";
+        cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
     } else {
         //cout << "Public previously initialized, entering now...\n";
@@ -222,6 +222,7 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
+<<<<<<< HEAD
 ////////////////////Megan added this chunk. commented out following chunk////////////////////
         //this way we can check bool isActive for each chatroom each time this readinAllChatrooms is called.
         if (chatrooms.size() >= 10) {
@@ -239,6 +240,10 @@ void ChatDaemon::readInAllChatrooms() {
 
        // if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
         //   continue;
+=======
+        if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
+            continue;
+>>>>>>> f9a4edb1f799e0fc5ce224351d6ea341a681e565
         
     /***************************************************************************    
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
@@ -266,7 +271,14 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
+<<<<<<< HEAD
         new_chatroom->start = clock(); 
+=======
+        chatrooms.push_back(new_chatroom);
+        local_chatrooms.push_back(new_chatroom);
+        chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
+        changeChatroom(new_chatroom);
+>>>>>>> f9a4edb1f799e0fc5ce224351d6ea341a681e565
         return new_chatroom;
     }
 
@@ -303,7 +315,7 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     User* sender = user_map[new_message->getSenderUUID()];   
     
     m->lock();
-    ui->printMessage(sender, new_message, chatbox);
+    ui->printMessage(sender, new_message);
     m->unlock();
 }   
 
@@ -325,6 +337,13 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
 }
 
+void ChatDaemon::wakeLocalUser() {local_user->sendUser();}
+
+void ChatDaemon::wakeLocalChatrooms() {
+    for(int i = 0; i < chatrooms.size(); i++) {
+        local_chatrooms[i]->sendChatroom();
+    }
+}
 
 void ChatDaemon::readSendObjects() {
     while(true) {
@@ -332,6 +351,8 @@ void ChatDaemon::readSendObjects() {
         readInAllUsers();
         readInAllMessages();
         processCurrentChatroom();
+        wakeLocalUser();
+        //wakeLocalChatrooms();
     }
 }
 
