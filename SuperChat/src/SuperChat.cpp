@@ -7,6 +7,8 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <chrono>
+#include <ctime>
 
 #include "DDSEntityManager.h"
 #include "ccpp_SuperChat.h"

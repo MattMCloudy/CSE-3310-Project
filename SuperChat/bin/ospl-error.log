@@ -1278,3 +1278,43 @@ Node        : localhost
 Process     : SuperChat <9303>
 Thread      : main thread 7ffff5e0d700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492481957.612044947
+========================================================================================
+Report      : ERROR
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492625169.776474041
+========================================================================================
+Report      : ERROR
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492625169.787681590
+========================================================================================
+Report      : ERROR
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.948208836 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492625169.776576820
+========================================================================================
+Report      : ERROR
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.948733149 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492625169.776590850
+========================================================================================
+Report      : ERROR
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : The splice deamon is no longer running for entity 0xf003d8e0. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492625169.776596614

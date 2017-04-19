@@ -72,3 +72,19 @@ int Message::getChatroomIndex() {return chatroom_idx;}
 string Message::getContent() {return content;}
 
 unsigned long long Message::getSenderUUID() {return sender_uuid;}
+
+
+
+
+
+/*
+void Message::makeTestMessage() {
+    struct message* new_message = (struct message*) malloc(sizeof(struct message)); //This is the same as messageInstance
+    string testMessage = "This is a test message"; 
+    strncpy(new_message->message, testMessage.c_str(), sizeof(new_message->message));
+    new_message->uuid = sender_uuid;
+    new_message->chatroom_idx = chatroom_idx;
+    new_message->cksum = 0;
+    message_struct = new_message;
+}
+*/

@@ -50,12 +50,13 @@ void Chatroom::setEntityManager() {
     em.createSubscriber();
 }
 
-
 void Chatroom::makeNewChatroom() {
     struct chatroom* new_chatroom = (struct chatroom*) malloc(sizeof(struct chatroom));
     strncpy(new_chatroom->chatroom_name, name.c_str(), sizeof(new_chatroom->chatroom_name));
     new_chatroom->chatroom_idx = chatroom_idx;
     chatroom_struct = new_chatroom;
+    //start = clock();  
+    //cout << "START TIME: " << start << endl; 
 }
 
 
@@ -71,6 +72,7 @@ void Chatroom::addUser(User* new_user) {
 void Chatroom::addMessage(Message* new_message) {
     messages.push_back(new_message);
     unpublished_messages.push_back(new_message);
+    start = clock();  
 }
 
 void Chatroom::sendAllUnpublishedMessages() {
@@ -80,6 +82,19 @@ void Chatroom::sendAllUnpublishedMessages() {
     unpublished_messages.clear();
 }
 
+void Chatroom::checkActive(){
+ 
+    clock_t now; 
+    int elapsed_time; 
+    elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
+    cout << "ELAPSED TIME: " << elapsed_time << endl; 
+    if (elapsed_time > 600){                    //600 seconds in 10 minutes
+        isActive = false; 
+    }
+    isActive = true; 
+}
+
 int Chatroom::getChatroomIndex() {return chatroom_idx;}
 
 string Chatroom::getName() {return name;}
+

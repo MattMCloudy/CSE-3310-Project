@@ -19120,3 +19120,2713 @@ Node        : localhost
 Process     : SuperChat <19365>
 Thread      : durability 7f753f24e700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492542234.302773177
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:30 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : spliced 7fd71a1f5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492547970.690235696
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:30 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : spliced 7fd71a1f5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492547970.707695832
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:30 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : spliced 7fd71a1f5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492547970.707857974
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:30 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : spliced 7fd71a1f5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492547970.708333256
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:30 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : ddsi2 7fd716365700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492547970.746092211
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:31 CDT 2017
+Description : The durability service can by identified by ID: 546555539
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : durability 7fd71671b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492547971.639936467
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 15:39:36 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <2495>
+Thread      : signalHandler 7fd717007700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492547976.219812319
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:56 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : spliced 7f02f713b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492550216.557902868
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:56 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : spliced 7f02f713b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492550216.571430768
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:56 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : spliced 7f02f713b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492550216.571661776
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:56 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : spliced 7f02f713b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492550216.572131691
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:56 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : ddsi2 7f02d7a2f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492550216.614156132
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:16:57 CDT 2017
+Description : The durability service can by identified by ID: 1617568445
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : durability 7f02d7da1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492550217.507899015
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:17:04 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : durability 7f02d7da1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492550224.521053416
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:26 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : spliced 7f5e18dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492550906.068808992
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:26 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : spliced 7f5e18dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492550906.089097620
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:26 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : spliced 7f5e18dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492550906.089367025
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : spliced 7f5e18dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492550906.090548722
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : ddsi2 7f5e15744700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492550906.118314041
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:28:27 CDT 2017
+Description : The durability service can by identified by ID: 287402154
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : durability 7f5e15afa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492550907.016209803
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : spliced 7f846de31700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492551341.874422365
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : spliced 7f846de31700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492551341.879331263
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : spliced 7f846de31700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492551341.879492172
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : spliced 7f846de31700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551341.879886885
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : ddsi2 7f846a7e6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551341.897256932
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:41 CDT 2017
+Description : The durability service can by identified by ID: 510421231
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : durability 7f846ab58700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492551341.907503235
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:35:48 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : durability 7f846ab58700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551348.915751389
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : spliced 7f2f9c506700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492551916.498904893
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : spliced 7f2f9c506700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492551916.509578560
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : spliced 7f2f9c506700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492551916.510490867
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : spliced 7f2f9c506700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551916.511291761
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : ddsi2 7f2f98ebb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551916.525444404
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:16 CDT 2017
+Description : The durability service can by identified by ID: 1957970754
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : durability 7f2f9922d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492551916.629614392
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:45:23 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : durability 7f2f9922d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492551923.644799384
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : spliced 7f4593925700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492552062.001776808
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : spliced 7f4593925700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492552062.006466283
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : spliced 7f4593925700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492552062.006651938
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : spliced 7f4593925700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552062.007174778
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : ddsi2 7f45902da700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552062.023620350
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:42 CDT 2017
+Description : The durability service can by identified by ID: 986406872
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : durability 7f459064c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492552062.036565430
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:47:49 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : durability 7f459064c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552069.046125582
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:48:36 CDT 2017
+Description : Termination request (signal 1) received from PID 2216, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <2835>
+Thread      : signalHandler 7f02f474e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492552116.178075090
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:48:36 CDT 2017
+Description : Termination request (signal 1) received from PID 2216, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <3158>
+Thread      : signalHandler 7f5e163e6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492552116.179175693
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:48:36 CDT 2017
+Description : Termination request (signal 1) received from PID 2216, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <3316>
+Thread      : signalHandler 7f846b444700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492552116.186706978
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:48:36 CDT 2017
+Description : Termination request (signal 1) received from PID 2216, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <3451>
+Thread      : signalHandler 7f2f99b19700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492552116.192353419
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:48:36 CDT 2017
+Description : Termination request (signal 1) received from PID 2216, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <3599>
+Thread      : signalHandler 7f4590f38700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492552116.194206976
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : spliced 7f8584952700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492552177.497384865
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : spliced 7f8584952700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492552177.547806515
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : spliced 7f8584952700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492552177.547971309
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : spliced 7f8584952700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552177.548404364
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : ddsi2 7f8581307700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552177.557278347
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:37 CDT 2017
+Description : The durability service can by identified by ID: 1455068111
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : durability 7f8581679700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492552177.561750389
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:49:44 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3740>
+Thread      : durability 7f8581679700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552184.568762238
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:27 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : spliced 7f91e384d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492552407.921561960
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:27 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : spliced 7f91e384d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492552407.935408184
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:27 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : spliced 7f91e384d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492552407.935613417
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:27 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : spliced 7f91e384d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552407.936060272
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:27 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : ddsi2 7f91e01be700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552407.974002989
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:28 CDT 2017
+Description : The durability service can by identified by ID: 105922675
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : durability 7f91e0574700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492552408.364136279
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:53:35 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2271>
+Thread      : durability 7f91e0574700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552415.375530572
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:17 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : spliced 7f8f33c2a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492552517.099847531
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:17 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : spliced 7f8f33c2a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492552517.121217632
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:17 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : spliced 7f8f33c2a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492552517.121384216
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:17 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : spliced 7f8f33c2a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552517.121811624
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:17 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : ddsi2 7f8f3059b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552517.149165752
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:55:18 CDT 2017
+Description : The durability service can by identified by ID: 1884154821
+Node        : megan-VirtualBox
+Process     : SuperChat <2405>
+Thread      : durability 7f8f30951700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492552518.048009356
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : spliced 7f1c7c47b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492552585.407676581
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : spliced 7f1c7c47b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492552585.412140505
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : spliced 7f1c7c47b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492552585.412274161
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : spliced 7f1c7c47b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552585.412656729
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : ddsi2 7f1c78e30700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552585.427653744
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:25 CDT 2017
+Description : The durability service can by identified by ID: 411918230
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : durability 7f1c791a2700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492552585.440007652
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 16:56:32 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2511>
+Thread      : durability 7f1c791a2700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492552592.468242327
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:25 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : spliced 7ff71cb18700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492553365.687165478
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:25 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : spliced 7ff71cb18700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492553365.710051295
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:25 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : spliced 7ff71cb18700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492553365.710256864
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:25 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : spliced 7ff71cb18700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553365.710677530
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:25 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : ddsi2 7ff719489700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553365.737065348
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:26 CDT 2017
+Description : The durability service can by identified by ID: 136177664
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : durability 7ff71983f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492553366.636199020
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:09:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2691>
+Thread      : durability 7ff71983f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553373.649438706
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : spliced 7f4354047700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492553437.083542697
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : spliced 7f4354047700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492553437.088217659
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : spliced 7f4354047700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492553437.088411403
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : spliced 7f4354047700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553437.088861466
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : ddsi2 7f43509fc700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553437.105857052
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:37 CDT 2017
+Description : The durability service can by identified by ID: 2014021081
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : durability 7f4350d6e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492553437.119214563
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:10:44 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2795>
+Thread      : durability 7f4350d6e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553444.130651780
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : spliced 7fd345832700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492553515.530493970
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : spliced 7fd345832700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492553515.535257145
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : spliced 7fd345832700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492553515.535408563
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : spliced 7fd345832700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553515.535936569
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : ddsi2 7fd3421e7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553515.552683565
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:11:55 CDT 2017
+Description : The durability service can by identified by ID: 948069076
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : durability 7fd342559700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492553515.566544477
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:12:02 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2902>
+Thread      : durability 7fd342559700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553522.578571191
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : spliced 7f2108c76700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492553585.002765854
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : spliced 7f2108c76700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492553585.007350496
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : spliced 7f2108c76700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492553585.007494648
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : spliced 7f2108c76700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553585.007938279
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : ddsi2 7f210562b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553585.024259561
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:05 CDT 2017
+Description : The durability service can by identified by ID: 1171175143
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : durability 7f210599d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492553585.039049151
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:13:12 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3006>
+Thread      : durability 7f210599d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492553592.050851602
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : spliced 7f78ccf63700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492554367.027999912
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : spliced 7f78ccf63700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492554367.032434528
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : spliced 7f78ccf63700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492554367.032585932
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : spliced 7f78ccf63700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492554367.032973969
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : ddsi2 7f78c9918700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492554367.048503621
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:26:07 CDT 2017
+Description : The durability service can by identified by ID: 1831564018
+Node        : megan-VirtualBox
+Process     : SuperChat <3150>
+Thread      : durability 7f78c9c8a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492554367.055979923
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : spliced 7fc8db6f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492554789.456108949
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : spliced 7fc8db6f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492554789.461034431
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : spliced 7fc8db6f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492554789.461188075
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : spliced 7fc8db6f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492554789.461608367
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : ddsi2 7fc8bbfff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492554789.477921067
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 17:33:09 CDT 2017
+Description : The durability service can by identified by ID: 1285603889
+Node        : megan-VirtualBox
+Process     : SuperChat <3267>
+Thread      : durability 7fc8d841b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492554789.490000587
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : spliced 7f4df041e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492568648.059634175
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : spliced 7f4df041e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492568648.073708510
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : spliced 7f4df041e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492568648.073876886
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : spliced 7f4df041e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492568648.074450913
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : ddsi2 7f4decd8f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492568648.123294143
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:08 CDT 2017
+Description : The durability service can by identified by ID: 2054963952
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : durability 7f4ded145700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492568648.606522752
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:24:15 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : durability 7f4ded145700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492568655.623015849
+========================================================================================
+Report      : WARNING
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Processing of lease 0x7f4dc8001a30 is behind schedule; expiry-time=1492568690.119859503s and lag=702.432014800s (actionId=1 and duration=10.000000000s). Assuming resuming after hibernate...
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : watchdog 7f4df03fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/775/0/1492569392.551941123
+========================================================================================
+Report      : WARNING
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Processing of lease 0x7f4dd00027a0 is behind schedule; expiry-time=1492568690.615419573s and lag=701.936454730s (actionId=1 and duration=10.000000000s). Assuming resuming after hibernate...
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : watchdog 7f4df03fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/775/0/1492569392.552189713
+========================================================================================
+Report      : WARNING
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Processing of lease 0x7f4de400b090 is behind schedule; expiry-time=1492568682.080232153s and lag=710.471642150s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : watchdog 7f4df03fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492569392.552243074
+========================================================================================
+Report      : WARNING
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Processing of lease 0x7f4de400b100 is behind schedule; expiry-time=1492568682.080213833s and lag=710.471660470s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : watchdog 7f4df03fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492569392.552263868
+========================================================================================
+Report      : WARNING
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Processing of lease 0x7f4de4095740 is behind schedule; expiry-time=1492568690.116837579s and lag=702.435036724s (actionId=1 and duration=10.000000000s). Assuming resuming after hibernate...
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : watchdog 7f4df03fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/775/0/1492569392.552277013
+========================================================================================
+Report      : INFO
+Date        : Tue Apr 18 21:36:32 CDT 2017
+Description : Termination request (signal 1) received from PID 2406, UID 1000
+Node        : megan-VirtualBox
+Process     : SuperChat <2500>
+Thread      : signalHandler 7f4deda31700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/503/0/1492569392.553821872
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : spliced 7f936f0fb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492620233.037679435
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : spliced 7f936f0fb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492620233.059617292
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : spliced 7f936f0fb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492620233.059789430
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : spliced 7f936f0fb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492620233.060231692
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : ddsi2 7f934fa2f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492620233.123507423
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:43:53 CDT 2017
+Description : The durability service can by identified by ID: 36679651
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : durability 7f934fda1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492620233.696817483
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 11:44:00 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <2913>
+Thread      : durability 7f934fda1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492620240.716696459
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : spliced 7fd0f60ac700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492621733.154252130
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : spliced 7fd0f60ac700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492621733.178976543
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : spliced 7fd0f60ac700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492621733.179141634
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : spliced 7fd0f60ac700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621733.179611490
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : ddsi2 7fd0f2a1d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621733.220216293
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:08:53 CDT 2017
+Description : The durability service can by identified by ID: 772834712
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : durability 7fd0f2dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492621733.711760040
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:00 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3468>
+Thread      : durability 7fd0f2dd3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621740.740071255
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:51 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : spliced 7fd15e37f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492621791.983797604
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:51 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : spliced 7fd15e37f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492621791.994023276
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:51 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : spliced 7fd15e37f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492621791.994215845
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:51 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : spliced 7fd15e37f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621791.994634429
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:52 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : ddsi2 7fd15ad34700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621792.013348038
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:52 CDT 2017
+Description : The durability service can by identified by ID: 175797106
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : durability 7fd15b0a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492621792.027697311
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:09:59 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3572>
+Thread      : durability 7fd15b0a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621799.039572063
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:11 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : spliced 7f293d5ef700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492621931.994140524
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:11 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : spliced 7f293d5ef700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492621931.998792143
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:11 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : spliced 7f293d5ef700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492621931.998946033
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:11 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : spliced 7f293d5ef700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621931.999417366
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:12 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : ddsi2 7f2939fa4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621932.018821586
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:12 CDT 2017
+Description : The durability service can by identified by ID: 1491170774
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : durability 7f293a316700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492621932.522856654
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:12:19 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3723>
+Thread      : durability 7f293a316700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492621939.533531985
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : spliced 7f95e0350700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622047.811787691
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : spliced 7f95e0350700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622047.816405760
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : spliced 7f95e0350700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622047.816559837
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : spliced 7f95e0350700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622047.817006686
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : ddsi2 7f95dcd05700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622047.838768550
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:07 CDT 2017
+Description : The durability service can by identified by ID: 644401690
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : durability 7f95dd077700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622047.943865961
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:14:14 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3829>
+Thread      : durability 7f95dd077700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622054.953478048
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : spliced 7f46efee1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622231.614190260
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : spliced 7f46efee1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622231.618823480
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : spliced 7f46efee1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622231.618988385
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : spliced 7f46efee1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622231.619412670
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : ddsi2 7f46ec896700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622231.636257264
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:11 CDT 2017
+Description : The durability service can by identified by ID: 1308505445
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : durability 7f46ecc08700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622231.652338709
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:17:12 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <3944>
+Thread      : signalHandler 7f46ed4f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492622232.831113645
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:05 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : spliced 7f9f6e487700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622345.741944003
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:05 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : spliced 7f9f6e487700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622345.749882340
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:05 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : spliced 7f9f6e487700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622345.750185413
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : spliced 7f9f6e487700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622345.751668752
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:05 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : ddsi2 7f9f6ae3c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622345.765875087
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:19:06 CDT 2017
+Description : The durability service can by identified by ID: 1241661666
+Node        : megan-VirtualBox
+Process     : SuperChat <4052>
+Thread      : durability 7f9f6b1ae700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622346.171794699
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : spliced 7f48ed54e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622479.860562611
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : spliced 7f48ed54e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622479.865102367
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : spliced 7f48ed54e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622479.865238991
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : spliced 7f48ed54e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622479.865662093
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : ddsi2 7f48e9f03700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622479.882647484
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:19 CDT 2017
+Description : The durability service can by identified by ID: 1008296914
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : durability 7f48ea275700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622479.899388620
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:21:21 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <4160>
+Thread      : signalHandler 7f48eab61700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492622481.079088149
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : spliced 7f0f8c1a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622586.393262443
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : spliced 7f0f8c1a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622586.397929502
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : spliced 7f0f8c1a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622586.398174238
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : spliced 7f0f8c1a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622586.398690479
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : ddsi2 7f0f88b17700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622586.431224394
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:06 CDT 2017
+Description : The durability service can by identified by ID: 155705648
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : durability 7f0f88ecd700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622586.923979405
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:23:07 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <4310>
+Thread      : signalHandler 7f0f897b9700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492622587.612148038
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : spliced 7fc2904d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492622666.467941496
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : spliced 7fc2904d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492622666.472408831
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : spliced 7fc2904d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492622666.472542357
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : spliced 7fc2904d3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622666.473003782
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : ddsi2 7fc28ce88700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492622666.490321796
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:26 CDT 2017
+Description : The durability service can by identified by ID: 1152005038
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : durability 7fc28d1fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492622666.505815132
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:24:27 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <4420>
+Thread      : signalHandler 7fc28dae6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492622667.688835731
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : spliced 7f341c903700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492623237.340118228
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : spliced 7f341c903700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492623237.344658868
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : spliced 7f341c903700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492623237.344796107
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : spliced 7f341c903700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492623237.345201250
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : ddsi2 7f34192b8700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492623237.366534404
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:33:57 CDT 2017
+Description : The durability service can by identified by ID: 863162236
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : durability 7f341962a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492623237.378665920
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:34:04 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4589>
+Thread      : durability 7f341962a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492623244.399767033
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : spliced 7fcf85140700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492623330.729393536
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : spliced 7fcf85140700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492623330.734219816
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : spliced 7fcf85140700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492623330.734409008
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : spliced 7fcf85140700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492623330.734812283
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : ddsi2 7fcf81af5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492623330.750376241
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 12:35:30 CDT 2017
+Description : The durability service can by identified by ID: 398475717
+Node        : megan-VirtualBox
+Process     : SuperChat <4698>
+Thread      : durability 7fcf81e67700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492623330.767981717
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : spliced 7f78d3f8f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492624852.467664818
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : spliced 7f78d3f8f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492624852.482203353
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : spliced 7f78d3f8f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492624852.482463863
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : spliced 7f78d3f8f700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492624852.483532474
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : ddsi2 7f78d0944700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492624852.492256104
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:52 CDT 2017
+Description : The durability service can by identified by ID: 2111627110
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : durability 7f78d0cb6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492624852.504808842
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:00:53 CDT 2017
+Description : Exception (signal 11) occurred in process
+Node        : megan-VirtualBox
+Process     : SuperChat <4896>
+Thread      : signalHandler 7f78d15a2700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492624853.687170155
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : Not installing a signal handler for the already ignored signal 13.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/os_signalHandlerThread/os_signalHandler.c/793/0/1492624902.855128819
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492624902.902541385
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492624902.907027636
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492624902.908655865
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492624902.910186552
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:42 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : ddsi2 7ffff498c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492624902.966770921
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:43 CDT 2017
+Description : The durability service can by identified by ID: 196271079
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : durability 7ffff4d20700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492624903.471737097
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:47 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624904.910173463s and lag=2.933726473s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624907.843918582
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:47 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624904.910180443s and lag=2.933719493s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624907.843953806
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:51 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624909.843995840s and lag=2.100462879s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624911.944469857
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:51 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624909.843968334s and lag=2.100490385s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624911.944507459
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:01:51 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : durability 7ffff4d20700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492624911.945387868
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:55 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624913.944532068s and lag=2.003373921s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624915.947917665
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:01:55 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624913.944514415s and lag=2.003391574s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624915.947951410
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:01 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624917.947975240s and lag=3.151946381s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624921.099934079
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:01 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624917.947958506s and lag=3.151963115s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624921.099986419
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:15 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624929.326767222s and lag=6.404029823s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624935.730810304
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:15 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624929.326750148s and lag=6.404046897s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624935.730863990
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:19 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624937.730891280s and lag=2.149057257s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624939.879960254
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:19 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624937.730872383s and lag=2.149076154s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624939.879998929
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:27 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492624941.880022904s and lag=5.234714091s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624947.114748645
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:02:27 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492624941.880006165s and lag=5.234730830s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <4966>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492624947.114785851
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : Not installing a signal handler for the already ignored signal 13.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/os_signalHandlerThread/os_signalHandler.c/793/0/1492625147.312342607
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492625147.327758334
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492625147.335605677
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492625147.336626175
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625147.341800418
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : ddsi2 7ffff498c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625147.398064722
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:05:47 CDT 2017
+Description : The durability service can by identified by ID: 562311682
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : durability 7ffff4d20700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492625147.897046180
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:05:53 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492625149.341783354s and lag=4.443565753s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492625153.785368768
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:05:53 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492625149.341792300s and lag=4.443556807s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492625153.785412407
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Processing of lease 0x7fffec00c4c0 is behind schedule; expiry-time=1492625155.785458467s and lag=13.947955725s (actionId=6 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492625169.733426715
+========================================================================================
+Report      : WARNING
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Processing of lease 0x7fffec00c800 is behind schedule; expiry-time=1492625155.785420174s and lag=13.947994018s (actionId=5 and duration=2.000000000s). This is often an indication that the machine is too busy. The lease manager will continue to function normally.
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : watchdog 7ffff7fd1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_leaseManager/v_leaseManager.c/795/0/1492625169.733464103
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Service 'ddsi2' DIED -> skip
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/271/0/1492625169.733742997
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:06:09 CDT 2017
+Description : Service 'durability' DIED -> skip
+Node        : megan-VirtualBox
+Process     : SuperChat <5049>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/271/0/1492625169.733814451
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : Not installing a signal handler for the already ignored signal 13.
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/os_signalHandlerThread/os_signalHandler.c/793/0/1492625373.161614222
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492625373.166790133
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492625373.173589747
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492625373.174503431
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : spliced 7ffff7ff5700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625373.180024137
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : ddsi2 7ffff498c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625373.220831470
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:33 CDT 2017
+Description : The durability service can by identified by ID: 1552368012
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : durability 7ffff4d20700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492625373.628450735
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:09:40 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5176>
+Thread      : durability 7ffff4d20700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625380.648061946
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : spliced 7f636c63c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492625406.842089462
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : spliced 7f636c63c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492625406.846786176
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : spliced 7f636c63c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492625406.846990554
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : spliced 7f636c63c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625406.847391082
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : ddsi2 7f6368ff1700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625406.863635368
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:06 CDT 2017
+Description : The durability service can by identified by ID: 47889334
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : durability 7f6369363700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492625406.881274750
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:10:13 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5242>
+Thread      : durability 7f6369363700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492625413.901334725
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : spliced 7f05791fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492626479.578491342
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : spliced 7f05791fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492626479.583348313
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : Service cmsoap disabled
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : spliced 7f05791fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492626479.583512721
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : spliced 7f05791fa700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492626479.583967247
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : ddsi2 7f0575baf700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492626479.601409996
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:27:59 CDT 2017
+Description : The durability service can by identified by ID: 27857798
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : durability 7f0575f21700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492626479.619340583
+========================================================================================
+Report      : INFO
+Date        : Wed Apr 19 13:28:06 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : megan-VirtualBox
+Process     : SuperChat <5469>
+Thread      : durability 7f0575f21700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492626486.633788050

@@ -51,6 +51,7 @@ class ChatDaemon {
         messageDataReader_var message_reader;
         userDataReader_var user_reader;
         mutex* m;
+        char* testMessage; 
     public:
         ChatDaemon() {
             //cout << "ChatDaemon Initialized...\n";
@@ -58,6 +59,7 @@ class ChatDaemon {
             hasStarted = false;
             current_chatroom = NULL;
         }
+        void setTestMessage(); 
         ~ChatDaemon();
         void start();
         void setUI(UserInterface* new_ui);
@@ -82,6 +84,8 @@ class ChatDaemon {
         void readInPreviousUsers();
         void setChatbox(FORM*);
         void postUsersToFile();
+
+
         void exit();      
 };
 

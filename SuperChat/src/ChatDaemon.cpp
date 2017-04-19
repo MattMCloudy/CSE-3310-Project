@@ -15,10 +15,6 @@ Matt:
 
 void ChatDaemon::start() {
     hasStarted = true;
-
-    //build user list from file ** needs to be written
-    //readInPreviousUsers();
-    //m->unlock();
     
 
     setEntityManager();
@@ -34,14 +30,13 @@ void ChatDaemon::start() {
     }
     
     readInAllChatrooms();
-    
     //addNewLocalUser("Tim");
     //sendMessage("Lets see how this works");
     readInAllUsers();
     readInAllMessages();
-    
     readSendObjects();
-}
+
+ }
 
 void ChatDaemon::setUI(UserInterface* new_ui) {
     ui = new_ui;
@@ -50,7 +45,6 @@ void ChatDaemon::setUI(UserInterface* new_ui) {
 void ChatDaemon::setMutex(mutex* new_m) {
     m = new_m;
 }
-
 
 
 void ChatDaemon::setEntityManager() {
@@ -228,9 +222,25 @@ void ChatDaemon::readInAllChatrooms() {
 
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-        //if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
-        //    continue;
+////////////////////Megan added this chunk. commented out following chunk////////////////////
+        //this way we can check bool isActive for each chatroom each time this readinAllChatrooms is called.
+        if (chatrooms.size() >= 10) {
+          continue; }
+        else if (chatroom_map[hash(new_chatroom->getName())] != NULL) {
+            new_chatroom->checkActive(); 
+        }
+        else{
+            chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
+            chatrooms.push_back(new_chatroom);
+            changeChatroom(new_chatroom);   
+            new_chatroom->start = clock();          //set start time when the chatroom is first created. (we'll also set it when a message is sent)
+        }
+////////////////////////end chunk by megan/////////////////////////////////
+
+       // if ((chatrooms.size() >= 10) || (chatroom_map[hash(new_chatroom->getName())] != NULL))
+        //   continue;
         
+    /***************************************************************************    
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         chatrooms.push_back(new_chatroom);
 
@@ -238,6 +248,7 @@ void ChatDaemon::readInAllChatrooms() {
             changeChatroom(new_chatroom);
 
         //postChatroomToUI();
+    *****************************************************************************/    
     }
 
     status = chatroom_reader->return_loan(chatList, infoSeq);
@@ -255,6 +266,7 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
+        new_chatroom->start = clock(); 
         return new_chatroom;
     }
 
@@ -336,6 +348,10 @@ void ChatDaemon::sendMessage(char* input) {
     //read in and processed in the right chatroom
 }
 
+void ChatDaemon::setTestMessage(){
+    testMessage = "This is a test message."; 
+}
+
 int ChatDaemon::hash(string key_string) {
     int total = 0;
     
@@ -355,3 +371,5 @@ void ChatDaemon::exit() {
 }
 
 void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}
+
+
