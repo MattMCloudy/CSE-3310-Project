@@ -74,7 +74,8 @@ class ChatDaemon {
         void readInAllMessages();
         void readInAllChatrooms();
         Chatroom* createNewChatroom(string name);
-        void postChatroomToUI(Chatroom* chatroom); //Possibly in Chatroom instead?
+        void postUsersToUI();
+        void postChatroomsToUI(); //Possibly in Chatroom instead?
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
@@ -89,9 +90,6 @@ class ChatDaemon {
         void setChatbox(FORM*);
         void setMessageLengthCounter(int);
         void postUsersToFile();
-
-
-        void exit();      
 };
 
 #endif

@@ -16,9 +16,6 @@ void ChatDaemon::start() {
         changeChatroom(chatrooms[0]);
     }
     
-    readInAllChatrooms();
-    readInAllUsers();
-    readInAllMessages();
     readSendObjects();
  }
 
@@ -140,7 +137,7 @@ void ChatDaemon::readInAllUsers() {
     
     
     checkWhichUsersOnline();
-
+    postUsersToUI();
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -184,7 +181,7 @@ void ChatDaemon::readInAllChatrooms() {
     for(ULong j = 0; j < chatList.length(); j++) {
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
 
-        if (chatrooms.size() >= 10) {
+        if (chatrooms.size() >= 10)
           continue;
         else if (chatroom_map[hash(new_chatroom->getName())] != NULL)
             new_chatroom->setIsActive(); 
@@ -199,6 +196,7 @@ void ChatDaemon::readInAllChatrooms() {
         }
     }
 
+    postChatroomsToUI();
     status = chatroom_reader->return_loan(chatList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -223,12 +221,20 @@ void ChatDaemon::processCurrentChatroom() {
     current_chatroom->sendAllUnpublishedMessages();
 }
 
-void ChatDaemon::postChatroomToUI(Chatroom* chatroom) {
+void ChatDaemon::postUsersToUI() {
+    /*
+    m->lock();
+    ui->printUsers(online_users, offline_users);
+    m->unlock();
+    */
+}
+
+void ChatDaemon::postChatroomsToUI() {
     //Something like this should work for this method
     
     /*
     m->lock();
-    ui->postNewChatroom(chatroom);
+    ui->printChatrooms(chatrooms);
     m->unlock();
     */
     
@@ -301,9 +307,6 @@ void ChatDaemon::readInPreviousUsers() {
 }
 
 void ChatDaemon::postUsersToFile() {}
-
-void ChatDaemon::exit() {
-}
 
 void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}
 
