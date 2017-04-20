@@ -131,13 +131,12 @@ void ChatDaemon::readInAllUsers() {
 
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
-
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
+        postUsersToUI();
     }
     
     
     checkWhichUsersOnline();
-    postUsersToUI();
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -263,7 +262,7 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
     User* new_local_user = new User(nick, "The local user", 0);    
     local_user = new_local_user;
-       
+    user_map[local_user->getUUID()] = local_user;
     LocalUserInitialized = true;
     return local_user;
     
