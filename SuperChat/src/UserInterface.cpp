@@ -31,10 +31,13 @@ void UserInterface::create() {
 
     mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
     mbf[1] = NULL;
-    cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);    //creating chatbox field
+    cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);      //creating chatbox field
     cbf[1] = NULL;			
     crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
     crf[1] = NULL;    	     
+    ulf[0] = new_field(20,(8+1),15,53,0,0);
+    ulf[1] = new_field(20,(8+1),15,88,0,0);
+    ulf[2] = NULL;
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
     field_opts_on(mbf[0], O_WRAP); 	      //"
@@ -44,15 +47,21 @@ void UserInterface::create() {
     field_opts_on(cbf[0], O_WRAP);	      //"
 
     field_opts_off(crf[0], O_AUTOSKIP);	   //setting chatroom list options
-    //field_opts_off(crf[0], O_STATIC); 
     
+    field_opts_off(ulf[0], O_AUTOSKIP);
+    field_opts_off(ulf[0], O_STATIC);
 
+    field_opts_off(ulf[1], O_AUTOSKIP);
+    field_opts_off(ulf[1], O_STATIC);
+    
     msgbox = new_form(mbf);		//declaring forms
     post_form(msgbox);			  //"
     chatbox = new_form(cbf);		  //"
     post_form(chatbox);			  //"
     chatroomList = new_form(crf);
     post_form(chatroomList);
+    usersList = new_form(ulf);
+    post_form(usersList);
     refresh();
     
     m->lock();
@@ -62,14 +71,16 @@ void UserInterface::create() {
   attron(A_BOLD);                      //drawing horizontal lines
   move(1,0); hline('_', C_MAX-1);       //"
   move(6,0); hline('_', 51);	        //"	
-  move(38,0); hline('_', 51);	        //"
-  move(40,0); hline('_', C_MAX-1);      //"
-  move(13,52); hline('_', 68);  
+  move(38,0); hline('_', C_MAX-1);      //"
+  move(13,52); hline('_', 68);  	//"
+  move(36,52); hline('_', 68);		//"
 
   move(2, 51); vline('|', 37);	       //drawing vertical lines
   move(0,0); vline('|', 39);		//"
   move(0, C_MAX-1); vline('|', 39);	//"
   move(2, 76); vline('|', 12);		//"
+  move(14, 86); vline('|', 23);
+  
 
   attron(A_STANDOUT);                  //printing titles
   mvprintw(7, 1, "Chatbox:");		    //"
@@ -77,6 +88,8 @@ void UserInterface::create() {
   mvprintw(0, 1, "SuperChat:");		    //"
   mvprintw(2, 52, "Controls");		    //"
   mvprintw(2, 77, "Chatrooms");	            //"
+  mvprintw(14, 52, "Online Users"); 	    //"
+  mvprintw(14, 87, "Offline Users");	    //"
 
   attroff(A_STANDOUT);
 
@@ -150,12 +163,17 @@ void UserInterface::create() {
     }
     unpost_form(msgbox);
     unpost_form(chatbox);
+    unpost_form(chatroomList);
+    unpost_form(usersList);
     free_form(msgbox);
     free_form(chatbox);
+    free_form(chatroomList);
+    free_form(usersList);
     free_field(mbf[0]);
     free_field(cbf[0]); 
     free_field(crf[0]);
-
+    free_field(ulf[0]);
+    free_field(ulf[1]);
     endwin();
     delete daemon;
     //This will totally cause errors once we have the file reading in place
@@ -198,13 +216,14 @@ void UserInterface::printMessage(User* origin_user, Message* new_message, int si
     }
 
     lastUser = ID;
-  refresh();
+    refresh();
 }
 
 void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
+  form_driver(chatroomList, REQ_CLR_FIELD);
   string temp;
   int i, j;
-  for(i=0; i < chatrooms.size(); i++) {
+  for(i=0; i<chatrooms.size(); i++) {
     temp = chatrooms[i]->getName();
       for(j=0; j<temp.length(); j++){
         form_driver(chatroomList, temp[j]);
@@ -212,7 +231,32 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
     form_driver(chatroomList, REQ_NEXT_LINE);
   }
   refresh();
-  form_driver(chatroomList, REQ_CLR_FIELD);
+}
+
+void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
+  form_driver(usersList, REQ_PREV_FIELD);
+  form_driver(usersList, REQ_CLR_FIELD);
+  string temp;
+  int i, j;
+  for(i=0; i<online.size(); i++){
+    temp = online[i]->getNick();
+      for(j=0; j<temp.length(); j++){
+        form_driver(usersList, temp[j]);
+      }
+    form_driver(usersList, REQ_NEXT_LINE);
+  }
+
+  form_driver(usersList, REQ_NEXT_FIELD);
+  form_driver(usersList, REQ_CLR_FIELD);
+
+  for(i=0; i<offline.size(); i++){
+    temp = offline[i]->getNick();
+      for(j=0; j<temp.length(); j++){
+        form_driver(usersList, temp[j]);
+      }
+    form_driver(usersList, REQ_NEXT_LINE);
+  }
+
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
