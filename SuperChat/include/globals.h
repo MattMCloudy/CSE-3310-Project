@@ -6,5 +6,8 @@
 
 FORM* msgbox;
 FORM* chatbox;
+FORM* chatroomList;
 FIELD* mbf[2];
 FIELD* cbf[2];
+FIELD* crf[2];
+FIELD* ulf[3];

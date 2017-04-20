@@ -32,53 +32,62 @@ void UserInterface::create() {
     mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
     mbf[1] = NULL;
     cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);    //creating chatbox field
-    cbf[1] = NULL;					     
+    cbf[1] = NULL;			
+    crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
+    crf[1] = NULL;    	     
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
-    field_opts_on(mbf[0], O_WRAP);
+    field_opts_on(mbf[0], O_WRAP); 	      //"
 
-    field_opts_off(cbf[0], O_AUTOSKIP);        //setting chatbox options
-    field_opts_off(cbf[0], O_STATIC);            //"    
-    field_opts_on(cbf[0], O_WRAP);	       //"
+    field_opts_off(cbf[0], O_AUTOSKIP);    //setting chatbox options
+    field_opts_off(cbf[0], O_STATIC);         //"    
+    field_opts_on(cbf[0], O_WRAP);	      //"
 
+    field_opts_off(crf[0], O_AUTOSKIP);	   //setting chatroom list options
+    //field_opts_off(crf[0], O_STATIC); 
+    
 
     msgbox = new_form(mbf);		//declaring forms
     post_form(msgbox);			  //"
     chatbox = new_form(cbf);		  //"
     post_form(chatbox);			  //"
+    chatroomList = new_form(crf);
+    post_form(chatroomList);
     refresh();
     
     m->lock();
     daemon->setChatbox(chatbox);
     m->unlock();
 
-    attron(A_BOLD);                      //drawing horizontal lines
-    move(1,0); hline('_', C_MAX-1);       //"
-    move(6,0); hline('_', 51);	        //"
-    move(38,0); hline('_', 51);	        //"
-    move(40,0); hline('_', C_MAX-1);
+  attron(A_BOLD);                      //drawing horizontal lines
+  move(1,0); hline('_', C_MAX-1);       //"
+  move(6,0); hline('_', 51);	        //"	
+  move(38,0); hline('_', 51);	        //"
+  move(40,0); hline('_', C_MAX-1);      //"
+  move(13,52); hline('_', 68);  
 
-    
-    move(2, 51); vline('|', 37);	       //drawing vertical lines
-    move(0,0); vline('|', 39);		//"
-    move(0, C_MAX-1); vline('|', 39);	//"
+  move(2, 51); vline('|', 37);	       //drawing vertical lines
+  move(0,0); vline('|', 39);		//"
+  move(0, C_MAX-1); vline('|', 39);	//"
+  move(2, 76); vline('|', 12);		//"
 
-    attron(A_STANDOUT);                  //printing titles
-    mvprintw(7, 1, "Chatbox:");		   //"
-    mvprintw(2, 1, "Enter Message: ");	   //"
-    mvprintw(0, 1, "SuperChat:");		   //"
-    mvprintw(2, 52, "Controls");		   //"
+  attron(A_STANDOUT);                  //printing titles
+  mvprintw(7, 1, "Chatbox:");		    //"
+  mvprintw(2, 1, "Enter Message: ");	    //"
+  mvprintw(0, 1, "SuperChat:");		    //"
+  mvprintw(2, 52, "Controls");		    //"
+  mvprintw(2, 77, "Chatrooms");	            //"
 
-    attroff(A_STANDOUT);
+  attroff(A_STANDOUT);
 
-    mvprintw(3, 54, "'ESC' to exit client"); //"
-    mvprintw(4, 54, "'F1' to ________");     //"
-    mvprintw(5, 54, "'F2' to ________");     //"
-    mvprintw(6, 54, "'F3' to ________");	   //"
-    mvprintw(7, 54, "'F4' to ________");     //"
+  mvprintw(3, 52, "'ESC' to exit client");  //"
+  mvprintw(4, 52, "'F1' Create chat room"); //"
+  mvprintw(5, 52, "'F2' to ________");      //"
+  mvprintw(6, 52, "'F3' to ________");	    //"
+  mvprintw(7, 52, "'F4' to ________");      //"
 
-    attroff(A_BOLD);
-    mvprintw(0, 11, " %s: %s", nick, "02020\0"); //print user nick and UUID
+  attroff(A_BOLD);
+    mvprintw(0, 11, " %s", nick); //print user nick and UUID
   
 
     while((ch=getch())!=27)
@@ -145,7 +154,7 @@ void UserInterface::create() {
     free_form(chatbox);
     free_field(mbf[0]);
     free_field(cbf[0]); 
-    //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
+    free_field(crf[0]);
 
     endwin();
     delete daemon;
@@ -189,6 +198,20 @@ void UserInterface::printMessage(User* origin_user, Message* new_message, int si
     }
 
     lastUser = ID;
+  refresh();
+}
+
+void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
+  string temp;
+  int i, j;
+  for(i=0; i < chatrooms.size(); i++) {
+    temp = chatrooms[i]->getName();
+      for(j=0; j<temp.length(); j++){
+        form_driver(chatroomList, temp[i]);
+      }
+    form_driver(chatroomList, REQ_NEXT_LINE);
+  }
+  refresh();
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
