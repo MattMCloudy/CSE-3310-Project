@@ -207,11 +207,12 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
   for(i=0; i < chatrooms.size(); i++) {
     temp = chatrooms[i]->getName();
       for(j=0; j<temp.length(); j++){
-        form_driver(chatroomList, temp[i]);
+        form_driver(chatroomList, temp[j]);
       }
     form_driver(chatroomList, REQ_NEXT_LINE);
   }
   refresh();
+  form_driver(chatroomList, REQ_CLR_FIELD);
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}

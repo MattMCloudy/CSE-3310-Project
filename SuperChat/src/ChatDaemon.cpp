@@ -238,9 +238,9 @@ void ChatDaemon::postChatroomsToUI() {
     //Something like this should work for this method
     
     
-    /*m->lock();
+    m->lock();
     ui->printChatrooms(chatrooms);
-    m->unlock();*/
+    m->unlock();
     
     
 }

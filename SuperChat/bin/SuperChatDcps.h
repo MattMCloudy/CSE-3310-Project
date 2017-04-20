@@ -4,7 +4,7 @@
 //  
 //  File name: SuperChatDcps.h
 //  Source: ./bin/SuperChatDcps.idl
-//  Generated: Thu Apr 20 17:19:44 2017
+//  Generated: Thu Apr 20 17:32:32 2017
 //  OpenSplice V6.4.140407OSS
 //  
 //******************************************************************

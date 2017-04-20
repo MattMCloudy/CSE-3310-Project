@@ -1732,3 +1732,459 @@ Node        : nima-VirtualBox
 Process     : SuperChat <12515>
 Thread      : durability 7fedb9c27700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492726824.998331806
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : spliced 7fb8fc02a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492727591.377436082
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : spliced 7fb8fc02a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492727591.381869173
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : spliced 7fb8fc02a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492727591.382019049
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : spliced 7fb8fc02a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727591.382400486
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : ddsi2 7fb8f81de700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727591.400309659
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:11 CDT 2017
+Description : The durability service can by identified by ID: 1079888554
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : durability 7fb8f8550700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492727591.404917731
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:18 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : durability 7fb8f8550700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727598.430277967
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:24 CDT 2017
+Description : Exception (signal 6) occurred in process
+Node        : nima-VirtualBox
+Process     : SuperChat <12804>
+Thread      : signalHandler 7fb8f8e3c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492727604.694135278
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:26 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : spliced 7f6df2d9d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492727606.967025246
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:26 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : spliced 7f6df2d9d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492727606.971461295
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:26 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : spliced 7f6df2d9d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492727606.971593472
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : spliced 7f6df2d9d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727606.971976739
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:26 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : ddsi2 7f6deef51700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727606.989047182
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:27 CDT 2017
+Description : The durability service can by identified by ID: 257344612
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : durability 7f6def2c3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492727607.005222717
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:34 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : durability 7f6def2c3700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727614.028864695
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : spliced 7fd03177e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492727620.841706947
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : spliced 7fd03177e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492727620.845517713
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : spliced 7fd03177e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492727620.845659304
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : spliced 7fd03177e700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727620.845958470
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : ddsi2 7fd02d932700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727620.862353219
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:40 CDT 2017
+Description : The durability service can by identified by ID: 651310997
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : durability 7fd02dca4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492727620.874035671
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:33:47 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : durability 7fd02dca4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727627.901881216
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : spliced 7efe0a357700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492727674.929537909
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : spliced 7efe0a357700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492727674.933966173
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : spliced 7efe0a357700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492727674.934115064
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : spliced 7efe0a357700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727674.934496134
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : ddsi2 7efe0650b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727674.952605802
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:34 CDT 2017
+Description : The durability service can by identified by ID: 1671981505
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : durability 7efe0687d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492727674.961120926
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:34:41 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : durability 7efe0687d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492727681.982887287
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:35:00 CDT 2017
+Description : Exception (signal 6) occurred in process
+Node        : nima-VirtualBox
+Process     : SuperChat <13048>
+Thread      : signalHandler 7efe07169700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492727700.012043606
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : spliced 7fca7e220700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492728055.788615419
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : spliced 7fca7e220700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492728055.804514805
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : spliced 7fca7e220700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492728055.804712144
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : spliced 7fca7e220700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728055.805027488
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : ddsi2 7fca7a3d4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728055.819464372
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:40:55 CDT 2017
+Description : The durability service can by identified by ID: 631034930
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : durability 7fca7a746700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492728055.829001250
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:41:02 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : durability 7fca7a746700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728062.858135069
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : u_domainNew:Database allocated on heap
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : spliced 7fbb652f0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/user::u_domain::u_domainNew/u_domain.c/706/0/1492728892.631676825
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : ---------------------------------------------------------------
+              -- The service is using the following configuration settings --
+              ---------------------------------------------------------------
+              Domain (id)          : ospl_sp_ddsi (0)
+              Storage              : 10240 Kbytes
+              Storage threshold    : 1024 Kbytes
+              Storage address      : Not available
+              Locking              : default
+              Memory mode          : Heap memory
+              Builtin topics       : true
+              Priority inheritance : false
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : spliced 7fbb652f0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/The OpenSplice domain service/u_domain.c/827/0/1492728892.636081083
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : Service cmsoap disabled
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : spliced 7fbb652f0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/sr_componentInfo.c/439/0/1492728892.636231650
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'splicedaemon' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : spliced 7fbb652f0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728892.636630223
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'ddsi2' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : ddsi2 7fbb614a4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728892.658415988
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:52 CDT 2017
+Description : The durability service can by identified by ID: 2130875232
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : durability 7fbb61816700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DurabilityService/d_durability.c/476/0/1492728892.667057473
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:54:59 CDT 2017
+Description : ++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ The service 'durability' is now operational. 
+              ++++++++++++++++++++++++++++++++++++++++++++++++
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : durability 7fbb61816700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/v_serviceChangeState/v_service.c/329/0/1492728899.708132010
+========================================================================================
+Report      : INFO
+Date        : Thu Apr 20 17:55:14 CDT 2017
+Description : Exception (signal 6) occurred in process
+Node        : nima-VirtualBox
+Process     : SuperChat <13345>
+Thread      : signalHandler 7fbb62102700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/signalHandlerThread/os_signalHandler.c/447/0/1492728914.298298285

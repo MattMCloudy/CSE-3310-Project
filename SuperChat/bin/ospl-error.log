@@ -62,3 +62,51 @@ Node        : nima-VirtualBox
 Process     : SuperChat <12515>
 Thread      : main thread 7fedbad14700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492726845.182073218
+========================================================================================
+Report      : API_INFO
+Date        : Thu Apr 20 17:33:36 CDT 2017
+Description : Subscriber::delete_datareader contains_loans
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : main thread 7f6df03b0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_dataReader.c/339/20/1492727616.235838689
+========================================================================================
+Report      : ERROR
+Date        : Thu Apr 20 17:33:36 CDT 2017
+Description : Unable to delete datareader
+Node        : nima-VirtualBox
+Process     : SuperChat <12867>
+Thread      : main thread 7f6df03b0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492727616.235876056
+========================================================================================
+Report      : API_INFO
+Date        : Thu Apr 20 17:33:53 CDT 2017
+Description : Subscriber::delete_datareader contains_loans
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : main thread 7fd02ed91700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_dataReader.c/339/20/1492727633.290070745
+========================================================================================
+Report      : ERROR
+Date        : Thu Apr 20 17:33:53 CDT 2017
+Description : Unable to delete datareader
+Node        : nima-VirtualBox
+Process     : SuperChat <12935>
+Thread      : main thread 7fd02ed91700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492727633.290108622
+========================================================================================
+Report      : API_INFO
+Date        : Thu Apr 20 17:41:46 CDT 2017
+Description : Subscriber::delete_datareader contains_loans
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : main thread 7fca7b833700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/DCPS API/gapi_dataReader.c/339/20/1492728106.432406580
+========================================================================================
+Report      : ERROR
+Date        : Thu Apr 20 17:41:46 CDT 2017
+Description : Unable to delete datareader
+Node        : nima-VirtualBox
+Process     : SuperChat <13169>
+Thread      : main thread 7fca7b833700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1492728106.432445072

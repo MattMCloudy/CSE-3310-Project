@@ -111,12 +111,13 @@ int main()
   move(6,0); hline('_', 51);	        //"	
   move(38,0); hline('_', C_MAX-1);      //"
   move(13,52); hline('_', 68);  	//"
-  move(36,52); hline('_', 68);
+  move(36,52); hline('_', 68);		//"
 
   move(2, 51); vline('|', 37);	       //drawing vertical lines
   move(0,0); vline('|', 39);		//"
   move(0, C_MAX-1); vline('|', 39);	//"
   move(2, 76); vline('|', 12);		//"
+  
 
   attron(A_STANDOUT);                  //printing titles
   mvprintw(7, 1, "Chatbox:");		    //"
@@ -201,12 +202,15 @@ int main()
   }
   unpost_form(msgbox);
   unpost_form(chatbox);
+  unpost_form(chatroom);
   free_form(msgbox);
   free_form(chatbox);
+  free_form(chatroom);
   free_field(mbf[0]);
   free_field(cbf[0]);
   free_field(crf[0]);
-      
+  free_field(ulf[0]);
+  free_field(ulf[1]);
   //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
 
   endwin();
