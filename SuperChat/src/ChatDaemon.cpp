@@ -188,15 +188,15 @@ void ChatDaemon::readInAllChatrooms() {
         else{
             chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
             chatrooms.push_back(new_chatroom);
-
+            
             if (current_chatroom == NULL)
                 changeChatroom(new_chatroom);   
 
-            new_chatroom->setIsActive();          //set start time when the chatroom is first created.
+            new_chatroom->setIsActive();
+            postChatroomsToUI();
         }
     }
 
-    postChatroomsToUI();
     status = chatroom_reader->return_loan(chatList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -217,6 +217,7 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         local_chatrooms.push_back(new_chatroom);
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         changeChatroom(new_chatroom);
+        postChatroomsToUI();
         return new_chatroom;
     }
     return NULL;
@@ -306,6 +307,8 @@ int ChatDaemon::hash(string key_string) {
     
     return total;
 }
+
+vector<Chatroom*> ChatDaemon::getChatrooms() {return chatrooms;}
 
 void ChatDaemon::readInPreviousUsers() {
     /*some reading in files from cout and stuff */

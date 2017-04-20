@@ -204,6 +204,8 @@ void UserInterface::printMessage(User* origin_user, Message* new_message, int si
 void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
   string temp;
   int i, j;
+
+  form_driver(chatroomList, REQ_CLR_FIELD);
   for(i=0; i < chatrooms.size(); i++) {
     temp = chatrooms[i]->getName();
       for(j=0; j<temp.length(); j++){
@@ -212,7 +214,6 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
     form_driver(chatroomList, REQ_NEXT_LINE);
   }
   refresh();
-  form_driver(chatroomList, REQ_CLR_FIELD);
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
