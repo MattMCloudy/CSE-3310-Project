@@ -6,8 +6,8 @@ User::User(string passed_nick, string passed_description, int passed_chatroom_id
     description = passed_description;
     chatroom_idx = passed_chatroom_idx;
     uuid = newBoostUUID();
-    isOnline = false;
-
+    isOnline = true;
+    start = clock();
     setEntityManager();
     makeNewUser();
     sendUser();      
@@ -17,12 +17,12 @@ User::User(struct user* new_user) {
     string nick_temp(new_user->nick);
     nick = nick_temp;
     chatroom_idx = new_user->chatroom_idx;
-    isOnline = false;
+    isOnline = true;
     //string desc_temp(new_user->description); the idl doesn't have this yet for some reason.
     //description = desc_temp;
     uuid = new_user->uuid;
     user_struct = new_user;
-
+    start = clock();
 }
 
 
@@ -87,8 +87,22 @@ unsigned long long User::getUUID() {return uuid;}
 
 string User::getNick() {return nick;}
 
-void User::setIsOnline() {isOnline = true;}
+void User::checkIfOnline() {
+    clock_t now = clock(); 
+    int elapsed_time; 
+    elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
+    //cout << elapsed_time << "\n";
+    if (elapsed_time > 600)                    //600 seconds in 10 minutes
+        isOnline = false; 
+    else
+        isOnline = true; 
+}
 
-void User::setIsOffline() {isOnline = false;}
+void User::setIsOnline() {
+    clock_t now = clock();
+    start = now;
+    checkIfOnline();
+}
+
 
 bool User::getIsOnline() {return isOnline;}

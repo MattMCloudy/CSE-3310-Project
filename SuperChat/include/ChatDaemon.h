@@ -36,6 +36,7 @@ class ChatDaemon {
         bool LocalUserInitialized;
         bool hasStarted;
         vector<Chatroom*> chatrooms;
+        vector<Chatroom*> local_chatrooms;
         vector<User*> users;
         vector<User*> online_users;
         vector<User*> offline_users;
@@ -51,6 +52,8 @@ class ChatDaemon {
         messageDataReader_var message_reader;
         userDataReader_var user_reader;
         mutex* m;
+        char* testMessage; 
+        int message_length_counter;
     public:
         ChatDaemon() {
             //cout << "ChatDaemon Initialized...\n";
@@ -58,6 +61,7 @@ class ChatDaemon {
             hasStarted = false;
             current_chatroom = NULL;
         }
+        void setTestMessage(); 
         ~ChatDaemon();
         void start();
         void setUI(UserInterface* new_ui);
@@ -76,14 +80,17 @@ class ChatDaemon {
         User* addNewRemoteUser(User* new_user);
         void sendMessage(char* input);
         void wakeLocalUser();
-        void wakeAllChatrooms();
+        void wakeLocalChatrooms();
         void readSendObjects();
         void processCurrentChatroom();
         int hash(string key_string);
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
         void setChatbox(FORM*);
+        void setMessageLengthCounter(int);
         void postUsersToFile();
+
+
         void exit();      
 };
 
