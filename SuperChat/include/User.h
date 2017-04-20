@@ -29,6 +29,7 @@ class User {
         int getChatroomIndex();
         unsigned long long getUUID();
         string getNick();
+        void changeNick(string);
         void checkIfOnline();
         void setIsOnline();
         bool getIsOnline();

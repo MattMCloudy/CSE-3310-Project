@@ -87,6 +87,11 @@ unsigned long long User::getUUID() {return uuid;}
 
 string User::getNick() {return nick;}
 
+void User::changeNick(string new_nick) {
+    nick = new_nick;
+    strncpy(user_struct->nick, new_nick.c_str(), sizeof(user_struct->nick));
+}
+
 void User::checkIfOnline() {
     clock_t now = clock(); 
     int elapsed_time; 

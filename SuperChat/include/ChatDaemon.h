@@ -85,6 +85,7 @@ class ChatDaemon {
         void readSendObjects();
         void processCurrentChatroom();
         int hash(string key_string);
+        User* changeLocalUserNick(char*);
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
         void setChatbox(FORM*);

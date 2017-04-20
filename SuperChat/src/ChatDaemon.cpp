@@ -201,6 +201,11 @@ void ChatDaemon::readInAllChatrooms() {
     checkStatus(status, "MsgDataReader::return_loan");
 }
 
+User* ChatDaemon::changeLocalUserNick(char* input) {
+    string temp(input);
+    local_user->changeNick(temp);
+    return local_user;
+}
 
 Chatroom* ChatDaemon::createNewChatroom(string name) {
     if (chatrooms.size() >= 10) {
