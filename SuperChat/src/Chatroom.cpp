@@ -87,7 +87,6 @@ void Chatroom::checkActive(){
     clock_t now = clock(); 
     int elapsed_time; 
     elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
-    //cout << elapsed_time << "\n";
     if (elapsed_time > 600)                    //600 seconds in 10 minutes
         isActive = false; 
     else
