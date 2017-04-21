@@ -223,7 +223,13 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
   form_driver(chatroomList, REQ_CLR_FIELD);
   string temp;
   int i, j;
+<<<<<<< HEAD
   for(i=0; i<chatrooms.size(); i++) {
+=======
+
+  form_driver(chatroomList, REQ_CLR_FIELD);
+  for(i=0; i < chatrooms.size(); i++) {
+>>>>>>> 62168420b1a4b5066b0b433dbf74d96f7471c3f1
     temp = chatrooms[i]->getName();
       for(j=0; j<temp.length(); j++){
         form_driver(chatroomList, temp[j]);
@@ -231,6 +237,7 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
     form_driver(chatroomList, REQ_NEXT_LINE);
   }
   refresh();
+<<<<<<< HEAD
 }
 
 void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
@@ -257,6 +264,8 @@ void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
     form_driver(usersList, REQ_NEXT_LINE);
   }
 
+=======
+>>>>>>> 62168420b1a4b5066b0b433dbf74d96f7471c3f1
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}

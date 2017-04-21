@@ -131,13 +131,12 @@ void ChatDaemon::readInAllUsers() {
 
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
-
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
+        postUsersToUI();
     }
     
     
     checkWhichUsersOnline();
-    postUsersToUI();
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -188,15 +187,15 @@ void ChatDaemon::readInAllChatrooms() {
         else{
             chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
             chatrooms.push_back(new_chatroom);
-
+            
             if (current_chatroom == NULL)
                 changeChatroom(new_chatroom);   
 
-            new_chatroom->setIsActive();          //set start time when the chatroom is first created.
+            new_chatroom->setIsActive();
+            postChatroomsToUI();
         }
     }
 
-    postChatroomsToUI();
     status = chatroom_reader->return_loan(chatList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -217,6 +216,7 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
         local_chatrooms.push_back(new_chatroom);
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         changeChatroom(new_chatroom);
+        postChatroomsToUI();
         return new_chatroom;
     }
     return NULL;
@@ -262,7 +262,7 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     
     User* new_local_user = new User(nick, "The local user", 0);    
     local_user = new_local_user;
-       
+    user_map[local_user->getUUID()] = local_user;
     LocalUserInitialized = true;
     return local_user;
     
@@ -306,6 +306,8 @@ int ChatDaemon::hash(string key_string) {
     
     return total;
 }
+
+vector<Chatroom*> ChatDaemon::getChatrooms() {return chatrooms;}
 
 void ChatDaemon::readInPreviousUsers() {
     /*some reading in files from cout and stuff */
