@@ -135,7 +135,6 @@ void ChatDaemon::readInAllUsers() {
         postUsersToUI();
     }
     
-    
     checkWhichUsersOnline();
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
@@ -227,11 +226,10 @@ void ChatDaemon::processCurrentChatroom() {
 }
 
 void ChatDaemon::postUsersToUI() {
-    /*
     m->lock();
     ui->printUsers(online_users, offline_users);
     m->unlock();
-    */
+    
 }
 
 void ChatDaemon::postChatroomsToUI() {
