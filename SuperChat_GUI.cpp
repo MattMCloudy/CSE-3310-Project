@@ -12,6 +12,7 @@ int NICK_SIZE_MAX = 8;
 FORM *chatbox;
 FORM *chatrooms;
 FORM* chatroom;
+FORM* usersList;
 void printMsg(char* nick, char* ID, char *input, int size)
 {
   int i;
@@ -85,7 +86,9 @@ int main()
   cbf[1] = NULL;		
   crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
   crf[1] = NULL;    
-  //ulf[0] = new_field(
+  ulf[0] = new_field(20,(8+1),15,53,0,0);
+  ulf[1] = new_field(20,(8+1),15,88,0,0);
+  ulf[2] = NULL;
 
   field_opts_off(mbf[0], O_AUTOSKIP);        //setting message box options
   field_opts_on(mbf[0], O_WRAP);	       //"
@@ -97,6 +100,13 @@ int main()
   field_opts_off(crf[0], O_AUTOSKIP);	     //setting chatroom list options
   set_field_back(crf[0], A_UNDERLINE);
   
+  field_opts_off(ulf[0], O_AUTOSKIP);
+  set_field_back(ulf[0], A_UNDERLINE);
+  field_opts_off(ulf[0], O_STATIC);
+
+  field_opts_off(ulf[1], O_AUTOSKIP);
+  set_field_back(ulf[1], A_UNDERLINE);
+  field_opts_off(ulf[1], O_STATIC);
 
   msgbox = new_form(mbf);		//declaring forms
   post_form(msgbox);			  //"
@@ -104,6 +114,9 @@ int main()
   post_form(chatbox);			  //"
   chatroom = new_form(crf);
   post_form(chatroom);
+  usersList = new_form(ulf);
+  post_form(usersList);
+  
   refresh();				 
 
   attron(A_BOLD);                      //drawing horizontal lines
@@ -117,6 +130,7 @@ int main()
   move(0,0); vline('|', 39);		//"
   move(0, C_MAX-1); vline('|', 39);	//"
   move(2, 76); vline('|', 12);		//"
+  move(14, 86); vline('|', 23);
   
 
   attron(A_STANDOUT);                  //printing titles
