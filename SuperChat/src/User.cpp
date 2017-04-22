@@ -6,6 +6,8 @@ User::User(string passed_nick, string passed_description, int passed_chatroom_id
     description = passed_description;
     chatroom_idx = passed_chatroom_idx;
     uuid = newBoostUUID();
+    uuid_str = to_string(uuid); 
+    uuid_char = uuid_str.c_str(); 
     isOnline = true;
     start = clock();
     setEntityManager();
@@ -111,3 +113,7 @@ void User::setIsOnline() {
 
 
 bool User::getIsOnline() {return isOnline;}
+
+const char* User::getUUIDchar() {
+    return uuid_char; 
+}

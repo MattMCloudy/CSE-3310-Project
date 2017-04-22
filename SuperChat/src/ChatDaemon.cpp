@@ -2,6 +2,7 @@
 #include "../include/UserInterface.h"
 
 
+
 void ChatDaemon::start() {
     hasStarted = true;
     
@@ -254,7 +255,7 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
 }   
 
 User* ChatDaemon::addNewLocalUser(string nick) {
-    
+   // cout << "TESTING IN ADD NEW LOCAL USER" << endl; 
     if (LocalUserInitialized) {
         //cerr << "A local user has already been initialized: ";
         return local_user;
@@ -264,19 +265,25 @@ User* ChatDaemon::addNewLocalUser(string nick) {
     local_user = new_local_user;
        
     LocalUserInitialized = true;
+
     return local_user;
     
+}
+User* ChatDaemon::getLocalUser(){
+    return local_user; 
 }
 
 void ChatDaemon::wakeLocalUser() {local_user->sendUser();}
 
 void ChatDaemon::readSendObjects() {
     while(true) {
+       // cout << "READ_SEND_OBJECTS" << endl; 
         readInAllChatrooms();
         readInAllUsers();
         readInAllMessages();
         processCurrentChatroom();
-        wakeLocalUser();
+       // wakeLocalUser();
+        sleep(3); 
     }
 }
 
@@ -311,7 +318,6 @@ void ChatDaemon::readInPreviousUsers() {
     /*some reading in files from cout and stuff */
 }
 
-void ChatDaemon::postUsersToFile() {}
 
 void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}
 

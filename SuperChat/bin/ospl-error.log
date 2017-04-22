@@ -1,0 +1,45 @@
+========================================================================================
+Report      : ERROR
+Date        : Fri Apr 21 14:45:43 CDT 2017
+Description : Watchdog thread could not be started.
+
+Node        : megan-VirtualBox
+Process     : SuperChat <2829>
+Thread      : main thread 7efc27b71700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantInit/u_participant.c/648/0/1492803943.887219356
+========================================================================================
+Report      : ERROR
+Date        : Fri Apr 21 14:45:46 CDT 2017
+Description : Watchdog thread could not be started.
+
+Node        : megan-VirtualBox
+Process     : SuperChat <2829>
+Thread      : main thread 7efc27b71700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantInit/u_participant.c/658/0/1492803946.065544411
+========================================================================================
+Report      : ERROR
+Date        : Fri Apr 21 14:58:01 CDT 2017
+Description : Watchdog thread could not be started.
+
+Node        : megan-VirtualBox
+Process     : SuperChat <3003>
+Thread      : main thread 7f03a31b8700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantInit/u_participant.c/648/0/1492804681.198098132
+========================================================================================
+Report      : ERROR
+Date        : Fri Apr 21 14:58:04 CDT 2017
+Description : Watchdog thread could not be started.
+
+Node        : megan-VirtualBox
+Process     : SuperChat <3003>
+Thread      : main thread 7f03a31b8700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_participantInit/u_participant.c/658/0/1492804684.980273166
+========================================================================================
+Report      : ERROR
+Date        : Fri Apr 21 20:37:54 CDT 2017
+Description : rtps_init: failed to find a free participant index for domain 0
+
+Node        : megan-VirtualBox
+Process     : SuperChat <16868>
+Thread      : ddsi2 7f5ac70ab700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492825074.692253058

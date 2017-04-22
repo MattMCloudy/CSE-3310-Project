@@ -1,8 +1,3 @@
-/*Matt:
- * This is where all of the methods for the UserInterface will be implemented.
- * :)
- */
-
 #include "../include/UserInterface.h"
 #include "../include/ChatDaemon.h"
 #include "../include/globals.h"
@@ -11,11 +6,11 @@
 void UserInterface::create() {
     cout << "Inside UI\n";
 
-    local_user = daemon->addNewLocalUser("Tim");
+    //local_user = daemon->addNewLocalUser("Tim");
 
 
-    const char* nick = local_user->getNick().c_str(); 		//place holder for user nick string
-    char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
+    const char* nick; 
+    //char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
 
     //SEND LOCAL USER TO CHAT DAEMON
 
@@ -32,126 +27,195 @@ void UserInterface::create() {
     mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
     mbf[1] = NULL;
     cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);    //creating chatbox field
-    cbf[1] = NULL;					     
+    cbf[1] = NULL;               
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
     field_opts_on(mbf[0], O_WRAP);
 
     field_opts_off(cbf[0], O_AUTOSKIP);        //setting chatbox options
     field_opts_off(cbf[0], O_STATIC);            //"    
-    field_opts_on(cbf[0], O_WRAP);	       //"
+    field_opts_on(cbf[0], O_WRAP);         //"
 
 
-    msgbox = new_form(mbf);		//declaring forms
-    post_form(msgbox);			  //"
-    chatbox = new_form(cbf);		  //"
-    post_form(chatbox);			  //"
+    msgbox = new_form(mbf);   //declaring forms
+    post_form(msgbox);        //"
+    chatbox = new_form(cbf);      //"
+    post_form(chatbox);       //"
     refresh();
     
     m->lock();
     daemon->setChatbox(chatbox);
     m->unlock();
 
-    attron(A_BOLD);                      //drawing horizontal lines
-    move(1,0); hline('_', C_MAX-1);       //"
-    move(6,0); hline('_', 51);	        //"
-    move(38,0); hline('_', 51);	        //"
-    move(40,0); hline('_', C_MAX-1);
 
-    
-    move(2, 51); vline('|', 37);	       //drawing vertical lines
-    move(0,0); vline('|', 39);		//"
-    move(0, C_MAX-1); vline('|', 39);	//"
 
     attron(A_STANDOUT);                  //printing titles
-    mvprintw(7, 1, "Chatbox:");		   //"
-    mvprintw(2, 1, "Enter Message: ");	   //"
-    mvprintw(0, 1, "SuperChat:");		   //"
-    mvprintw(2, 52, "Controls");		   //"
+    mvprintw(1, 1, "Enter Nick:");     
 
-    attroff(A_STANDOUT);
+    while ((!daemon->LocalUserInitialized) && ((ch=getch()) != 8)){
+          {  switch(ch)
+           {     case KEY_DOWN:
+                     form_driver(msgbox, REQ_NEXT_LINE);
+                     break;
+       
+                 case KEY_UP:
+                     form_driver(msgbox, REQ_PREV_LINE);
+                     break;
 
-    mvprintw(3, 54, "'ESC' to exit client"); //"
-    mvprintw(4, 54, "'F1' to ________");     //"
-    mvprintw(5, 54, "'F2' to ________");     //"
-    mvprintw(6, 54, "'F3' to ________");	   //"
-    mvprintw(7, 54, "'F4' to ________");     //"
+                 case KEY_LEFT:
+                     form_driver(msgbox, REQ_LEFT_CHAR);
+                     break;
+          
+                 case KEY_RIGHT:
+                     form_driver(msgbox, REQ_RIGHT_CHAR);
+                     break;
 
-    attroff(A_BOLD);
-    mvprintw(0, 11, " %s: %s", nick, "02020\0"); //print user nick and UUID
-  
+                 case KEY_BACKSPACE:
+                  
+                   if(count>=MAX_MESSAGE_LENGTH)
+                       form_driver(msgbox, REQ_DEL_CHAR);
+                   else {
+                       form_driver(msgbox, REQ_DEL_PREV);
+                   }
+                   if(count!=0)
+                       count--;
+                     break;
 
-    while((ch=getch())!=27)
-    {  switch(ch)
-     {     case KEY_DOWN:
-               form_driver(msgbox, REQ_NEXT_LINE);
-               break;
- 
-           case KEY_UP:
-               form_driver(msgbox, REQ_PREV_LINE);
-               break;
+                 case 10: //enter is pressed
+                     daemon->addNewLocalUser(input); 
+                     local_user = daemon->getLocalUser();    
+                     
+                     mvprintw(0, 11,  "%s: ", local_user->getNick().c_str()); //print user nick 
+                     mvprintw(0, 1, "%s  ", local_user->getUUIDchar()); //print UUID
 
-           case KEY_LEFT:
-               form_driver(msgbox, REQ_LEFT_CHAR);
-               break;
-    
-           case KEY_RIGHT:
-               form_driver(msgbox, REQ_RIGHT_CHAR);
-               break;
+                     count=0;       
+                     form_driver(msgbox, REQ_CLR_FIELD);
+                     refresh(); 
+                     break;
 
-           case KEY_BACKSPACE:
-            
-	           if(count>=MAX_MESSAGE_LENGTH)
-	               form_driver(msgbox, REQ_DEL_CHAR);
-	           else {
-	               form_driver(msgbox, REQ_DEL_PREV);
-	           }
-	           if(count!=0)
-	               count--;
-               break;
+               case KEY_PPAGE:
+                   form_driver(chatbox, REQ_SCR_BLINE);
+                   break;
 
-           case 10: //enter is pressed
+               case KEY_NPAGE:
+                   form_driver(chatbox, REQ_SCR_FLINE);
+                   break;
 
-	           //printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
-               daemon->setMessageLengthCounter(count);
-               daemon->sendMessage(input);
-               count=0;       
-               form_driver(msgbox, REQ_CLR_FIELD);
-               refresh(); 
-               break;
-
-	       case KEY_PPAGE:
-	           form_driver(chatbox, REQ_SCR_BLINE);
-	           break;
-
-	       case KEY_NPAGE:
-	           form_driver(chatbox, REQ_SCR_FLINE);
-	           break;
-
-           default:
-               if(count<=MAX_MESSAGE_LENGTH){
-	               form_driver(msgbox, ch);
-	               input[count] = ch;
-                   if(count<MAX_MESSAGE_LENGTH)
-	                   count++;
-                   refresh();
-               }
-               break;
-      }
+                 default:
+                     if(count<=MAX_MESSAGE_LENGTH){
+                       form_driver(msgbox, ch);
+                       input[count] = ch;
+                         if(count<MAX_MESSAGE_LENGTH)
+                           count++;
+                         refresh();
+                     }
+                     break;
+            }
+         }
     }
-    unpost_form(msgbox);
-    unpost_form(chatbox);
-    free_form(msgbox);
-    free_form(chatbox);
-    free_field(mbf[0]);
-    free_field(cbf[0]); 
-    //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
+      
 
-    endwin();
-    delete daemon;
-    //This will totally cause errors once we have the file reading in place
+      attron(A_BOLD);                      //drawing horizontal lines
+      move(1,0); hline('_', C_MAX-1);       //"
+      move(6,0); hline('_', 51);          //"
+      move(38,0); hline('_', 51);         //"
+      move(40,0); hline('_', C_MAX-1);
+
+      
+      move(2, 51); vline('|', 37);         //drawing vertical lines
+      move(0,0); vline('|', 39);    //"
+      move(0, C_MAX-1); vline('|', 39); //"
+
+      attron(A_STANDOUT);                  //printing titles
+      mvprintw(7, 1, "Chatbox:");      //"
+      mvprintw(2, 1, "Enter Message: ");     //"
+      mvprintw(0, 1, "SuperChat:");      //"
+      mvprintw(2, 52, "Controls");       //"
+
+      attroff(A_STANDOUT);
+
+      mvprintw(3, 54, "'ESC' to exit client"); //"
+      mvprintw(4, 54, "'F1' to ________");     //"
+      mvprintw(5, 54, "'F2' to ________");     //"
+      mvprintw(6, 54, "'F3' to ________");     //"
+      mvprintw(7, 54, "'F4' to ________");     //"
+
+      attroff(A_BOLD);
+      //mvprintw(0, 11, " %s: %s", nick, "02020\0"); //print user nick and UUID
+
+
+      while((ch=getch())!=27)
+      {  switch(ch)
+       {     case KEY_DOWN:
+                 form_driver(msgbox, REQ_NEXT_LINE);
+                 break;
+   
+             case KEY_UP:
+                 form_driver(msgbox, REQ_PREV_LINE);
+                 break;
+
+             case KEY_LEFT:
+                 form_driver(msgbox, REQ_LEFT_CHAR);
+                 break;
+      
+             case KEY_RIGHT:
+                 form_driver(msgbox, REQ_RIGHT_CHAR);
+                 break;
+
+             case KEY_BACKSPACE:
+              
+               if(count>=MAX_MESSAGE_LENGTH)
+                   form_driver(msgbox, REQ_DEL_CHAR);
+               else {
+                   form_driver(msgbox, REQ_DEL_PREV);
+               }
+               if(count!=0)
+                   count--;
+                 break;
+
+             case 10: //enter is pressed
+                 mvprintw(0, 11, "%s: ", local_user->getNick().c_str()); //print user nick and UUID
+                 mvprintw(0, 19, "%s  ", local_user->getUUIDchar()); //print user nick and UUID
+
+               //printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
+                 daemon->setMessageLengthCounter(count);
+                 daemon->sendMessage(input);
+                 count=0;       
+                 form_driver(msgbox, REQ_CLR_FIELD);
+                 refresh(); 
+                 break;
+
+           case KEY_PPAGE:
+               form_driver(chatbox, REQ_SCR_BLINE);
+               break;
+
+           case KEY_NPAGE:
+               form_driver(chatbox, REQ_SCR_FLINE);
+               break;
+
+             default:
+                 if(count<=MAX_MESSAGE_LENGTH){
+                   form_driver(msgbox, ch);
+                   input[count] = ch;
+                     if(count<MAX_MESSAGE_LENGTH)
+                       count++;
+                     refresh();
+                 }
+                 break;
+        }
+      }
+      unpost_form(msgbox);
+      unpost_form(chatbox);
+      free_form(msgbox);
+      free_form(chatbox);
+      free_field(mbf[0]);
+      free_field(cbf[0]); 
+      //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
+
+      endwin();
+      delete daemon;
+      //This will totally cause errors once we have the file reading in place
 } 
-
 
 
 void UserInterface::printMessage(User* origin_user, Message* new_message, int size)

@@ -33,6 +33,10 @@ class UserInterface {
         int i;
         int count;
         User* local_user;
+        const char* uuid_str; 
+        int uuid_int; 
+        const char* user_nick_char; 
+        const char* uuid_char; 
     public:
         UserInterface() {
             //cout << "UI Initialized...\n";

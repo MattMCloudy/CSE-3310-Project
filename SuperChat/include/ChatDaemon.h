@@ -33,7 +33,7 @@ class ChatDaemon {
         UserInterface* ui;
         Chatroom* current_chatroom;
         FORM* chatbox;
-        bool LocalUserInitialized;
+        //bool LocalUserInitialized;
         bool hasStarted;
         vector<Chatroom*> chatrooms;
         vector<Chatroom*> local_chatrooms;
@@ -79,6 +79,7 @@ class ChatDaemon {
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
+        User* getLocalUser(); 
         void sendMessage(char* input);
         void wakeLocalUser();
         void wakeLocalChatrooms();
@@ -91,6 +92,9 @@ class ChatDaemon {
         void setChatbox(FORM*);
         void setMessageLengthCounter(int);
         void postUsersToFile();
+
+        bool LocalUserInitialized;
+
 };
 
 #endif
