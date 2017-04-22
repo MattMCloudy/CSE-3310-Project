@@ -9,6 +9,14 @@ void ChatDaemon::start() {
     setEntityManager();
     readInAllChatrooms();
 
+    if (chatrooms.size() == 0) {
+        //cout << "Initializing public chatroom...\n";
+        createNewChatroom("public");
+    } else {
+        //cout << "Public previously initialized, entering now...\n";
+        changeChatroom(chatrooms[0]);
+    }
+
     /*(megan) Initializing some online users to see if they show up 
       (4/22)  on the GUI online users list. 
     */
@@ -20,14 +28,11 @@ void ChatDaemon::start() {
     User("Martha", "testUser2", 0);  //isOnline set to true.
     readInAllUsers();
     User("Tom", "testUser2", 0);
+    readInAllUsers();
+    User("Sarah", "testUser3", 0); //BUG: doesn't display the last user to be read in. 
+    readInAllUsers(); 
 
-    if (chatrooms.size() == 0) {
-        //cout << "Initializing public chatroom...\n";
-        createNewChatroom("public");
-    } else {
-        //cout << "Public previously initialized, entering now...\n";
-        changeChatroom(chatrooms[0]);
-    }
+
     
     readSendObjects();
  }
@@ -144,14 +149,7 @@ void ChatDaemon::readInAllUsers() {
 
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
-        /*(megan) I had to comment this out bc it was segfaulting on this line when
-          (4/22)  I was trying to set up some users. First try: i initialized 4 Users(). 
-                  This seemed to work except only the last one would be in the online_users vector.
-                  Then I readInAllUsers after each initialization and it segfaulted here. 
-                  After commenting this line out, all new online users were successfully 
-                  placed in the online_users vector. This is prolly important though. 
-        */  
-        //chatrooms[new_user->getChatroomIndex()]->addUser(new_user);  
+        chatrooms[new_user->getChatroomIndex()]->addUser(new_user);  
         postUsersToUI();
     }
     
