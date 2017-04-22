@@ -89,6 +89,7 @@ class ChatDaemon {
         User* changeLocalUserNick(char*);
         void changeChatroom(Chatroom* new_cur_chatroom);
         void readInPreviousUsers();
+        vector<Chatroom*> getChatrooms();
         void setChatbox(FORM*);
         void setMessageLengthCounter(int);
         void postUsersToFile();

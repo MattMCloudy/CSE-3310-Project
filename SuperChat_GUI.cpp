@@ -5,22 +5,28 @@ int MAX_MESSAGE_LENGTH = 144; //MAX LENGTH FOR ENTIRE OUTPUT (INCLUDES UUID AND 
 int R_MAX = 40;
 int C_MAX = 121;
 int MAX_UUID_LENGTH = 10;
+int CHATROOMS_MAX = 10;
+int CHATROOMS_NAME_MAX = 25;
+int NICK_SIZE_MAX = 8;
 
-
-void printMsg(char* nick, char* ID, char *input, FORM *chatbox, int size)
+FORM *chatbox;
+FORM *chatrooms;
+FORM* chatroom;
+FORM* usersList;
+void printMsg(char* nick, char* ID, char *input, int size)
 {
   int i;
   int count=0;
   static char* lastUser;
  
   form_driver(chatbox, REQ_END_FIELD);       //cursor to end of chatbox
-  form_driver(chatbox, REQ_NEXT_LINE);       //cursor to next line 
+  form_driver(chatbox, REQ_NEXT_LINE);       //cursor to next line
   if(lastUser!=ID){
     for(i=0; i<((MAX_MESSAGE_LENGTH/3)-1); i++, count++){
       if(nick[i] == NULL)
         break;
       form_driver(chatbox, nick[i]);
-    }form_driver(chatbox, '[');    
+    }form_driver(chatbox, '[');
 
     for(i=0; count<((MAX_MESSAGE_LENGTH/3)-4); i++, count++){
       if(nick[i] == NULL)
@@ -32,32 +38,35 @@ void printMsg(char* nick, char* ID, char *input, FORM *chatbox, int size)
   }
   form_driver(chatbox, ':'); 
   for(i=0; i<size; i++){                 //iterates through to input[count]
-    form_driver(chatbox, input[i]);       //sets prints input[i] to Chatbox
+    form_driver(chatbox, input[i]);      //sets prints input[i] to Chatbox
   }
 
   lastUser = ID;
+  refresh();
 }
 
-void addUser(char* nick, char* ID){
+void addChatRoom(){
 
 }
 
 int main()
 {
   
-  FIELD *mbf[1];                        //creating field array for msgbox
-  FIELD *cbf[1];             		//creating field array for chatbox
-  FORM *msgbox;                         //declare pointer to msgbox form
-  FORM *chatbox;			//declare pointer to chatbox form
+  FIELD *mbf[1];                         //creating field array for msgbox
+  FIELD *cbf[1];             		 //creating field array for chatbox
+  FIELD *crf[1];			 //creating field array for chatroom list
+  FIELD *ulf[2];
+
+  FORM *msgbox;                          //declare pointer to msgbox form
 
   int ch;
-  char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+  char input[MAX_MESSAGE_LENGTH];        // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
   int i;
-  int count=0;			//counter for number of characters in the input string(for printing)
+  int count=0;				 //counter for number of characters in the input string(for printing)
 
-  char nick[] = "John Doe\0"; 		//place holder for user nick string
-  char ID[] = "012345\0";               //place holder for user ID string
-  char curCR[] = "(Current Chatroom)\0";//place holder for current user chatroom
+  char nick[] = "John Doe\0"; 		 //place holder for user nick string
+  char ID[] = "012345\0";                //place holder for user ID string
+  char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
 
   //SEND LOCAL USER TO CHAT DAEMON
 
@@ -71,48 +80,75 @@ int main()
   resizeterm(R_MAX, C_MAX);
   refresh();
 
-  mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
+  mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);      //creating message box field
   mbf[1] = NULL;
-  cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);    //creating chatbox field
-  cbf[1] = NULL;					     
+  cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);     //creating chatbox field
+  cbf[1] = NULL;		
+  crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
+  crf[1] = NULL;    
+  ulf[0] = new_field(20,(8+1),15,53,0,0);
+  ulf[1] = new_field(20,(8+1),15,88,0,0);
+  ulf[2] = NULL;
 
-  field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
-  field_opts_on(mbf[0], O_WRAP);
+  field_opts_off(mbf[0], O_AUTOSKIP);        //setting message box options
+  field_opts_on(mbf[0], O_WRAP);	       //"
 
   field_opts_off(cbf[0], O_AUTOSKIP);        //setting chatbox options
-  field_opts_off(cbf[0], O_STATIC);            //"    
+  field_opts_off(cbf[0], O_STATIC);            //"
   field_opts_on(cbf[0], O_WRAP);	       //"
 
+  field_opts_off(crf[0], O_AUTOSKIP);	     //setting chatroom list options
+  set_field_back(crf[0], A_UNDERLINE);
+  
+  field_opts_off(ulf[0], O_AUTOSKIP);
+  set_field_back(ulf[0], A_UNDERLINE);
+  field_opts_off(ulf[0], O_STATIC);
+
+  field_opts_off(ulf[1], O_AUTOSKIP);
+  set_field_back(ulf[1], A_UNDERLINE);
+  field_opts_off(ulf[1], O_STATIC);
 
   msgbox = new_form(mbf);		//declaring forms
   post_form(msgbox);			  //"
   chatbox = new_form(cbf);		  //"
   post_form(chatbox);			  //"
-  refresh();
+  chatroom = new_form(crf);
+  post_form(chatroom);
+  usersList = new_form(ulf);
+  post_form(usersList);
+  
+  refresh();				 
 
   attron(A_BOLD);                      //drawing horizontal lines
   move(1,0); hline('_', C_MAX-1);       //"
-  move(6,0); hline('_', 51);	        //"
-  move(38,0); hline('_', 51);	        //"
-  move(40,0); hline('_', C_MAX-1);
-  
+  move(6,0); hline('_', 51);	        //"	
+  move(38,0); hline('_', C_MAX-1);      //"
+  move(13,52); hline('_', 68);  	//"
+  move(36,52); hline('_', 68);		//"
+
   move(2, 51); vline('|', 37);	       //drawing vertical lines
   move(0,0); vline('|', 39);		//"
   move(0, C_MAX-1); vline('|', 39);	//"
+  move(2, 76); vline('|', 12);		//"
+  move(14, 86); vline('|', 23);
+  
 
   attron(A_STANDOUT);                  //printing titles
-  mvprintw(7, 1, "Chatbox:");		   //"
-  mvprintw(2, 1, "Enter Message: ");	   //"
-  mvprintw(0, 1, "SuperChat:");		   //"
-  mvprintw(2, 52, "Controls");		   //"
+  mvprintw(7, 1, "Chatbox:");		    //"
+  mvprintw(2, 1, "Enter Message: ");	    //"
+  mvprintw(0, 1, "SuperChat:");		    //"
+  mvprintw(2, 52, "Controls");		    //"
+  mvprintw(2, 77, "Chatrooms");	            //"
+  mvprintw(14, 52, "Online Users"); 	    //"
+  mvprintw(14, 87, "Offline Users");	    //"
 
   attroff(A_STANDOUT);
 
-  mvprintw(3, 54, "'ESC' to exit client"); //"
-  mvprintw(4, 54, "'F1' to ________");     //"
-  mvprintw(5, 54, "'F2' to ________");     //"
-  mvprintw(6, 54, "'F3' to ________");	   //"
-  mvprintw(7, 54, "'F4' to ________");     //"
+  mvprintw(3, 52, "'ESC' to exit client");  //"
+  mvprintw(4, 52, "'F1' Create chat room"); //"
+  mvprintw(5, 52, "'F2' to ________");      //"
+  mvprintw(6, 52, "'F3' to ________");	    //"
+  mvprintw(7, 52, "'F4' to ________");      //"
 
   attroff(A_BOLD);
   mvprintw(0, 11, " %s: %s", nick, ID); //print user nick and UUID
@@ -149,11 +185,11 @@ int main()
 
          case 10: //enter is pressed
 
-	    printMsg(nick, ID, input, chatbox, count); //print function to print input[] into chatbox
+	    printMsg(nick, ID, input, count); //print function to print input[] into chatbox
             count=0;       
             form_driver(msgbox, REQ_CLR_FIELD);
             //daemon->sendMessage(input);
-            refresh(); 
+            refresh();
             break;
 
 	 case KEY_PPAGE:
@@ -164,6 +200,9 @@ int main()
 	    form_driver(chatbox, REQ_SCR_FLINE);
 	    break;
 
+	 case KEY_F(1):
+	    
+  	    break;
          default:
             if(count<=MAX_MESSAGE_LENGTH){
 	      form_driver(msgbox, ch);
@@ -177,11 +216,15 @@ int main()
   }
   unpost_form(msgbox);
   unpost_form(chatbox);
+  unpost_form(chatroom);
   free_form(msgbox);
   free_form(chatbox);
+  free_form(chatroom);
   free_field(mbf[0]);
   free_field(cbf[0]);
-      
+  free_field(crf[0]);
+  free_field(ulf[0]);
+  free_field(ulf[1]);
   //>>SEND LOGOUT SIGNAL TO CHATDAEMON HERE<<
 
   endwin();

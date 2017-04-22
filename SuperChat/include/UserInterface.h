@@ -18,6 +18,7 @@
 #define MAX_MESSAGE_LENGTH 144
 #define C_MAX 121
 #define R_MAX 40
+#define CHATROOMS_NAME_MAX 25
 #define MAX_UUID_LENGTH 10
 
 class ChatDaemon;
@@ -46,6 +47,8 @@ class UserInterface {
         void printMessage(User*, Message*, int);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
+	void printChatrooms(vector<Chatroom*> chatrooms);
+	void printUsers(vector<User*> online, vector<User*> offline);
 };
 
 #endif
