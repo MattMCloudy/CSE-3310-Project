@@ -108,3 +108,420 @@ Node        : megan-VirtualBox
 Process     : SuperChat <4897>
 Thread      : OSPL Lease Renew Thread 7f55de385700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492836505.768956125
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 3115.601924516 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6274>
+Thread      : OSPL Lease Renew Thread 7f6468618700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492840666.842648035
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 3115.534957084 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6274>
+Thread      : leaseThread 7f6468367700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492840666.844669299
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 3326.528994031 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6006>
+Thread      : OSPL Lease Renew Thread 7f0aee117700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492840666.844422284
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 3326.216897193 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6006>
+Thread      : leaseThread 7f0aede88700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492840666.851589872
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 2010.189037020 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6750>
+Thread      : OSPL Lease Renew Thread 7fb176f7b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492840666.844535346
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 2009.922100043 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6750>
+Thread      : leaseThread 7fb176cca700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492840666.851156162
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4043.976300617 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5724>
+Thread      : OSPL Lease Renew Thread 7f3969f44700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492840666.847489026
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4078.246416155 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5662>
+Thread      : OSPL Lease Renew Thread 7f9810bcd700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492840666.855754278
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4078.202936957 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5662>
+Thread      : leaseThread 7f981091c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492840666.866110270
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 00:57:46 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4043.934656811 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <5724>
+Thread      : leaseThread 7f3969c93700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492840666.855899179
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:22:06 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <3609>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492878126.711171576
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:22:06 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <3609>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492878126.718027938
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:22:06 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 15.183833863 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3609>
+Thread      : OSPL Lease Renew Thread 7fffd7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492878126.711298524
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:22:06 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 14.655921036 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3609>
+Thread      : leaseThread 7fffd7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492878126.711314726
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:22:06 CDT 2017
+Description : The splice deamon is no longer running for entity 0xe80883b0. Unable to continue, a restart of the splice deamon and all applications is required.
+Node        : megan-VirtualBox
+Process     : SuperChat <3609>
+Thread      : main thread 7ffff5e0d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/u_entityClaimCommon/u_entity.c/540/0/1492878126.711323047
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:27:21 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 74.296362539 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3808>
+Thread      : OSPL Lease Renew Thread 7fffd7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492878441.129148143
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:27:21 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 73.771517486 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3808>
+Thread      : leaseThread 7fffd7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492878441.130119296
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:40:20 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 26.849263499 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4177>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492879220.765070486
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:40:20 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 26.431722120 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4177>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492879220.765696831
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879471.725972502
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879471.726373346
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.545596785 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492879471.726649622
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 13.546213997 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492879471.727624534
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879471.729181965
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879471.730966553
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:31 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879471.732522581
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:44:38 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <4370>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492879478.839375797
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:54:08 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 59.377777534 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4706>
+Thread      : OSPL Lease Renew Thread 7ffff487a700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492880048.552394315
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 11:54:08 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 58.989360559 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4706>
+Thread      : leaseThread 7ffff45eb700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492880048.555633113
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:44:50 CDT 2017
+Description : rtps_init: failed to find a free participant index for domain 0
+
+Node        : megan-VirtualBox
+Process     : SuperChat <6023>
+Thread      : ddsi2 7f6ece155700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492883090.701521010
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5345.866127012 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3227>
+Thread      : leaseThread 7fb00f482700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883110.817377259
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5346.773632471 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3227>
+Thread      : OSPL Lease Renew Thread 7fb00f6ef700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883111.161752276
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5226.703147281 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3346>
+Thread      : leaseThread 7fd204d7b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883110.854414740
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5227.154623578 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3346>
+Thread      : OSPL Lease Renew Thread 7fd20502c700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883110.857291528
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4005.058930914 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4067>
+Thread      : OSPL Lease Renew Thread 7fba7823d700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883110.639556295
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5066.415477007 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3523>
+Thread      : OSPL Lease Renew Thread 7f84ee081700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883110.277893111
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5066.388640295 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3523>
+Thread      : leaseThread 7f84eddd0700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883110.895776335
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4004.160022419 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <4067>
+Thread      : leaseThread 7fba5bfcc700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883111.516581566
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:10 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 6166.990900133 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2666>
+Thread      : leaseThread 7f28e3493700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883110.709875527
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 6166.174978584 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2666>
+Thread      : OSPL Lease Renew Thread 7f28e3700700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883111.435067328
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5935.803136031 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2900>
+Thread      : leaseThread 7f8a52201700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883111.167223531
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4525.348821976 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3923>
+Thread      : leaseThread 7f8cd98a6700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883111.425926726
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 4525.378766436 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <3923>
+Thread      : OSPL Lease Renew Thread 7f8cd9b57700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883111.040787519
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5916.151225089 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2971>
+Thread      : OSPL Lease Renew Thread 7f82c6d07700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883111.359200424
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5916.098045218 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2971>
+Thread      : leaseThread 7f82c6a56700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492883111.599809193
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 12:45:11 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 5936.611600834 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <2900>
+Thread      : OSPL Lease Renew Thread 7f8a52490700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492883111.168993836
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492884370.393131044
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 11.464242562 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : OSPL Lease Renew Thread 7fffd7fff700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492884370.393638430
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 11.464299326 s.
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : leaseThread 7fffd7de7700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1492884370.394069232
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492884370.395579556
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492884370.403204065
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 13:06:10 CDT 2017
+Description : Unknown service 'splicedaemon' died
+Node        : megan-VirtualBox
+Process     : SuperChat <6541>
+Thread      : ServiceManager 7ffff7e1b700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/serviceMonitor.c/66/0/1492884370.404449079

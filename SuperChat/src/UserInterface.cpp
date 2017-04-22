@@ -34,9 +34,16 @@ void UserInterface::create() {
     cbf[1] = NULL;			
     crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
     crf[1] = NULL;    	     
-    ulf[0] = new_field(20,(8+1),15,53,0,0);
-    ulf[1] = new_field(20,(8+1),15,88,0,0);
-    ulf[2] = NULL;
+    //ulf[0] = new_field(20,(8+1),15,53,0,0);                     //(megan) creating user list field (?)
+    //ulf[1] = new_field(20,(8+1),15,88,0,0);
+    //ulf[2] = NULL;
+    on_ulf[0] = new_field(20,(8+1),15,53,0,0); 
+    on_ulf[1] = NULL; 
+    off_ulf[0] = new_field(20,(8+1),15,88,0,0);
+    off_ulf[1] = NULL; 
+
+
+
 //>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
@@ -54,7 +61,7 @@ void UserInterface::create() {
 
     field_opts_off(crf[0], O_AUTOSKIP);	   //setting chatroom list options
     
-    field_opts_off(ulf[0], O_AUTOSKIP);
+    field_opts_off(ulf[0], O_AUTOSKIP);     
     field_opts_off(ulf[0], O_STATIC);
 
 /*<<<<<<< HEAD
@@ -72,8 +79,15 @@ void UserInterface::create() {
     post_form(chatbox);			  //"
     chatroomList = new_form(crf);
     post_form(chatroomList);
-    usersList = new_form(ulf);
-    post_form(usersList);
+   // usersList = new_form(ulf);
+   // post_form(usersList);
+
+    onlineUsersList = new_form(on_ulf); 
+    post_form(onlineUsersList); 
+
+    offlineUsersList = new_form(off_ulf); 
+    post_form(offlineUsersList); 
+
 //>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
     refresh();
     
@@ -403,27 +417,35 @@ void UserInterface::printChatrooms(vector<Chatroom*> chatrooms){
 }
 
 void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
-  form_driver(usersList, REQ_PREV_FIELD);
-  form_driver(usersList, REQ_CLR_FIELD);
+  //form_driver(usersList, REQ_PREV_FIELD);
+  //form_driver(usersList, REQ_CLR_FIELD);
+  form_driver(onlineUsersList, REQ_PREV_FIELD); 
+  form_driver(onlineUsersList, REQ_CLR_FIELD); 
   string temp;
   int i, j;
   for(i=0; i<online.size(); i++){
     temp = online[i]->getNick();
       for(j=0; j<temp.length(); j++){
-        form_driver(usersList, temp[j]);
+        form_driver(onlineUsersList, temp[j]);
+  //    form_driver(usersList, temp[j]);
       }
-    form_driver(usersList, REQ_NEXT_LINE);
+    form_driver(onlineUsersList, REQ_NEXT_LINE);
+  //form_driver(usersList, REQ_NEXT_LINE);
   }
-
-  form_driver(usersList, REQ_NEXT_FIELD);
-  form_driver(usersList, REQ_CLR_FIELD);
+  form_driver(offlineUsersList, REQ_NEXT_FIELD);
+  form_driver(offlineUsersList, REQ_CLR_FIELD);
+  //form_driver(usersList, REQ_NEXT_FIELD);
+  //form_driver(usersList, REQ_CLR_FIELD);
 
   for(i=0; i<offline.size(); i++){
     temp = offline[i]->getNick();
       for(j=0; j<temp.length(); j++){
-        form_driver(usersList, temp[j]);
+        form_driver(offlineUsersList, temp[j]);
+     // form_driver(usersList, temp[j]);
       }
-    form_driver(usersList, REQ_NEXT_LINE);
+    form_driver(offlineUsersList, REQ_NEXT_LINE);
+  //form_driver(usersList, REQ_NEXT_LINE);
+
   }
 }
 

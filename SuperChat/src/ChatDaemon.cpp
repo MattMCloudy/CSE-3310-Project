@@ -9,6 +9,18 @@ void ChatDaemon::start() {
     setEntityManager();
     readInAllChatrooms();
 
+    /*(megan) Initializing some online users to see if they show up 
+      (4/22)  on the GUI online users list. 
+    */
+
+    User("Bobby", "testUser1", 0);   //assigns nick and chatroom_idx. Passes to makeNewUser which creates a user object. 
+    readInAllUsers();
+    User("Sam", "testUser2", 0);     //then publishes the new user. 
+    readInAllUsers();
+    User("Martha", "testUser2", 0);  //isOnline set to true.
+    readInAllUsers();
+    User("Tom", "testUser2", 0);
+
     if (chatrooms.size() == 0) {
         //cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
@@ -132,7 +144,14 @@ void ChatDaemon::readInAllUsers() {
 
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
-        chatrooms[new_user->getChatroomIndex()]->addUser(new_user);
+        /*(megan) I had to comment this out bc it was segfaulting on this line when
+          (4/22)  I was trying to set up some users. First try: i initialized 4 Users(). 
+                  This seemed to work except only the last one would be in the online_users vector.
+                  Then I readInAllUsers after each initialization and it segfaulted here. 
+                  After commenting this line out, all new online users were successfully 
+                  placed in the online_users vector. This is prolly important though. 
+        */  
+        //chatrooms[new_user->getChatroomIndex()]->addUser(new_user);  
         postUsersToUI();
     }
     
@@ -275,11 +294,13 @@ void ChatDaemon::wakeLocalUser() {local_user->sendUser();}
 
 void ChatDaemon::readSendObjects() {
     while(true) {
-       // cout << "READ_SEND_OBJECTS" << endl; 
         readInAllChatrooms();
         readInAllUsers();
+        //cout << online_users.size() << endl; 
+       // cout << online_users[0]->getNick() << endl; 
         readInAllMessages();
         processCurrentChatroom();
+       
        // wakeLocalUser();
         sleep(3); 
     }
