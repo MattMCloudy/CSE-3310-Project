@@ -113,10 +113,18 @@ vector<User*> ChatDaemon::checkWhichUsersOnline() {
     offline_users.clear();
     for(int i = 0; i < users.size(); i++) {
         users[i]->checkIfOnline();
-        if (users[i]->getIsOnline())
+        if (users[i]->getIsOnline()){
             online_users.push_back(users[i]);
-        else
+            //cout << "Online USER NAME:  " << users[i]->getNick() << endl; 
+            //cout << "Online USER START: " << users[i]->start << endl; 
+            //cout << "ONLINE USER: " << online_users[i]->getNick() << endl; 
+        }
+        else{
+            //cout << "Offline USER NAME:  " << users[i]->getNick() << endl; 
+            //cout << "Offline USER START: " << users[i]->start << endl;
             offline_users.push_back(users[i]);
+            //cout << "OFFLINE USER in c.w.u.o: " << offline_users[i]->getNick() << endl; 
+        }
     }
     return online_users;
 }
@@ -150,10 +158,14 @@ void ChatDaemon::readInAllUsers() {
         users.push_back(new_user);
         user_map[new_user->getUUID()] = new_user;
         chatrooms[new_user->getChatroomIndex()]->addUser(new_user);  
-        postUsersToUI();
+        postUsersToUI();        //sends vector<Users*>online_users and vector<User*>offline_users
+                                //to UI to be printed. 
     }
     
-    checkWhichUsersOnline();
+    checkWhichUsersOnline();    //sorts the offline and online ones into appropriate vectors. 
+                                //returns vector<Users*>online_users; 
+    postUsersToUI();            //megan added. needed in order to update lists so they move from 
+                                //online in GUI to offline in GUI
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -294,8 +306,6 @@ void ChatDaemon::readSendObjects() {
     while(true) {
         readInAllChatrooms();
         readInAllUsers();
-        //cout << online_users.size() << endl; 
-       // cout << online_users[0]->getNick() << endl; 
         readInAllMessages();
         processCurrentChatroom();
        

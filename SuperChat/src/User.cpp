@@ -94,20 +94,38 @@ void User::changeNick(string new_nick) {
     strncpy(user_struct->nick, new_nick.c_str(), sizeof(user_struct->nick));
 }
 
+
+/*
+    (megan) (4/22)
+    The elapsed_time check is just set to some arbitrary amout of time. 
+    I messed with it forever trying to get it to be a determined amount 
+    but it's all funky. We can either "eye-ball" it and set it to whatever 
+    feels right. or someone can mess with it more if they want to make it check
+    if like 5 min (or however much time we decided for someone to be inactive
+    and declared offline) has passed. 
+*/
 void User::checkIfOnline() {
-    clock_t now = clock(); 
-    int elapsed_time; 
-    elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
-    //cout << elapsed_time << "\n";
-    if (elapsed_time > 600)                    //600 seconds in 10 minutes
-        isOnline = false; 
+    //time_t now;
+    //time(&now); 
+    now = clock(); 
+    long double elapsed_time; 
+    elapsed_time = double(now - start);//CLOCKS_PER_SEC; //how many seconds have elapsed
+   // cout << "ELAPSED TIME: " << elapsed_time << endl;
+   // cout << "NOW: "          << now << endl; 
+   // cout << "START: "        << start << endl; 
+   // cout << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << endl; 
+    if (elapsed_time > 100000)                    //600 seconds in 10 minutes
+        isOnline = false;    
     else
         isOnline = true; 
 }
 
 void User::setIsOnline() {
-    clock_t now = clock();
-    start = now;
+    //time_t start; 
+    //time(&start); 
+    //clock_t start; 
+    start = clock(); 
+    //start = now;
     checkIfOnline();
 }
 
