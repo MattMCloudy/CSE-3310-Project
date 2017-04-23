@@ -25,9 +25,9 @@ void ChatDaemon::start() {
     readInAllUsers();
     User("Sam", "testUser2", 0);     //then publishes the new user. 
     readInAllUsers();
-    User("Martha", "testUser2", 0);  //isOnline set to true.
+    User("Marthak", "testUser2", 0);  //isOnline set to true.
     readInAllUsers();
-    User("Tom", "testUser2", 0);
+    User("TommyII", "testUser2", 0);
     readInAllUsers();
     User("Sarah", "testUser3", 0); //BUG: doesn't display the last user to be read in. 
     readInAllUsers(); 
@@ -281,18 +281,17 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     m->unlock();
 }   
 
-User* ChatDaemon::addNewLocalUser(string nick) {
+User* ChatDaemon::addNewLocalUser(string nick) {    //sent the inputted name from GUI
    // cout << "TESTING IN ADD NEW LOCAL USER" << endl; 
     if (LocalUserInitialized) {
         //cerr << "A local user has already been initialized: ";
         return local_user;
     }
     
-    User* new_local_user = new User(nick, "The local user", 0);    
-    local_user = new_local_user;
-    user_map[local_user->getUUID()] = local_user;
+    User* new_local_user = new User(nick, "The local user", 0);    //during construction, the nick becomes a User (given uuid and chatroom idx)
+    local_user = new_local_user;                                   //and the constructor also send the nick to makeNewUser() where it is  
+    user_map[local_user->getUUID()] = local_user;                  //actually given a user struct for idl 
     LocalUserInitialized = true;
-
     return local_user;
     
 }

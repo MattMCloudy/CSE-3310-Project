@@ -178,3 +178,21 @@ Node        : megan-VirtualBox
 Process     : SuperChat <8010>
 Thread      : ddsi2 7fc6af422700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492906189.754027645
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 20:18:58 CDT 2017
+Description : rtps_init: failed to find a free participant index for domain 0
+
+Node        : megan-VirtualBox
+Process     : SuperChat <10054>
+Thread      : ddsi2 7f0e81507700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492910338.765782050
+========================================================================================
+Report      : ERROR
+Date        : Sat Apr 22 20:45:18 CDT 2017
+Description : rtps_init: failed to find a free participant index for domain 0
+
+Node        : megan-VirtualBox
+Process     : SuperChat <11537>
+Thread      : ddsi2 7f306e6f9700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492911918.925699090

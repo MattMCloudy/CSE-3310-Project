@@ -8,8 +8,8 @@ void UserInterface::create() {
 
     //local_user = daemon->addNewLocalUser("Tim");
 
-
-    const char* nick; 
+    string nick; 
+    //const char* nick; 
     //char curCR[] = "(Current Chatroom)\0"; //place holder for current user chatroom
 
     //SEND LOCAL USER TO CHAT DAEMON
@@ -99,7 +99,7 @@ void UserInterface::create() {
 
 /////this section is for the local user to enter nick and log on
     attron(A_STANDOUT);                  
-    mvprintw(1, 1, "Enter Nick:");     
+    mvprintw(1, 1, "Enter Nick: ");     
 
     while ((!daemon->LocalUserInitialized) && ((ch=getch()) != 8)){
           {  switch(ch)
@@ -151,11 +151,11 @@ void UserInterface::create() {
                    break;
 
                  default:
-                     if(count<=MAX_MESSAGE_LENGTH){
-                       form_driver(msgbox, ch);
-                       input[count] = ch;
-                         if(count<MAX_MESSAGE_LENGTH)
-                           count++;
+                     if(count < 8){                 //i think nick needs to be strictly < 8
+                       form_driver(msgbox, ch);     //there's something up with opsl idl nick
+                       input[count] = ch;           //where the 8th character must be null. 
+                         if(count < 8)              //I'm not sure how to actually enforce this
+                           count++;                 //cuz i don't know ncurses much at all. 
                          refresh();
                      }
                      break;
@@ -274,7 +274,24 @@ void UserInterface::create() {
 
     while((ch=getch())!=27)
     {  switch(ch)
-     {     case KEY_DOWN:
+     {     case KEY_F(2):
+              unpost_form(chatbox);
+              unpost_form(chatroomList);
+              unpost_form(usersList);
+              free_form(msgbox);
+              free_form(chatbox);
+              free_form(chatroomList);
+              free_form(usersList);
+              free_field(mbf[0]);
+              free_field(cbf[0]); 
+              free_field(crf[0]);
+              free_field(ulf[0]);
+              free_field(ulf[1]);
+              attron(A_STANDOUT);                  
+              mvprintw(1, 1, "Enter Chatroom Name: "); 
+              break; 
+
+           case KEY_DOWN:
                form_driver(msgbox, REQ_NEXT_LINE);
                break;
  
@@ -448,6 +465,8 @@ void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
 
   }
 }
+
+
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
 
