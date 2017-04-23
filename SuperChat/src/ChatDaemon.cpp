@@ -9,6 +9,15 @@ void ChatDaemon::start() {
     setEntityManager();
     readInAllChatrooms();
 
+  /*  int i; 
+    if (chatrooms.size() == 0){
+        createNewChatroom("public");
+        for (i = 0; i < 9; i++){
+            createNewChatroom(" ");
+        }
+        changeChatroom(chatrooms[0]);
+    }
+*/
     if (chatrooms.size() == 0) {
         //cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
@@ -16,23 +25,25 @@ void ChatDaemon::start() {
         //cout << "Public previously initialized, entering now...\n";
         changeChatroom(chatrooms[0]);
     }
+    createNewChatroom("Test room A "); 
+    createNewChatroom("Test room B "); 
+    readInAllChatrooms(); 
+    changeChatroom(chatrooms[0]);
 
     /*(megan) Initializing some online users to see if they show up 
       (4/22)  on the GUI online users list. 
     */
 
-    User("Bobby", "testUser1", 0);   //assigns nick and chatroom_idx. Passes to makeNewUser which creates a user object. 
+    User("Bobby", "testUser1", 0);      //assigns nick and chatroom_idx. Passes to makeNewUser which creates a user object. 
+    readInAllUsers();                   //then publishes the new user.
+    User("Sam", "testUser2", 0);        //isOnline set to true.
     readInAllUsers();
-    User("Sam", "testUser2", 0);     //then publishes the new user. 
-    readInAllUsers();
-    User("Marthak", "testUser2", 0);  //isOnline set to true.
-    readInAllUsers();
+    User("Marthak", "testUser2", 2);    
+    readInAllUsers();                      
     User("TommyII", "testUser2", 0);
     readInAllUsers();
-    User("Sarah", "testUser3", 0); //BUG: doesn't display the last user to be read in. 
+    User("Sarah", "testUser3", 0);      //BUG: doesn't display the last user to be read in. 
     readInAllUsers(); 
-
-
     
     readSendObjects();
  }
@@ -163,9 +174,11 @@ void ChatDaemon::readInAllUsers() {
     }
     
     checkWhichUsersOnline();    //sorts the offline and online ones into appropriate vectors. 
-                                //returns vector<Users*>online_users; 
+                                //returns vector<Users*>online_users;
+
     postUsersToUI();            //megan added. needed in order to update lists so they move from 
                                 //online in GUI to offline in GUI
+
     status = user_reader->return_loan(userList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -192,7 +205,7 @@ void ChatDaemon::readInAllMessages() {
         messages.push_back(new_message);
         message_map[hash(new_message->getContent())] = new_message;
         chatrooms[new_message->getChatroomIndex()]->addMessage(new_message);
-        cout << "NEW MESSAGE CHATROOM INDEX: " << new_message->getChatroomIndex() << endl; 
+        //cout << "NEW MESSAGE CHATROOM INDEX: " << new_message->getChatroomIndex() << endl; 
     }
 
     status = message_reader->return_loan(msgList, infoSeq);

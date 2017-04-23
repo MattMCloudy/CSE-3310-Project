@@ -459,3 +459,12 @@ Node        : megan-VirtualBox
 Process     : SuperChat <6940>
 Thread      : OSPL Lease Renew Thread 7fdb874ac700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1492969144.282671908
+========================================================================================
+Report      : ERROR
+Date        : Sun Apr 23 13:31:30 CDT 2017
+Description : rtps_init: failed to find a free participant index for domain 0
+
+Node        : megan-VirtualBox
+Process     : SuperChat <10290>
+Thread      : ddsi2 7f1e9a5de700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/ddsi2/q_init.c/540/0/1492972290.124204563
