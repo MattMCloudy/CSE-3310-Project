@@ -113,10 +113,10 @@ void UserInterface::create() {
 
     attroff(A_STANDOUT);
     mvprintw(3, 52, "'ESC' to exit client");  //"
-    mvprintw(4, 52, "'F1' Create chat room"); //"
-    mvprintw(5, 52, "'F2' to ________");      //"
-    mvprintw(6, 52, "'F3' to ________");      //"
-    mvprintw(7, 52, "'F4' to ________");      //"
+    mvprintw(4, 52, "'F2' Create chat room"); //"
+    mvprintw(5, 52, "'F3' to ________");      //"
+    mvprintw(6, 52, "'F4' to ________");      //"
+    mvprintw(7, 52, "'F5' to ________");      //"
 
   //  attroff(A_BOLD);
   //  mvprintw(0, 11, " %s", nick); //print user nick and UUID
@@ -217,6 +217,7 @@ void UserInterface::create() {
                 mvprintw(7, 52, "'F4' to ________");      //"
 
                 daemon->postChatroomsToUI(); 
+                daemon->postUsersToUI();
 
                //setUpChatroom(); 
                break; 
@@ -628,28 +629,33 @@ void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
   string temp;
   int i, j;
   for(i=0; i<online.size(); i++){
-    temp = online[i]->getNick();
-      for(j=0; j<temp.length(); j++){
-        form_driver(onlineUsersList, temp[j]);
-  //    form_driver(usersList, temp[j]);
-      }
-    form_driver(onlineUsersList, REQ_NEXT_LINE);
-  //form_driver(usersList, REQ_NEXT_LINE);
+    if(online[i]->getChatroomIndex() == daemon->getCurrentChatroom()->getChatroomIndex()){
+          temp = online[i]->getNick();
+            for(j=0; j<temp.length(); j++){
+              form_driver(onlineUsersList, temp[j]);
+        //    form_driver(usersList, temp[j]);
+            }
+          form_driver(onlineUsersList, REQ_NEXT_LINE);
+        //form_driver(usersList, REQ_NEXT_LINE);
+        }
   }
-  form_driver(offlineUsersList, REQ_NEXT_FIELD);
-  form_driver(offlineUsersList, REQ_CLR_FIELD);
-  //form_driver(usersList, REQ_NEXT_FIELD);
-  //form_driver(usersList, REQ_CLR_FIELD);
+        form_driver(offlineUsersList, REQ_NEXT_FIELD);
+        form_driver(offlineUsersList, REQ_CLR_FIELD);
+        //form_driver(usersList, REQ_NEXT_FIELD);
+        //form_driver(usersList, REQ_CLR_FIELD);
+    
+  
 
   for(i=0; i<offline.size(); i++){
-    temp = offline[i]->getNick();
-      for(j=0; j<temp.length(); j++){
-        form_driver(offlineUsersList, temp[j]);
-     // form_driver(usersList, temp[j]);
-      }
-    form_driver(offlineUsersList, REQ_NEXT_LINE);
-  //form_driver(usersList, REQ_NEXT_LINE);
-
+    if(offline[i]->getChatroomIndex() == daemon->getCurrentChatroom()->getChatroomIndex()){
+        temp = offline[i]->getNick();
+          for(j=0; j<temp.length(); j++){
+            form_driver(offlineUsersList, temp[j]);
+         // form_driver(usersList, temp[j]);
+          }
+        form_driver(offlineUsersList, REQ_NEXT_LINE);
+      //form_driver(usersList, REQ_NEXT_LINE);
+    }
   }
 }
 
