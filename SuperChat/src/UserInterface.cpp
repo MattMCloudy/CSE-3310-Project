@@ -3,6 +3,10 @@
 #include "../include/globals.h"
 
 
+
+
+
+
 void UserInterface::create() {
     cout << "Inside UI\n";
 
@@ -23,13 +27,11 @@ void UserInterface::create() {
     attron(COLOR_PAIR(1));
     resizeterm(R_MAX, C_MAX);
     refresh();
+    
 
     mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
     mbf[1] = NULL;
-/*<<<<<<< HEAD
-    cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);    //creating chatbox field
-    cbf[1] = NULL;               
-=======*/
+
     cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);      //creating chatbox field
     cbf[1] = NULL;			
     crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
@@ -44,34 +46,22 @@ void UserInterface::create() {
 
 
 
-//>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
-    field_opts_on(mbf[0], O_WRAP); 	      //"
+    field_opts_on(mbf[0], O_WRAP); 	       //"
 
-/*<<<<<<< HEAD
-    field_opts_off(cbf[0], O_AUTOSKIP);        //setting chatbox options
-    field_opts_off(cbf[0], O_STATIC);            //"    
-    field_opts_on(cbf[0], O_WRAP);         //"
-=======*/
     field_opts_off(cbf[0], O_AUTOSKIP);    //setting chatbox options
-    field_opts_off(cbf[0], O_STATIC);         //"    
-    field_opts_on(cbf[0], O_WRAP);	      //"
-//>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
+    field_opts_off(cbf[0], O_STATIC);      //"    
+    field_opts_on(cbf[0], O_WRAP);	       //"
 
     field_opts_off(crf[0], O_AUTOSKIP);	   //setting chatroom list options
     
     field_opts_off(ulf[0], O_AUTOSKIP);     
     field_opts_off(ulf[0], O_STATIC);
 
-/*<<<<<<< HEAD
-    msgbox = new_form(mbf);   //declaring forms
-    post_form(msgbox);        //"
-    chatbox = new_form(cbf);      //"
-    post_form(chatbox);       //"
-=======
-    field_opts_off(ulf[1], O_AUTOSKIP);
-    field_opts_off(ulf[1], O_STATIC);*/
+
+   // field_opts_off(ulf[1], O_AUTOSKIP);
+   // field_opts_off(ulf[1], O_STATIC);
     
     msgbox = new_form(mbf);		//declaring forms
     post_form(msgbox);			  //"
@@ -79,6 +69,7 @@ void UserInterface::create() {
     post_form(chatbox);			  //"
     chatroomList = new_form(crf);
     post_form(chatroomList);
+  
    // usersList = new_form(ulf);
    // post_form(usersList);
 
@@ -88,15 +79,132 @@ void UserInterface::create() {
     offlineUsersList = new_form(off_ulf); 
     post_form(offlineUsersList); 
 
-//>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
     refresh();
     
     m->lock();
     daemon->setChatbox(chatbox);
     m->unlock();
 
-//<<<<<<< HEAD
+    enterNick(); 
+      
+       
+    attron(A_BOLD);                      //drawing horizontal lines
+    move(1,0); hline('_', C_MAX-1);      //"
+    move(6,0); hline('_', 51);           //" 
+    move(38,0); hline('_', C_MAX-1);     //"
+    move(13,52); hline('_', 68);         //"
+    move(36,52); hline('_', 68);         //"
 
+    move(2, 51); vline('|', 37);         //drawing vertical lines
+    move(0,0); vline('|', 39);           //"
+    move(0, C_MAX-1); vline('|', 39);    //"
+    move(2, 76); vline('|', 12);         //"
+    move(14, 86); vline('|', 23);
+    
+
+    attron(A_STANDOUT);                  //printing titles
+    mvprintw(7, 1, "Chatbox:");          //"
+    mvprintw(2, 1, "Enter Message: ");   //"
+    mvprintw(0, 1, "SuperChat:");        //"
+    mvprintw(2, 52, "Controls");         //"
+    mvprintw(2, 77, "Chatrooms");        //"
+    mvprintw(14, 52, "Online Users");    //"
+    mvprintw(14, 87, "Offline Users");   //"
+
+    attroff(A_STANDOUT);
+    mvprintw(3, 52, "'ESC' to exit client");  //"
+    mvprintw(4, 52, "'F1' Create chat room"); //"
+    mvprintw(5, 52, "'F2' to ________");      //"
+    mvprintw(6, 52, "'F3' to ________");      //"
+    mvprintw(7, 52, "'F4' to ________");      //"
+
+  //  attroff(A_BOLD);
+  //  mvprintw(0, 11, " %s", nick); //print user nick and UUID
+  
+
+    while((ch=getch())!=27)    
+    {  switch(ch)
+       {  case KEY_F(2):
+               enterChatroomName(); 
+               setTransitChatroomFalse(); 
+               break; 
+
+          case KEY_DOWN:
+               form_driver(msgbox, REQ_NEXT_LINE);
+               break;
+ 
+           case KEY_UP:
+               form_driver(msgbox, REQ_PREV_LINE);
+               break;
+
+           case KEY_LEFT:
+               form_driver(msgbox, REQ_LEFT_CHAR);
+               break;
+    
+           case KEY_RIGHT:
+               form_driver(msgbox, REQ_RIGHT_CHAR);
+               break;
+
+           case KEY_BACKSPACE:
+              
+               if(count>=MAX_MESSAGE_LENGTH)
+                   form_driver(msgbox, REQ_DEL_CHAR);
+               else {
+                   form_driver(msgbox, REQ_DEL_PREV);
+               }
+               if(count!=0)
+                   count--;
+                 break;
+
+           case KEY_NPAGE:
+               form_driver(chatbox, REQ_SCR_FLINE);
+               break;
+
+           case 10: //enter is pressed
+              //  mvprintw(22, 11, "%s: ", local_user->getNick().c_str()); //print user nick and UUID
+              // mvprintw(22, 19, "%s  ", local_user->getUUIDchar()); //print user nick and UUID
+
+                //printMessage(local_user, input, chatbox); //print function to print input[] into chatbox
+                daemon->setMessageLengthCounter(count);
+                daemon->sendMessage(input);
+                count=0;       
+                form_driver(msgbox, REQ_CLR_FIELD);
+                refresh(); 
+               break;
+             default:
+               // mvprintw(22, 11, "%s: ", local_user->getNick().c_str()); //print user nick and UUID
+               // mvprintw(22, 19, "%s  ", local_user->getUUIDchar()); //print user nick and UUID
+                 if(count<=MAX_MESSAGE_LENGTH){
+                   form_driver(msgbox, ch);
+                   input[count] = ch;
+                     if(count<MAX_MESSAGE_LENGTH)
+                       count++;
+                     refresh();
+                 }
+                 break;
+          }     
+      
+    }
+    unpost_form(msgbox);
+    unpost_form(chatbox);
+    unpost_form(chatroomList);
+    unpost_form(usersList);
+    free_form(msgbox);
+    free_form(chatbox);
+    free_form(chatroomList);
+    free_form(usersList);
+    free_field(mbf[0]);
+    free_field(cbf[0]); 
+    free_field(crf[0]);
+    free_field(ulf[0]);
+    free_field(ulf[1]);
+    endwin();
+    delete daemon;
+}
+
+
+
+void UserInterface::enterNick(){
 /////this section is for the local user to enter nick and log on
     attron(A_STANDOUT);                  
     mvprintw(1, 1, "Enter Nick: ");     
@@ -134,7 +242,7 @@ void UserInterface::create() {
                      daemon->addNewLocalUser(input); 
                      local_user = daemon->getLocalUser();    
                      
-                     //mvprintw(0, 20,  "%s: ", local_user->getNick().c_str()); //print user nick 
+                    // mvprintw(0, 20,  "%s: ", local_user->getNick().c_str()); //print user nick 
                      //mvprintw(0, 10, "%s  ", local_user->getUUIDchar()); //print UUID
 
                      count=0;       
@@ -162,37 +270,14 @@ void UserInterface::create() {
             }
          }
     }
-      /*
-
-      attron(A_BOLD);                      //drawing horizontal lines
-      move(1,0); hline('_', C_MAX-1);       //"
-      move(6,0); hline('_', 51);          //"
-      move(38,0); hline('_', 51);         //"
-      move(40,0); hline('_', C_MAX-1);
-
+}
+/*
+void UserInterface::setUpChatroom(){
       
-      move(2, 51); vline('|', 37);         //drawing vertical lines
-      move(0,0); vline('|', 39);    //"
-      move(0, C_MAX-1); vline('|', 39); //"
-
-      attron(A_STANDOUT);                  //printing titles
-      mvprintw(7, 1, "Chatbox:");      //"
-      mvprintw(2, 1, "Enter Message: ");     //"
-      mvprintw(0, 1, "SuperChat:");      //"
-      mvprintw(2, 52, "Controls");       //"
-
-      attroff(A_STANDOUT);
-
-      mvprintw(3, 54, "'ESC' to exit client"); //"
-      mvprintw(4, 54, "'F1' to ________");     //"
-      mvprintw(5, 54, "'F2' to ________");     //"
-      mvprintw(6, 54, "'F3' to ________");     //"
-      mvprintw(7, 54, "'F4' to ________");     //"
-
       //attroff(A_BOLD);
       //mvprintw(0, 11, " %s: %s", nick, "02020\0"); //print user nick and UUID
 
-
+/*
       while((ch=getch())!=27)
       {  switch(ch)
        {     case KEY_DOWN:
@@ -237,7 +322,7 @@ void UserInterface::create() {
            case KEY_PPAGE:
                form_driver(chatbox, REQ_SCR_BLINE);
 //=======*/
-  attron(A_BOLD);                      //drawing horizontal lines
+/*  attron(A_BOLD);                      //drawing horizontal lines
   move(1,0); hline('_', C_MAX-1);       //"
   move(6,0); hline('_', 51);	        //"	
   move(38,0); hline('_', C_MAX-1);      //"
@@ -273,12 +358,15 @@ void UserInterface::create() {
   
 
     while((ch=getch())!=27)
-    {  switch(ch)
-     {     case KEY_F(2):
+    {
+      {  switch(ch)
+      {     case KEY_F(2):
+             // void getnewChatroomName(); 
+            //  unpost_form(msgbox);
               unpost_form(chatbox);
               unpost_form(chatroomList);
               unpost_form(usersList);
-              free_form(msgbox);
+             // free_form(msgbox);
               free_form(chatbox);
               free_form(chatroomList);
               free_form(usersList);
@@ -287,10 +375,11 @@ void UserInterface::create() {
               free_field(crf[0]);
               free_field(ulf[0]);
               free_field(ulf[1]);
-              attron(A_STANDOUT);                  
-              mvprintw(1, 1, "Enter Chatroom Name: "); 
-              break; 
-
+              enterChatroomName(); 
+              setUpChatroom(); 
+              // cout << "CURRENT CHATROOM INDEX: " << daemon->getCurrentChatroom()->getChatroomIndex() << endl; 
+               //setUpChatroom(); 
+               break; 
            case KEY_DOWN:
                form_driver(msgbox, REQ_NEXT_LINE);
                break;
@@ -346,6 +435,8 @@ void UserInterface::create() {
                  break;
         }
       }
+    }
+
 /*<<<<<<< HEAD
       unpost_form(msgbox);
       unpost_form(chatbox);
@@ -360,7 +451,7 @@ void UserInterface::create() {
       //This will totally cause errors once we have the file reading in place
 =======*/
     //}
-    unpost_form(msgbox);
+  /*  unpost_form(msgbox);
     unpost_form(chatbox);
     unpost_form(chatroomList);
     unpost_form(usersList);
@@ -375,13 +466,17 @@ void UserInterface::create() {
     free_field(ulf[1]);
     endwin();
     delete daemon;
+}
+*/
+
     //This will totally cause errors once we have the file reading in place
 //>>>>>>> b5e81247ebaf39065c513d367c2e9386dc7e71dd
-} 
+//} 
 
 
 void UserInterface::printMessage(User* origin_user, Message* new_message, int size)
 {
+    mvprintw(14, 1, "CURRENT CHATROOM: %d ", daemon->getCurrentChatroom()->getChatroomIndex());
     int i;
     int mssg_counter=0;
     static long long int lastUser = 0;
@@ -466,8 +561,115 @@ void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
   }
 }
 
+void UserInterface::setUpChatroom(){
+  attron(A_BOLD);                      //drawing horizontal lines
+  move(1,0); hline('_', C_MAX-1);       //"
+  move(6,0); hline('_', 51);          //" 
+  move(38,0); hline('_', C_MAX-1);      //"
+  move(13,52); hline('_', 68);    //"
+  move(36,52); hline('_', 68);    //"
 
+  move(2, 51); vline('|', 37);         //drawing vertical lines
+  move(0,0); vline('|', 39);    //"
+  move(0, C_MAX-1); vline('|', 39); //"
+  move(2, 76); vline('|', 12);    //"
+  move(14, 86); vline('|', 23);
+  
+
+  attron(A_STANDOUT);                  //printing titles
+  mvprintw(7, 1, "Chatbox:");       //"
+  mvprintw(2, 1, "Enter Message: ");      //"
+  mvprintw(0, 1, "SuperChat:");       //"
+  mvprintw(2, 52, "Controls");        //"
+  mvprintw(2, 77, "Chatrooms");             //"
+  mvprintw(14, 52, "Online Users");       //"
+  mvprintw(14, 87, "Offline Users");      //"
+
+  attroff(A_STANDOUT);
+
+  mvprintw(3, 52, "'ESC' to exit client");  //"
+  mvprintw(4, 52, "'F1' Create chat room"); //"
+  mvprintw(5, 52, "'F2' to ________");      //"
+  mvprintw(6, 52, "'F3' to ________");      //"
+  mvprintw(7, 52, "'F4' to ________");      //"
+}
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
 
 void UserInterface::setMutex(mutex* new_m) {m = new_m;}
+
+void UserInterface::enterChatroomName(){
+  
+    attron(A_STANDOUT);                  
+    mvprintw(10, 10, "Enter Chatroom Name: ");     
+
+    while ((!transit_chatroom_bool) && ((ch=getch()) != 8)){
+          {  switch(ch)
+           {     case KEY_DOWN:
+                     form_driver(msgbox, REQ_NEXT_LINE);
+                     break;
+       
+                 case KEY_UP:
+                     form_driver(msgbox, REQ_PREV_LINE);
+                     break;
+
+                 case KEY_LEFT:
+                     form_driver(msgbox, REQ_LEFT_CHAR);
+                     break;
+          
+                 case KEY_RIGHT:
+                     form_driver(msgbox, REQ_RIGHT_CHAR);
+                     break;
+
+                 case KEY_BACKSPACE:
+                  
+                   if(count>=MAX_MESSAGE_LENGTH)
+                       form_driver(msgbox, REQ_DEL_CHAR);
+                   else {
+                       form_driver(msgbox, REQ_DEL_PREV);
+                   }
+                   if(count!=0)
+                       count--;
+                     break;
+
+                 case 10: //enter is pressed
+                     daemon->createNewChatroom(input); 
+                     transit_chatroom = daemon->getCurrentChatroom(); 
+                     setTransitChatroomTrue(); 
+                     
+                     //mvprintw(0, 20,  "%s: ", local_user->getNick().c_str()); //print user nick 
+                     //mvprintw(0, 10, "%s  ", local_user->getUUIDchar()); //print UUID
+
+                     count=0;       
+                     form_driver(msgbox, REQ_CLR_FIELD);
+                     refresh(); 
+                     break;
+
+               case KEY_PPAGE:
+                   form_driver(chatbox, REQ_SCR_BLINE);
+                   break;
+
+               case KEY_NPAGE:
+                   form_driver(chatbox, REQ_SCR_FLINE);
+                   break;
+
+                 default:
+                     if(count < 8){                
+                       form_driver(msgbox, ch);     
+                       input[count] = ch;           
+                         if(count < 8)              
+                           count++;                 
+                         refresh();
+                     }
+                     break;
+            }
+         }
+    }
+}
+
+void UserInterface::setTransitChatroomTrue(){
+  transit_chatroom_bool = true;  
+}
+void UserInterface::setTransitChatroomFalse(){
+  transit_chatroom_bool = false; 
+}

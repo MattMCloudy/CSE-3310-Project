@@ -38,7 +38,9 @@ class UserInterface {
         int uuid_int; 
         const char* user_nick_char; 
         const char* uuid_char; 
-    public:
+        Chatroom* transit_chatroom;             //transit_chatroom vars are used while changing chatrooms.
+        bool transit_chatroom_bool;             //they help to know when the enterchatroom name look can end.    
+    public:                                     
         UserInterface() {
             //cout << "UI Initialized...\n";
             count = 0;
@@ -47,8 +49,13 @@ class UserInterface {
         void printMessage(User*, Message*, int);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
-	void printChatrooms(vector<Chatroom*> chatrooms);
-	void printUsers(vector<User*> online, vector<User*> offline);
-};
+    	void printChatrooms(vector<Chatroom*> chatrooms);
+    	void printUsers(vector<User*> online, vector<User*> offline);
+        void enterNick(); 
+        void setUpChatroom(); 
+        void enterChatroomName(); 
+        void setTransitChatroomTrue(); 
+        void setTransitChatroomFalse(); 
+    };
 
 #endif

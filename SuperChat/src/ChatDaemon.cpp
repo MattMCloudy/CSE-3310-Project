@@ -235,14 +235,32 @@ User* ChatDaemon::changeLocalUserNick(char* input) {
     return local_user;
 }
 
-Chatroom* ChatDaemon::createNewChatroom(string name) {
+/*
+Function:    createNewChatroom
+Parameters:  name - a string representing the neme of the chatroom to be created
+             It is the name that the user inputs when creating a new chatroom from
+             GUI.
+Returns:     Chatroom* - a pointer to a new Chatroom instance. 
+Description: When the user enters the name he wants for his new
+             chatroom, it is sent here from UserInterface. 
+             1: Constructor makes new instance of User
+                a) constructor also makes the new chatroom into an idl chatroom struct. 
+                b) constructor publishes new chatroom. 
+             2: This new chatroom is added to vector<Chatrooms*>chatrooms. 
+             3: Added to local_chatrooms (?)
+             4: Current chatroom is updated to new chatroom. 
+             5: Sent to UI for printing. 
+*/
+Chatroom* ChatDaemon::createNewChatroom(string name) {                  
     if (chatrooms.size() >= 10) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
+        cout << "IN CREATE_NEW_CHATROOM " << endl; 
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
         new_chatroom->setIsActive(); 
         chatrooms.push_back(new_chatroom);
         local_chatrooms.push_back(new_chatroom);
+       // cout << "NEW CHATROOM NAME: " << new_chatroom->getName() << endl; 
         chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
         changeChatroom(new_chatroom);
         postChatroomsToUI();
@@ -282,9 +300,8 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
 }   
 
 User* ChatDaemon::addNewLocalUser(string nick) {    //sent the inputted name from GUI
-   // cout << "TESTING IN ADD NEW LOCAL USER" << endl; 
     if (LocalUserInitialized) {
-        //cerr << "A local user has already been initialized: ";
+        cerr << "local user initialized";
         return local_user;
     }
     
@@ -350,3 +367,6 @@ void ChatDaemon::readInPreviousUsers() {
 void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}
 
 
+Chatroom* ChatDaemon::getCurrentChatroom(){
+    return current_chatroom; 
+}

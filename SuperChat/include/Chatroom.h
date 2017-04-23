@@ -40,6 +40,8 @@ class Chatroom {
         string getName();  
         void checkActive(); 
         void setIsActive();
+        bool getIsActive(); 
+
 };
 
 #endif

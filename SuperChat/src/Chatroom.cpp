@@ -99,7 +99,12 @@ void Chatroom::setIsActive() {
     checkActive();
 }
 
+
 int Chatroom::getChatroomIndex() {return chatroom_idx;}
 
 string Chatroom::getName() {return name;}
+
+bool Chatroom::getIsActive(){
+    return isActive; 
+}
 

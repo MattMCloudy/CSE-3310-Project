@@ -93,7 +93,7 @@ class ChatDaemon {
         void setChatbox(FORM*);
         void setMessageLengthCounter(int);
         void postUsersToFile();
-
+        Chatroom* getCurrentChatroom();  
         bool LocalUserInitialized;
 
 };
