@@ -127,6 +127,98 @@ void UserInterface::create() {
        {  case KEY_F(2):
                enterChatroomName(); 
                setTransitChatroomFalse(); 
+
+
+
+                mbf[0] = new_field(3,(MAX_MESSAGE_LENGTH/3),3,2,0,0);       //creating message box field
+                mbf[1] = NULL;
+
+                cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);      //creating chatbox field
+                cbf[1] = NULL;      
+                crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
+                crf[1] = NULL;           
+                //ulf[0] = new_field(20,(8+1),15,53,0,0);                     //(megan) creating user list field (?)
+                //ulf[1] = new_field(20,(8+1),15,88,0,0);
+                //ulf[2] = NULL;
+                on_ulf[0] = new_field(20,(8+1),15,53,0,0); 
+                on_ulf[1] = NULL; 
+                off_ulf[0] = new_field(20,(8+1),15,88,0,0);
+                off_ulf[1] = NULL; 
+
+
+
+
+                field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
+                field_opts_on(mbf[0], O_WRAP);         //"
+
+                field_opts_off(cbf[0], O_AUTOSKIP);    //setting chatbox options
+                field_opts_off(cbf[0], O_STATIC);      //"    
+                field_opts_on(cbf[0], O_WRAP);         //"
+
+                field_opts_off(crf[0], O_AUTOSKIP);    //setting chatroom list options
+                
+                field_opts_off(ulf[0], O_AUTOSKIP);     
+                field_opts_off(ulf[0], O_STATIC);
+
+
+               // field_opts_off(ulf[1], O_AUTOSKIP);
+               // field_opts_off(ulf[1], O_STATIC);
+                
+                msgbox = new_form(mbf);   //declaring forms
+                post_form(msgbox);        //"
+                chatbox = new_form(cbf);      //"
+                post_form(chatbox);       //"
+               // chatroomList = new_form(crf);
+               // post_form(chatroomList);
+              
+               // usersList = new_form(ulf);
+               // post_form(usersList);
+
+                onlineUsersList = new_form(on_ulf); 
+                post_form(onlineUsersList); 
+
+                offlineUsersList = new_form(off_ulf); 
+                post_form(offlineUsersList); 
+
+                refresh();
+                
+                m->lock();
+                daemon->setChatbox(chatbox);
+                m->unlock();
+
+                attron(A_BOLD);                      //drawing horizontal lines
+                move(1,0); hline('_', C_MAX-1);      //"
+                move(6,0); hline('_', 51);           //" 
+                move(38,0); hline('_', C_MAX-1);     //"
+                move(13,52); hline('_', 68);         //"
+                move(36,52); hline('_', 68);         //"
+
+                move(2, 51); vline('|', 37);         //drawing vertical lines
+                move(0,0); vline('|', 39);           //"
+                move(0, C_MAX-1); vline('|', 39);    //"
+                move(2, 76); vline('|', 12);         //"
+                move(14, 86); vline('|', 23);
+                
+
+                attron(A_STANDOUT);                  //printing titles
+                mvprintw(7, 1, "Chatbox:");          //"
+                mvprintw(2, 1, "Enter Message: ");   //"
+                mvprintw(0, 1, "SuperChat:");        //"
+                mvprintw(2, 52, "Controls");         //"
+                mvprintw(2, 77, "Chatrooms");        //"
+                mvprintw(14, 52, "Online Users");    //"
+                mvprintw(14, 87, "Offline Users");   //"
+
+                attroff(A_STANDOUT);
+                mvprintw(3, 52, "'ESC' to exit client");  //"
+                mvprintw(4, 52, "'F1' Create chat room"); //"
+                mvprintw(5, 52, "'F2' to ________");      //"
+                mvprintw(6, 52, "'F3' to ________");      //"
+                mvprintw(7, 52, "'F4' to ________");      //"
+
+                daemon->postChatroomsToUI(); 
+
+               //setUpChatroom(); 
                break; 
 
           case KEY_DOWN:
@@ -562,36 +654,51 @@ void UserInterface::printUsers(vector<User*> online, vector<User*> offline){
 }
 
 void UserInterface::setUpChatroom(){
-  attron(A_BOLD);                      //drawing horizontal lines
-  move(1,0); hline('_', C_MAX-1);       //"
-  move(6,0); hline('_', 51);          //" 
-  move(38,0); hline('_', C_MAX-1);      //"
-  move(13,52); hline('_', 68);    //"
-  move(36,52); hline('_', 68);    //"
 
-  move(2, 51); vline('|', 37);         //drawing vertical lines
-  move(0,0); vline('|', 39);    //"
-  move(0, C_MAX-1); vline('|', 39); //"
-  move(2, 76); vline('|', 12);    //"
-  move(14, 86); vline('|', 23);
-  
+      unpost_form(msgbox);
+      unpost_form(chatbox);
+      unpost_form(chatroomList);
+      unpost_form(usersList);
+      free_form(msgbox);
+      free_form(chatbox);
+      free_form(chatroomList);
+      free_form(usersList);
+      free_field(mbf[0]);
+      free_field(cbf[0]); 
+      free_field(crf[0]);
+      free_field(ulf[0]);
+      free_field(ulf[1]);
 
-  attron(A_STANDOUT);                  //printing titles
-  mvprintw(7, 1, "Chatbox:");       //"
-  mvprintw(2, 1, "Enter Message: ");      //"
-  mvprintw(0, 1, "SuperChat:");       //"
-  mvprintw(2, 52, "Controls");        //"
-  mvprintw(2, 77, "Chatrooms");             //"
-  mvprintw(14, 52, "Online Users");       //"
-  mvprintw(14, 87, "Offline Users");      //"
+      attron(A_BOLD);                      //drawing horizontal lines
+      move(1,0); hline('_', C_MAX-1);       //"
+      move(6,0); hline('_', 51);          //" 
+      move(38,0); hline('_', C_MAX-1);      //"
+      move(13,52); hline('_', 68);    //"
+      move(36,52); hline('_', 68);    //"
 
-  attroff(A_STANDOUT);
+      move(2, 51); vline('|', 37);         //drawing vertical lines
+      move(0,0); vline('|', 39);    //"
+      move(0, C_MAX-1); vline('|', 39); //"
+      move(2, 76); vline('|', 12);    //"
+      move(14, 86); vline('|', 23);
 
-  mvprintw(3, 52, "'ESC' to exit client");  //"
-  mvprintw(4, 52, "'F1' Create chat room"); //"
-  mvprintw(5, 52, "'F2' to ________");      //"
-  mvprintw(6, 52, "'F3' to ________");      //"
-  mvprintw(7, 52, "'F4' to ________");      //"
+
+      attron(A_STANDOUT);                  //printing titles
+      mvprintw(7, 1, "Chatbox:");       //"
+      mvprintw(2, 1, "Enter Message: ");      //"
+      mvprintw(0, 1, "SuperChat:");       //"
+      mvprintw(2, 52, "Controls");        //"
+      mvprintw(2, 77, "Chatrooms");             //"
+      mvprintw(14, 52, "Online Users");       //"
+      mvprintw(14, 87, "Offline Users");      //"
+
+      attroff(A_STANDOUT);
+
+      mvprintw(3, 52, "'ESC' to exit client");  //"
+      mvprintw(4, 52, "'F1' Create chat room"); //"
+      mvprintw(5, 52, "'F2' to ________");      //"
+      mvprintw(6, 52, "'F3' to ________");      //"
+      mvprintw(7, 52, "'F4' to ________");      //"
 }
 
 void UserInterface::setDaemon(ChatDaemon* new_daemon) {daemon = new_daemon;}
@@ -672,4 +779,37 @@ void UserInterface::setTransitChatroomTrue(){
 }
 void UserInterface::setTransitChatroomFalse(){
   transit_chatroom_bool = false; 
+}
+
+void setUpChatroom(){
+    attron(A_BOLD);                      //drawing horizontal lines
+    move(1,0); hline('_', C_MAX-1);      //"
+    move(6,0); hline('_', 51);           //" 
+    move(38,0); hline('_', C_MAX-1);     //"
+    move(13,52); hline('_', 68);         //"
+    move(36,52); hline('_', 68);         //"
+
+    move(2, 51); vline('|', 37);         //drawing vertical lines
+    move(0,0); vline('|', 39);           //"
+    move(0, C_MAX-1); vline('|', 39);    //"
+    move(2, 76); vline('|', 12);         //"
+    move(14, 86); vline('|', 23);
+    
+
+    attron(A_STANDOUT);                  //printing titles
+    mvprintw(7, 1, "Chatbox:");          //"
+    mvprintw(2, 1, "Enter Message: ");   //"
+    mvprintw(0, 1, "SuperChat:");        //"
+    mvprintw(2, 52, "Controls");         //"
+    mvprintw(2, 77, "Chatrooms");        //"
+    mvprintw(14, 52, "Online Users");    //"
+    mvprintw(14, 87, "Offline Users");   //"
+
+    attroff(A_STANDOUT);
+    mvprintw(3, 52, "'ESC' to exit client");  //"
+    mvprintw(4, 52, "'F1' Create chat room"); //"
+    mvprintw(5, 52, "'F2' to ________");      //"
+    mvprintw(6, 52, "'F3' to ________");      //"
+    mvprintw(7, 52, "'F4' to ________");      //"
+
 }

@@ -52,10 +52,10 @@ class UserInterface {
     	void printChatrooms(vector<Chatroom*> chatrooms);
     	void printUsers(vector<User*> online, vector<User*> offline);
         void enterNick(); 
-        void setUpChatroom(); 
         void enterChatroomName(); 
         void setTransitChatroomTrue(); 
         void setTransitChatroomFalse(); 
+        void setUpChatroom(); 
     };
 
 #endif

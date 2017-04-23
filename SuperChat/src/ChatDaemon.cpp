@@ -192,6 +192,7 @@ void ChatDaemon::readInAllMessages() {
         messages.push_back(new_message);
         message_map[hash(new_message->getContent())] = new_message;
         chatrooms[new_message->getChatroomIndex()]->addMessage(new_message);
+        cout << "NEW MESSAGE CHATROOM INDEX: " << new_message->getChatroomIndex() << endl; 
     }
 
     status = message_reader->return_loan(msgList, infoSeq);
@@ -255,7 +256,6 @@ Chatroom* ChatDaemon::createNewChatroom(string name) {
     if (chatrooms.size() >= 10) {
         //cerr << "ERROR: Already 10 chatrooms initialized";
     } else {
-        cout << "IN CREATE_NEW_CHATROOM " << endl; 
         Chatroom* new_chatroom = new Chatroom(name, chatrooms.size(), this);
         new_chatroom->setIsActive(); 
         chatrooms.push_back(new_chatroom);
@@ -324,7 +324,6 @@ void ChatDaemon::readSendObjects() {
         readInAllUsers();
         readInAllMessages();
         processCurrentChatroom();
-       
        // wakeLocalUser();
         sleep(3); 
     }
