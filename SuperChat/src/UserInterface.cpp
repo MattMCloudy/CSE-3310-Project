@@ -105,11 +105,12 @@ void UserInterface::create() {
 
 						
   mvprintw(3, 52, "'ESC' to Exit Client");          //Printing Controls
-  mvprintw(4, 52, "'Arw(Up/Dn' to Scr Users");       //"
-  mvprintw(5, 52, "'Pg(Up/Dn)' to Scr CR");          //"
-  mvprintw(6, 52, "'F2' to Create Chatroom");        //"
-  mvprintw(7, 52, "'F3' to Change Nick");            //"
-  mvprintw(8, 52, "'F4' to Change Chatroom");        //"
+  mvprintw(4, 52, "'Arw(Up/Dn' Scr Users");          //"
+  mvprintw(5, 52, "'Arw(L/R)' Swp Usr List");        //"
+  mvprintw(6, 52, "'Pg(Up/Dn)' to Scr CR");          //"
+  mvprintw(7, 52, "'F2' to Create Chatroom");        //"
+  mvprintw(8, 52, "'F3' to Change Nick");            //"
+  mvprintw(9, 52, "'F4' to Change Chatroom");        //"
 
   attroff(A_BOLD);
     mvprintw(0, 11, " %s", nick); //print user nick
@@ -118,12 +119,21 @@ void UserInterface::create() {
     while((ch=getch())!=27)
     {  switch(ch)
      {     case KEY_DOWN:
-             form_driver(chatroomList, REQ_SCR_FLINE);
+             form_driver(usersList, REQ_SCR_FLINE);
              break;
  
            case KEY_UP:
-             form_driver(chatroomList, REQ_SCR_BLINE);
+             form_driver(usersList, REQ_SCR_BLINE);
              break;
+
+	   case KEY_RIGHT:
+	     form_driver(usersList, REQ_FIRST_FIELD);
+	     form_driver(usersList, REQ_NEXT_FIELD);
+	     break;
+
+	   case KEY_LEFT:
+	     form_driver(usersList, REQ_FIRST_FIELD);
+	     break;
 
            case KEY_BACKSPACE:
              if(function==0){
@@ -170,7 +180,7 @@ void UserInterface::create() {
 	       function=0;
 	       count=0;
 	     }
-           break;
+             break;
 
 	   case KEY_F(2):
 	     input.clear();
@@ -178,7 +188,7 @@ void UserInterface::create() {
 	     form_driver(msgbox,REQ_CLR_FIELD);
 	     form_driver(userInput,REQ_END_FIELD);
              count=0;
-  	   break;
+  	     break;
 
 	   case KEY_F(3):
 	     input.clear();
@@ -186,7 +196,7 @@ void UserInterface::create() {
 	     form_driver(msgbox,REQ_CLR_FIELD);
 	     form_driver(userInput,REQ_END_FIELD);
 	     count=0;
-	   break;
+	     break;
 
 	   case KEY_F(4):
 	     input.clear();
@@ -194,7 +204,7 @@ void UserInterface::create() {
 	     form_driver(msgbox,REQ_CLR_FIELD);
 	     form_driver(userInput,REQ_END_FIELD);
 	     count=0;
-	   break;
+	     break;
 
 	   case KEY_PPAGE:
              form_driver(chatbox, REQ_SCR_BLINE);
