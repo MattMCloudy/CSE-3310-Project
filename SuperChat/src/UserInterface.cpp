@@ -50,7 +50,7 @@ void UserInterface::create() {
 
     field_opts_off(crf[0], O_AUTOSKIP);	   //setting chatroom list options
     
-    field_opts_off(ulf[0], O_AUTOSKIP);
+    field_opts_off(ulf[0], O_AUTOSKIP);    
     field_opts_off(ulf[0], O_STATIC);
 
     field_opts_off(ulf[1], O_AUTOSKIP);
@@ -174,7 +174,13 @@ void UserInterface::create() {
 	       }
 	       if(function==4){
 		 daemon->changeChatroom(input);
-	 	 
+		 form_driver(chatbox, REQ_NEXT_LINE);
+		 form_driver(chatbox, '*');
+	 	 for(i=0; i<input.length(); i++){
+		   form_driver(chatbox, input[i]);	
+		 }
+		 form_driver(chatbox, '*');
+		 form_driver(chatbox, REQ_NEXT_LINE);
 	       }
  
 	       function=0;
