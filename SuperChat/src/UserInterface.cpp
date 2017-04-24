@@ -158,10 +158,11 @@ void UserInterface::create() {
 	       
  	       if(function==2)
 		 daemon->createNewChatroom(input);
-	       if(function==3)
+	       if(function==3){
 		 daemon->changeNick(input);
 		 nick = input;
 		 mvprintw(0, 11, " %s", nick); //print user nick
+	       }
 	     }
            break;
 
