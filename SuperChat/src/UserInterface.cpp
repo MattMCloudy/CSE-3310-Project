@@ -163,7 +163,7 @@ void UserInterface::create() {
 		 mvprintw(0, 11, " %s", nick); //print user nick
 	       }
 	       if(function==4){
-		 daemon->changeChatRoom(input);
+		 daemon->changeChatroom(input);
 	 	 
 	       }
  
