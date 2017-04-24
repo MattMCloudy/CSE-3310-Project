@@ -30,15 +30,18 @@ class UserInterface {
         ChatDaemon* daemon;
         mutex* m;
         int ch;
-        char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+        char msg[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+	string input;
         int i;
         int count;
         User* local_user;
+	int function=0;
     public:
         UserInterface() {
             //cout << "UI Initialized...\n";
             count = 0;
         }
+        void createChatroom();
         void create();
         void printMessage(User*, Message*, int);
         void setDaemon(ChatDaemon* new_daemon);
