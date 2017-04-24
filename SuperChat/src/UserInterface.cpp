@@ -106,10 +106,10 @@ void UserInterface::create() {
 						
   mvprintw(3, 52, "'ESC' to Exit Client");          //Printing Controls
   mvprintw(4, 52, "'Arw(Up/Dn' to Scr Users");       //"
-  mvprintw(4, 52, "'Pg(Up/Dn)' to Scr CR");          //"
-  mvprintw(5, 52, "'F2' to Create Chatroom");        //"
-  mvprintw(6, 52, "'F3' to Change Nick");            //"
-  mvprintw(7, 52, "'F4' to Change Chatroom");        //"
+  mvprintw(5, 52, "'Pg(Up/Dn)' to Scr CR");          //"
+  mvprintw(6, 52, "'F2' to Create Chatroom");        //"
+  mvprintw(7, 52, "'F3' to Change Nick");            //"
+  mvprintw(8, 52, "'F4' to Change Chatroom");        //"
 
   attroff(A_BOLD);
     mvprintw(0, 11, " %s", nick); //print user nick
