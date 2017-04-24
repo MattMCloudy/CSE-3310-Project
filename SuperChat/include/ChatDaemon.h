@@ -37,6 +37,7 @@ class ChatDaemon {
         bool hasStarted;
         vector<Chatroom*> chatrooms;
         vector<Chatroom*> local_chatrooms;
+        vector<Chatroom*> active_chatrooms; 
         vector<User*> users;
         vector<User*> online_users;
         vector<User*> offline_users;
@@ -95,6 +96,9 @@ class ChatDaemon {
         void postUsersToFile();
         Chatroom* getCurrentChatroom();  
         bool LocalUserInitialized;
+
+        vector<Chatroom*> checkWhichChatroomsActive(); 
+        Chatroom* changeChatroomName(char* input);
 
 };
 

@@ -1,7 +1,12 @@
 #include "../include/ChatDaemon.h"
 #include "../include/UserInterface.h"
 
-
+/*
+(megan, 4/23) Bugs I know of:   I think the last user read in doesn't get displayed 
+                                When user creates new chatroom and names it, the buffer string still contains old message so it gets put on the name. 
+                                The public chatroom also disappears after inactivite.     
+                                Lots of other noticable ones I'm sure. But I like our programs. :) 
+*/
 
 void ChatDaemon::start() {
     hasStarted = true;
@@ -9,15 +14,6 @@ void ChatDaemon::start() {
     setEntityManager();
     readInAllChatrooms();
 
-  /*  int i; 
-    if (chatrooms.size() == 0){
-        createNewChatroom("public");
-        for (i = 0; i < 9; i++){
-            createNewChatroom(" ");
-        }
-        changeChatroom(chatrooms[0]);
-    }
-*/
     if (chatrooms.size() == 0) {
         //cout << "Initializing public chatroom...\n";
         createNewChatroom("public");
@@ -125,22 +121,29 @@ vector<User*> ChatDaemon::checkWhichUsersOnline() {
     for(int i = 0; i < users.size(); i++) {
         users[i]->checkIfOnline();
         if (users[i]->getIsOnline()){
-            online_users.push_back(users[i]);
-            //cout << "Online USER NAME:  " << users[i]->getNick() << endl; 
-            //cout << "Online USER START: " << users[i]->start << endl; 
-            //cout << "ONLINE USER: " << online_users[i]->getNick() << endl; 
+            online_users.push_back(users[i]); 
         }
         else{
-            //cout << "Offline USER NAME:  " << users[i]->getNick() << endl; 
-            //cout << "Offline USER START: " << users[i]->start << endl;
             offline_users.push_back(users[i]);
-            //cout << "OFFLINE USER in c.w.u.o: " << offline_users[i]->getNick() << endl; 
         }
     }
     return online_users;
 }
 
 vector<User*> ChatDaemon::getOfflineUsers() {return offline_users;}
+
+vector<Chatroom*> ChatDaemon::checkWhichChatroomsActive() {
+    active_chatrooms.clear();
+    for(int i = 0; i < chatrooms.size(); i++) {
+        chatrooms[i]->checkIfActive();
+        if (chatrooms[i]->getIsActive()){
+            active_chatrooms.push_back(chatrooms[i]);
+        }
+    }
+    return active_chatrooms;
+}
+
+
 
 void ChatDaemon::readInAllUsers() {
     userSeq userList;
@@ -205,12 +208,25 @@ void ChatDaemon::readInAllMessages() {
         messages.push_back(new_message);
         message_map[hash(new_message->getContent())] = new_message;
         chatrooms[new_message->getChatroomIndex()]->addMessage(new_message);
-        //cout << "NEW MESSAGE CHATROOM INDEX: " << new_message->getChatroomIndex() << endl; 
+        chatrooms[new_message->getChatroomIndex()]->setIsActive();                //start_chatroom is reset to this moment. 
     }
 
     status = message_reader->return_loan(msgList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
+
+/*Function: readInAllChatrooms: gets all the published chatrooms from the network.
+                instances a new Chatroom() during which an idl chatroom struct is
+                also instanced. 
+                if there are already 10 chatrooms, it doesn't do anything with the
+                new room. 
+                if the chatroom is already in the hash table, (based on name) it doesn't do anything
+                with the room. 
+                otherwise, it hashes the new chatroom into the table, adds the chatroom to the 
+                vector<Chatroom*>chatrooms. 
+                If the current_chatroom isn't set, we go to the new chatroom. 
+*/
+
 
 void ChatDaemon::readInAllChatrooms() {
     chatroomSeq chatList;
@@ -222,23 +238,21 @@ void ChatDaemon::readInAllChatrooms() {
     
     for(ULong j = 0; j < chatList.length(); j++) {
         Chatroom* new_chatroom = new Chatroom(&chatList[j], chatrooms.size(), this);
-
         if (chatrooms.size() >= 10)
-          continue;
-        else if (chatroom_map[hash(new_chatroom->getName())] != NULL)
-            new_chatroom->setIsActive(); 
+            continue;
+        else if (chatroom_map[hash(new_chatroom->getName())] != NULL) 
+            continue;              
         else{
             chatroom_map[hash(new_chatroom->getName())] = new_chatroom;
             chatrooms.push_back(new_chatroom);
-            
-            if (current_chatroom == NULL)
-                changeChatroom(new_chatroom);   
-
-            new_chatroom->setIsActive();
-            postChatroomsToUI();
+            if (current_chatroom == NULL){
+                changeChatroom(new_chatroom);  
+            }     
         }
+         postChatroomsToUI();
     }
-
+    checkWhichChatroomsActive(); 
+    postChatroomsToUI(); 
     status = chatroom_reader->return_loan(chatList, infoSeq);
     checkStatus(status, "MsgDataReader::return_loan");
 }
@@ -247,6 +261,12 @@ User* ChatDaemon::changeLocalUserNick(char* input) {
     string temp(input);
     local_user->changeNick(temp);
     return local_user;
+}
+
+Chatroom* ChatDaemon::changeChatroomName(char* input) {
+    string temp(input);
+    current_chatroom->changeName(temp);
+    return current_chatroom;
 }
 
 /*
@@ -294,14 +314,9 @@ void ChatDaemon::postUsersToUI() {
 }
 
 void ChatDaemon::postChatroomsToUI() {
-    //Something like this should work for this method
-    
-    
     m->lock();
-    ui->printChatrooms(chatrooms);
+    ui->printChatrooms(active_chatrooms);
     m->unlock();
-    
-    
 }
 
 void ChatDaemon::postNewMessageToUI(Message* new_message) {
@@ -312,7 +327,7 @@ void ChatDaemon::postNewMessageToUI(Message* new_message) {
     m->unlock();
 }   
 
-User* ChatDaemon::addNewLocalUser(string nick) {    //sent the inputted name from GUI
+User* ChatDaemon::addNewLocalUser(string nick) {                   //sent the inputted name from GUI
     if (LocalUserInitialized) {
         cerr << "local user initialized";
         return local_user;
@@ -337,8 +352,8 @@ void ChatDaemon::readSendObjects() {
         readInAllUsers();
         readInAllMessages();
         processCurrentChatroom();
-       // wakeLocalUser();
-        sleep(3); 
+       // wakeLocalUser();                              
+        sleep(3);                                             
     }
 }
 
@@ -382,3 +397,6 @@ void ChatDaemon::setChatbox(FORM* passed_chatbox) {chatbox = passed_chatbox;}
 Chatroom* ChatDaemon::getCurrentChatroom(){
     return current_chatroom; 
 }
+
+
+    

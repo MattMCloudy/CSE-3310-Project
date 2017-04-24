@@ -97,14 +97,14 @@ void UserInterface::create() {
     move(14, 86); vline('|', 23);
     
 
-    attron(A_STANDOUT);                  //printing titles
-    mvprintw(7, 1, "Chatbox:");          //"
-    mvprintw(2, 1, "Enter Message: ");   //"
-    mvprintw(0, 1, "SuperChat:");        //"
-    mvprintw(2, 52, "Controls");         //"
-    mvprintw(2, 77, "Chatrooms");        //"
-    mvprintw(14, 52, "Online Users");    //"
-    mvprintw(14, 87, "Offline Users");   //"
+    attron(A_STANDOUT);                    //printing titles
+    mvprintw(7, 1,   "Chatbox:");          //"
+    mvprintw(2, 1,   "Enter Message: ");   //"
+    mvprintw(0, 1,   "SuperChat:");        //"
+    mvprintw(2, 52,  "Controls");          //"
+    mvprintw(2, 77,  "Chatrooms");         //"
+    mvprintw(14, 52, "Online Users");      //"
+    mvprintw(14, 87, "Offline Users");     //"
 
     attroff(A_STANDOUT);
     mvprintw(3, 52, "'ESC' to exit client");  //"
