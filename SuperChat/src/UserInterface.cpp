@@ -100,15 +100,16 @@ void UserInterface::create() {
   mvprintw(14, 87, "Offline Users");	    //"
 
   attroff(A_STANDOUT);
+ 
   mvprintw(37, 52, "Input: "); 		    //"
 
 						
   mvprintw(3, 52, "'ESC' to Exit Client");          //Printing Controls
-  mvprintw(4, 52, "'Pg(Up/Dn)' Scr Users");          //"
-  mvprintw(5, 52, "'F2' Create Chatroom");           //"
+  mvprintw(4, 52, "'Arw(Up/Dn' to Scr Users");       //"
+  mvprintw(4, 52, "'Pg(Up/Dn)' to Scr CR");          //"
+  mvprintw(5, 52, "'F2' to Create Chatroom");        //"
   mvprintw(6, 52, "'F3' to Change Nick");            //"
-  mvprintw(7, 52, "'F3' to ________");	             //"
-  mvprintw(8, 52, "'F4' to ________");               //"
+  mvprintw(7, 52, "'F4' to Change Chatroom");        //"
 
   attroff(A_BOLD);
     mvprintw(0, 11, " %s", nick); //print user nick
@@ -153,8 +154,6 @@ void UserInterface::create() {
 	       form_driver(chatroomList, REQ_NEXT_LINE);
 	       form_driver(userInput, REQ_CLR_FIELD);
 	       form_driver(msgbox, REQ_END_FIELD);
-	       function=0;
-	       count=0;
 	       
  	       if(function==2)
 		 daemon->createNewChatroom(input);
@@ -163,6 +162,13 @@ void UserInterface::create() {
 		 nick = input;
 		 mvprintw(0, 11, " %s", nick); //print user nick
 	       }
+	       if(function==4){
+		 daemon->changeChatRoom(input);
+	 	 
+	       }
+ 
+	       function=0;
+	       count=0;
 	     }
            break;
 
@@ -177,6 +183,14 @@ void UserInterface::create() {
 	   case KEY_F(3):
 	     input.clear();
 	     function = 3;
+	     form_driver(msgbox,REQ_CLR_FIELD);
+	     form_driver(userInput,REQ_END_FIELD);
+	     count=0;
+	   break;
+
+	   case KEY_F(4):
+	     input.clear();
+	     function = 4;
 	     form_driver(msgbox,REQ_CLR_FIELD);
 	     form_driver(userInput,REQ_END_FIELD);
 	     count=0;
