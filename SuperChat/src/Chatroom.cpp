@@ -33,7 +33,9 @@ Chatroom::~Chatroom() {
 }
 
 void Chatroom::setEntityManager() {
-    char* topic_name = "chatroom";
+    string c_top_temp = "chatroom";
+
+    char* topic_name = strdup(c_top_temp.c_str());
     em.createParticipant("");
 
     chatroomTypeSupport_var T = new chatroomTypeSupport();
@@ -83,23 +85,50 @@ void Chatroom::sendAllUnpublishedMessages() {
     unpublished_messages.clear();
 }
 
-void Chatroom::checkActive(){
-    clock_t now = clock(); 
-    int elapsed_time; 
-    elapsed_time = (now-start)/CLOCKS_PER_SEC;  //how many seconds have elapsed
-    if (elapsed_time > 600)                    //600 seconds in 10 minutes
-        isActive = false; 
+//same format as user setIsOnline
+/*
+    (megan) (4/22) (copy paste from Users.cpp. Same thing applies here)
+    The elapsed_time check is just set to some arbitrary amout of time. 
+    I messed with it forever trying to get it to be a determined amount 
+    but it's all funky. We can either "eye-ball" it and set it to whatever 
+    feels right. or someone can mess with it more if they want to make it check
+    if like 5 min (or however much time we decided for someone to be inactive
+    and declared offline) has passed. 
+*/
+
+void Chatroom::checkIfActive(){
+    now_chatroom = clock(); 
+    long double elapsed_time_chatroom; 
+    elapsed_time_chatroom = double(now_chatroom - start_chatroom);
+    if (elapsed_time_chatroom > 100000) 
+        isActive = false;  
     else
-        isActive = true; 
+        isActive = true;
 }
 
+//same format as user setIsOnline
 void Chatroom::setIsActive() {
-    clock_t now = clock();
-    start = now;
-    checkActive();
+    start_chatroom = clock();
+    checkIfActive();            //i don't think we need this line. double check. 
+}
+
+bool Chatroom::getIsActive(){
+    return isActive; 
 }
 
 int Chatroom::getChatroomIndex() {return chatroom_idx;}
 
 string Chatroom::getName() {return name;}
+
+
+void Chatroom::changeName(string new_name) {
+    name = new_name;
+    strncpy(chatroom_struct->chatroom_name, new_name.c_str(), sizeof(chatroom_struct->chatroom_name));
+    cout << "NEW CHATROOM NAME: " << chatroom_struct->chatroom_name << endl; 
+}
+struct chatroom* Chatroom::getChatroomStruct(){
+    return chatroom_struct; 
+}
+
+
 

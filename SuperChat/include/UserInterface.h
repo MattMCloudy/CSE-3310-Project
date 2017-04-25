@@ -48,6 +48,7 @@ class UserInterface {
         void setMutex(mutex* new_m);
 	void printChatrooms(vector<Chatroom*> chatrooms);
 	void printUsers(vector<User*> online, vector<User*> offline);
+ 	void printError(string message);
 };
 
 #endif

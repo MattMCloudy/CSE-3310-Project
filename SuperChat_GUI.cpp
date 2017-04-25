@@ -186,11 +186,12 @@ int main()
   attroff(A_STANDOUT);
   mvprintw(37, 52, "Input: ");
 
-  mvprintw(3, 52, "'ESC' to exit client");  //"
-  mvprintw(4, 52, "'F2' Create chat room"); //"
-  mvprintw(5, 52, "'F3' to ________");      //"
-  mvprintw(6, 52, "'F4' to ________");	    //"
-  mvprintw(7, 52, "'F5' to ________");      //"
+  mvprintw(3, 52, "'ESC' to Exit Client");          //Printing Controls
+  mvprintw(4, 52, "'Arw(Up/Dn' to Scr Users");       //"
+  mvprintw(5, 52, "'Pg(Up/Dn)' to Scr CR");          //"
+  mvprintw(6, 52, "'F2' to Create Chatroom");        //"
+  mvprintw(7, 52, "'F3' to Change Nick");            //"
+  mvprintw(8, 52, "'F4' to Change Chatroom");        //"
 
   attroff(A_BOLD);
   mvprintw(0, 11, " %s: %s", nick, ID); //print user nick and UUID

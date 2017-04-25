@@ -33,10 +33,12 @@ class ChatDaemon {
         UserInterface* ui;
         Chatroom* current_chatroom;
         FORM* chatbox;
-        bool LocalUserInitialized;
+        //bool LocalUserInitialized;
         bool hasStarted;
+	bool recentErrorStatus;
         vector<Chatroom*> chatrooms;
         vector<Chatroom*> local_chatrooms;
+        vector<Chatroom*> active_chatrooms; 
         vector<User*> users;
         vector<User*> online_users;
         vector<User*> offline_users;
@@ -59,6 +61,7 @@ class ChatDaemon {
             //cout << "ChatDaemon Initialized...\n";
             LocalUserInitialized = false;
             hasStarted = false;
+	    recentErrorStatus = false;
             current_chatroom = NULL;
         }
         void setTestMessage(); 
@@ -79,19 +82,27 @@ class ChatDaemon {
         void postNewMessageToUI(Message*); //This could also be inside of Chatroom theoretically.
         User* addNewLocalUser(string nick);
         User* addNewRemoteUser(User* new_user);
+        User* getLocalUser(); 
         void sendMessage(char* input);
         void wakeLocalUser();
         void wakeLocalChatrooms();
         void readSendObjects();
         void processCurrentChatroom();
         int hash(string key_string);
-        User* changeLocalUserNick(char*);
-        void changeChatroom(Chatroom* new_cur_chatroom);
+        User* changeLocalUserNick(string);
+        void changeChatroom(string); //**
         void readInPreviousUsers();
         vector<Chatroom*> getChatrooms();
         void setChatbox(FORM*);
         void setMessageLengthCounter(int);
         void postUsersToFile();
+        Chatroom* getCurrentChatroom();  
+        bool LocalUserInitialized;
+	bool isError();
+
+        vector<Chatroom*> checkWhichChatroomsActive(); 
+        Chatroom* changeChatroomName(string); //**
+
 };
 
 #endif

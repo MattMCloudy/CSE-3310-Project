@@ -22,6 +22,9 @@ class Chatroom {
         vector<User*> users;
         vector<Message*> messages;
         vector<Message*> unpublished_messages;
+        clock_t start_chatroom; 
+        clock_t now_chatroom; 
+
     public:
         Chatroom(string passed_name, int passed_chatroom_idx,  ChatDaemon* passed_daemon);
         Chatroom(struct chatroom* passed_chatroom_struct, int new_chatroom_idx, ChatDaemon* passed_daemon);
@@ -38,8 +41,12 @@ class Chatroom {
         void sendChatroom();
         int getChatroomIndex(); 
         string getName();  
-        void checkActive(); 
+        void checkIfActive(); 
         void setIsActive();
+        bool getIsActive(); 
+
+        struct chatroom* getChatroomStruct(); 
+        void changeName(string new_name);           //used to clear chatroom name after inactivity
 };
 
 #endif
