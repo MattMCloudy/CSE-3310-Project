@@ -18,6 +18,7 @@
 #define MAX_MESSAGE_LENGTH 144
 #define C_MAX 121
 #define R_MAX 40
+#define CHATROOMS_NAME_MAX 25
 #define MAX_UUID_LENGTH 10
 
 class ChatDaemon;
@@ -29,23 +30,25 @@ class UserInterface {
         ChatDaemon* daemon;
         mutex* m;
         int ch;
-        char input[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+        char msg[MAX_MESSAGE_LENGTH];           // **THIS IS THE STRING YOU WANT TO GIVE ALL MESSAGES TO**
+	string input;
         int i;
         int count;
         User* local_user;
-        const char* uuid_str; 
-        int uuid_int; 
-        const char* user_nick_char; 
-        const char* uuid_char; 
+	int function=0;
     public:
         UserInterface() {
             //cout << "UI Initialized...\n";
             count = 0;
         }
+        void createChatroom();
         void create();
         void printMessage(User*, Message*, int);
         void setDaemon(ChatDaemon* new_daemon);
         void setMutex(mutex* new_m);
+	void printChatrooms(vector<Chatroom*> chatrooms);
+	void printUsers(vector<User*> online, vector<User*> offline);
+ 	void printError(string message);
 };
 
 #endif

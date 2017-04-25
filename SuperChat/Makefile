@@ -4,7 +4,7 @@ COMMON_LIBS=-L${OSPL_HOME}/lib/ \
             -ldcpssacpp \
             -lddskernel \
             -lpthread \
-			-lboost_system
+		-lboost_system
 
 CXX_FLAGS=-std=c++11 -Wall -O0 -g
 

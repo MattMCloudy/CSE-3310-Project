@@ -29,7 +29,8 @@ Message::~Message() {
 }
 
 void Message::setEntityManager() {
-    char* topic_name = "message";
+    string m_top_temp = "message";
+    char* topic_name = strdup(m_top_temp.c_str());
     em.createParticipant("");
 
     messageTypeSupport_var T = new messageTypeSupport();
