@@ -10,11 +10,13 @@
 
 void UserInterface::create() {
     cout << "Inside UI\n";
-
+    
+    m->lock();
     local_user = daemon->addNewLocalUser("Default");
+    m->unlock();
 
 
-    char nick[8]; 		//place holder for user nick string
+    char nick[8];		//place holder for user nick string
     strncpy(nick, local_user->getNick().c_str(), sizeof(nick));
 
     //SEND LOCAL USER TO CHAT DAEMON
@@ -34,7 +36,7 @@ void UserInterface::create() {
     cbf[0] = new_field(30,(MAX_MESSAGE_LENGTH/3),8,2,0,0);      //creating chatbox field
     cbf[1] = NULL;			
     crf[0] = new_field(10,(CHATROOMS_NAME_MAX+1),3,78,0,0);     //creating chatroom list field 
-    crf[1] = NULL;    	     
+    crf[1] = NULL;	     
     ulf[0] = new_field(20,(8+1),15,53,0,0);
     ulf[1] = new_field(20,(8+1),15,88,0,0);
     ulf[2] = NULL;
@@ -42,7 +44,7 @@ void UserInterface::create() {
     inf[1] = NULL;
 
     field_opts_off(mbf[0], O_AUTOSKIP);    //setting message box options
-    field_opts_on(mbf[0], O_WRAP); 	      //"
+    field_opts_on(mbf[0], O_WRAP);	      //"
 
     field_opts_off(cbf[0], O_AUTOSKIP);    //setting chatbox options
     field_opts_off(cbf[0], O_STATIC);         //"    
@@ -78,9 +80,9 @@ void UserInterface::create() {
 
   attron(A_BOLD);                      //drawing horizontal lines
   move(1,0); hline('_', C_MAX-1);       //"
-  move(6,0); hline('_', 51);	        //"	
+  move(6,0); hline('_', 51);		//"	
   move(38,0); hline('_', 52);           //"
-  move(13,52); hline('_', 68);  	//"
+  move(13,52); hline('_', 68);		//"
   move(36,52); hline('_', 68);		//"
 
   move(2, 51); vline('|', 37);	       //drawing vertical lines
@@ -96,12 +98,12 @@ void UserInterface::create() {
   mvprintw(0, 1, "SuperChat:");		    //"
   mvprintw(2, 52, "Controls");		    //"
   mvprintw(2, 77, "All Chatrooms");	    //"
-  mvprintw(14, 52, "Online Users"); 	    //"
+  mvprintw(14, 52, "Online Users");	    //"
   mvprintw(14, 87, "Offline Users");	    //"
 
   attroff(A_STANDOUT);
 
-  mvprintw(37, 52, "Input: "); 		    //"
+  mvprintw(37, 52, "Input: ");		    //"
 
 						
   mvprintw(3, 52, "'ESC' to Exit Client");          //Printing Controls
@@ -139,12 +141,12 @@ void UserInterface::create() {
            case KEY_BACKSPACE:
              if(function==0){
 	       if(count>=MAX_MESSAGE_LENGTH)
-	         form_driver(msgbox, REQ_DEL_CHAR);
+		 form_driver(msgbox, REQ_DEL_CHAR);
 	       else {
                  form_driver(msgbox, REQ_DEL_PREV);
                }
 	       if(count!=0)
-	         count--;
+		 count--;
 	     }
 	     if(function>0&&count!=0){
 	       form_driver(userInput, REQ_DEL_PREV);
@@ -156,8 +158,10 @@ void UserInterface::create() {
            case 10: //enter is pressed
 	     if(function==0){
 	       form_driver(msgbox, REQ_END_FIELD);
+	       m->lock();
                daemon->setMessageLengthCounter(count);
                daemon->sendMessage(msg);
+	       m->unlock();
                count=0;       
                form_driver(msgbox, REQ_CLR_FIELD);
                refresh(); 
@@ -167,18 +171,22 @@ void UserInterface::create() {
 	       form_driver(userInput, REQ_CLR_FIELD);
 	       form_driver(msgbox, REQ_END_FIELD);
 	       
- 	       if(function==2)
-		 daemon->createNewChatroom(input);    		   //**
+	       if(function==2)
+		 m->lock();
+		 daemon->createNewChatroom(input);		   //**
+		 m->unlock();
 	       if(function==3){
-		 local_user = daemon->changeLocalUserNick(input);  //**
+		 m->lock();
+		 local_user = daemon->changeLocalUserNick(input);
+		 m->unlock();
 		 strncpy(nick, local_user->getNick().c_str(), sizeof(nick));
 		
 		 mvprintw(0, 11, "         ");
 		 mvprintw(0, 11, " %s", nick);			   //print user nick
-		 	
+			
 	       }
 	       if(function==4){
-		 daemon->changeChatroom(input);    		   //**
+		 daemon->changeChatroom(input);			   //**
                  if(!(daemon->isError())){
 		   form_driver(chatbox, REQ_NEXT_LINE); form_driver(chatbox, REQ_BEG_LINE);
 		   mvprintw(7,11, input.c_str());
@@ -189,7 +197,7 @@ void UserInterface::create() {
 		   form_driver(chatbox, REQ_NEXT_LINE);
 		 }
 	       }
- 	       form_driver(msgbox, REQ_END_FIELD);
+	       form_driver(msgbox, REQ_END_FIELD);
 	       function=0;
 	       count=0;
 	       input.clear();
@@ -202,7 +210,7 @@ void UserInterface::create() {
 	     form_driver(msgbox,REQ_CLR_FIELD);
 	     form_driver(userInput, REQ_CLR_FIELD);
              count=0;
-  	     break;
+	     break;
 
 	   case KEY_F(3):
 	     function = 3;
@@ -229,28 +237,28 @@ void UserInterface::create() {
            default:
 	     if(function==0){
                if(count<=MAX_MESSAGE_LENGTH){
-	         form_driver(msgbox, ch);
-	         msg[count] = ch;
+		 form_driver(msgbox, ch);
+		 msg[count] = ch;
                if(count<MAX_MESSAGE_LENGTH)
-	         count++;
+		 count++;
                  refresh();
                }
 	     }
 	     if(function==2||function==4){
                if(count<25){
                  form_driver(userInput,ch);
-	         input.push_back(ch);
-	         count++;
-	         refresh();
+		 input.push_back(ch);
+		 count++;
+		 refresh();
 	       }
 	       form_driver(userInput, REQ_END_FIELD);
 	     }	   
 	     if(function==3){
                if(count<8){
                  form_driver(userInput,ch);
-	         input.push_back(ch);
-	         count++;
-	         refresh();
+		 input.push_back(ch);
+		 count++;
+		 refresh();
 	       }
 	       form_driver(userInput, REQ_END_FIELD);
 	     }	

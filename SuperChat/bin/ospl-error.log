@@ -728,3 +728,51 @@ Node        : nima-VirtualBox
 Process     : SuperChat <28008>
 Thread      : main thread 7f6984beb700
 Internals   : V6.4.140407OSS/3b83e82/3b83e82/CCPP/ccpp_Subscriber_impl.cpp/208/0/1493156823.651617011
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:44 UTC 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.528897268 s.
+Node        : f550a1c8832e
+Process     : SuperChat <236>
+Thread      : OSPL Lease Renew Thread 7fb5d83f4700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1493856764.356960592
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:44 UTC 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.530814501 s.
+Node        : f550a1c8832e
+Process     : SuperChat <236>
+Thread      : leaseThread 7fb5d8143700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1493856764.646371792
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:44 UTC 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.530068644 s.
+Node        : f550a1c8832e
+Process     : SuperChat <352>
+Thread      : OSPL Lease Renew Thread 7fa471cf9700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1493856764.833786216
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:44 UTC 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.529626965 s.
+Node        : f550a1c8832e
+Process     : SuperChat <352>
+Thread      : leaseThread 7fa471a48700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1493856764.933603080
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:45 UTC 2017
+Description : Splice-daemon failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.528978852 s.
+Node        : f550a1c8832e
+Process     : SuperChat <294>
+Thread      : OSPL Lease Renew Thread 7f7f9e049700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/OpenSplice domain service/spliced.c/153/0/1493856765.033912085
+========================================================================================
+Report      : ERROR
+Date        : Thu May 04 00:12:45 UTC 2017
+Description : Durability failed to renew its lease within the configured lease expiry-time (10.000000000). The lease renewal took 391.529549539 s.
+Node        : f550a1c8832e
+Process     : SuperChat <294>
+Thread      : leaseThread 7f7f9dd98700
+Internals   : V6.4.140407OSS/3b83e82/3b83e82/Durability Service/d_durability.c/182/0/1493856765.512559550
